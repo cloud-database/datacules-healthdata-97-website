@@ -2,94 +2,655 @@
 // No internal GitHub usernames, repo paths, stack details, or maturity labels
 // should be exposed to visitors.
 export const BRAND = {
-  name: "Datacules-HealthData-97",
-  tagline: "One Platform. Every Healthcare Insight.",
-  description: "Datacules HealthData 97 is an enterprise healthcare data management and insights platform built on Node.js/Express and React that unifies clinical and operational healthcare data across EHR, billing, telehealth, prescriptions, labs, and IoT devices while maintaining full HIPAA and GDPR compliance. The platform features AI-powered predictive analytics for readmission risk, billing denial prediction, and vitals anomaly detection, backed by an Oracle database with 240+ tables across 23 integrated modules. It provides a comprehensive REST API with 354+ endpoints covering patient management, real-time vitals monitoring, revenue cycle management, and compliance audit trails.",
-  colors: {
-    primary: "#1A3A5C",
-    accent: "#00C2A8",
-    secondary: "#0D7E8A",
+  name: "Datacules HealthData 97",
+  tagline: "Intelligent Healthcare Data Management with AI-Powered Insights",
+  description:
+    "Datacules HealthData 97 is an enterprise healthcare data management and insights platform that unifies clinical and operational data across EHR, billing, telehealth, prescriptions, labs, and IoT devices — while maintaining full HIPAA, GDPR, and HL7 FHIR compliance. The platform delivers AI-powered predictive analytics for readmission risk, billing denial prediction, and vitals anomaly detection, backed by 240+ database tables across 23 tightly integrated modules and a comprehensive REST API with 354+ endpoints.",
+
+  // ─── Design System Tokens ───────────────────────────────────────────────────
+  designSystem: {
+    colors: {
+      // Backgrounds
+      bgPrimary: "#0D2137",
+      bgSecondary: "#112744",
+      bgDeep: "#061422",
+      bgHeroGradient:
+        "linear-gradient(135deg, #0D2137 0%, #0A1E30 50%, #061422 100%)",
+      bgComplianceGradient:
+        "linear-gradient(180deg, #112744 0%, #0D2137 100%)",
+      // Accents
+      accentTeal: "#00C9B1",
+      accentLavender: "#7B8CDE",
+      // Text
+      textPrimary: "#FFFFFF",
+      textSecondary: "#A8BFCC",
+      // Surfaces
+      surfaceCard: "rgba(255, 255, 255, 0.04)",
+      surfaceBorder: "rgba(255, 255, 255, 0.09)",
+      surfaceBorderHover: "rgba(0, 201, 177, 0.3)",
+      surfaceTrustBar: "rgba(255, 255, 255, 0.02)",
+      // Glows
+      glowTeal: "rgba(0, 201, 177, 0.08)",
+      glowLavender: "rgba(123, 140, 222, 0.06)",
+      glowCtaRadial:
+        "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,201,177,0.12) 0%, transparent 70%)",
+    },
+    typography: {
+      fontPrimary: "Inter, 'Plus Jakarta Sans', sans-serif",
+      fontDisplay: "Fraunces, 'Playfair Display', serif",
+      // Scale (desktop)
+      sizeH1: "72px",
+      sizeH2: "48px",
+      sizeH3: "32px",
+      sizeBody: "17px",
+      sizeSubhero: "20px",
+      sizeLabel: "11px",
+      sizeFooter: "14px",
+      // Mobile scale
+      sizeH1Mobile: "40px",
+      sizeH2Mobile: "32px",
+      sizeH3Mobile: "24px",
+      // Weights
+      weightBold: "700",
+      weightSemibold: "600",
+      weightRegular: "400",
+      // Tracking / leading
+      letterSpacingHeading: "-0.03em",
+      letterSpacingLabel: "0.2em",
+      lineHeightBody: "1.75",
+    },
+    spacing: {
+      // 8pt grid — all values multiples of 8
+      sectionPaddingDesktop: "120px",
+      sectionPaddingTablet: "80px",
+      sectionPaddingMobile: "60px",
+      maxContentWidth: "1280px",
+      cardPaddingDesktop: "40px",
+      cardPaddingMobile: "20px",
+      gridGap: "24px",
+      cardBorderRadius: "20px",
+    },
+    glassmorphism: {
+      base: {
+        background: "rgba(255, 255, 255, 0.04)",
+        border: "1px solid rgba(255, 255, 255, 0.09)",
+        borderRadius: "20px",
+        backdropFilter: "blur(16px)",
+        boxShadow:
+          "0 8px 48px rgba(0, 0, 0, 0.28), 0 1px 0 rgba(255,255,255,0.06) inset",
+        transition: "all 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+      },
+      hover: {
+        borderColor: "rgba(0, 201, 177, 0.3)",
+        boxShadow:
+          "0 16px 64px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 201, 177, 0.15), 0 1px 0 rgba(255,255,255,0.08) inset",
+        transform: "translateY(-4px)",
+      },
+    },
+    animations: {
+      scrollFadeUp: {
+        initial: { opacity: 0, translateY: "28px" },
+        visible: { opacity: 1, translateY: "0" },
+        duration: "0.65s",
+        easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+      },
+      cardStaggerDelay: "0.15s",
+      pulseRing: "pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      marqueeScroll: "marquee-scroll 32s linear infinite",
+      marqueeScrollMobile: "marquee-scroll 52s linear infinite",
+      ecgDraw: "ecg-draw 4s ease-in-out infinite",
+      float: "float 6s ease-in-out infinite",
+      complianceRing: "compliance-ring 6s linear infinite",
+      pageLoader: "page-loader 0.8s ease-out forwards",
+      buttonScale: "transform 0.2s ease",
+      navBlur: "backdrop-filter blur(20px)",
+      countUp: "count-up 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+    },
   },
+
+  // ─── Brand Colors (legacy alias kept for existing consumers) ────────────────
+  colors: {
+    primary: "#0D2137",
+    accent: "#00C9B1",
+    secondary: "#7B8CDE",
+  },
+
+  // ─── Messaging ───────────────────────────────────────────────────────────────
   messaging: {
     headline: "Healthcare Data, Unified and Intelligent",
-    subheadline: "One enterprise platform connecting your EHR, billing, telehealth, labs, and IoT data with AI-powered insights and built-in compliance.",
+    headlinePart1: "Healthcare Data,",
+    headlinePart2: "Unified and",
+    headlineAccent: "Intelligent",
+    subheadline:
+      "One enterprise platform connecting your EHR, billing, telehealth, labs, and IoT data — with AI-powered insights and compliance built into every layer.",
     cta: "Request a Platform Demo",
+    ctaSecondary: "Explore the Platform",
+    ctaTertiary: "Schedule a Technical Review",
   },
+
+  // ─── Trust Bar ───────────────────────────────────────────────────────────────
+  trustBar: {
+    label: "BUILT FOR ENTERPRISE HEALTHCARE ECOSYSTEMS",
+    logoFilter: "brightness(0) invert(1) opacity(0.55)",
+    logoHeight: "36px",
+    logoHoverFilter: "brightness(0) invert(1) opacity(1)",
+    maskImage:
+      "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+  },
+
+  // ─── Value Propositions ──────────────────────────────────────────────────────
   valuePropositions: [
     {
-      "headline": "Enterprise-Wide Data Unification",
-      "body": "Connect EHR, billing, telehealth, labs, prescriptions, and IoT into 23 integrated modules via 354+ API endpoints."
+      headline: "Enterprise-Wide Data Unification",
+      body: "Consolidate EHR, billing, telehealth, labs, prescriptions, and IoT streams into a single authoritative patient record across 23 integrated modules — accessible through 354+ REST API endpoints.",
+      icon: "layers",
+      accentColor: "#00C9B1",
     },
     {
-      "headline": "AI That Works When It Matters",
-      "body": "Dual AI architecture delivers readmission risk, denial prediction, and vitals anomaly detection with statistical fallback coverage."
+      headline: "AI That Surfaces What Matters",
+      body: "Purpose-built predictive models deliver readmission risk scores, billing denial forecasts, and real-time vitals anomaly detection — with statistical fallback coverage for maximum reliability.",
+      icon: "brain",
+      accentColor: "#7B8CDE",
     },
     {
-      "headline": "Compliance Built Into the Foundation",
-      "body": "HIPAA and GDPR controls, PHI encryption, configurable audit log retention, and dedicated compliance tables — by design, not as an add-on."
-    }
+      headline: "Compliance Engineered From the Ground Up",
+      body: "HIPAA and GDPR controls, PHI encryption at rest and in transit, configurable audit log retention, and dedicated compliance infrastructure — built into the platform architecture, not bolted on.",
+      icon: "shield-check",
+      accentColor: "#00C9B1",
+    },
   ] as const,
+
+  // ─── Features ────────────────────────────────────────────────────────────────
   features: [
     {
-      "name": "Unified patient repository aggregating data from EHR, labs, prescriptions, appointments, billing, and telehealth modules into a single comprehensive patient view",
-      "description": "Unified patient repository aggregating data from EHR, labs, prescriptions, appointments, billing, and telehealth modules into a single comprehensive patient view",
-      "category": "core"
+      name: "Unified Patient Repository",
+      description:
+        "Aggregate clinical, financial, and operational data from EHR, labs, prescriptions, appointments, billing, and telehealth into a single longitudinal patient record — giving every care team member a complete, real-time view.",
+      category: "core",
+      icon: "database",
+      accentColor: "#00C9B1",
     },
     {
-      "name": "AI/ML predictive engine covering readmission risk scoring, claim denial prediction, no-show forecasting, vitals anomaly detection, and chronic condition progression using XGBoost, Random Forest, and Isolation Forest models",
-      "description": "AI/ML predictive engine covering readmission risk scoring, claim denial prediction, no-show forecasting, vitals anomaly detection, and chronic condition progression using XGBoost, Random Forest, and Isolation Forest models",
-      "category": "core"
+      name: "AI-Powered Predictive Analytics",
+      description:
+        "Identify high-risk patients before adverse events occur. Our predictive engine covers readmission risk scoring, claim denial prediction, appointment no-show forecasting, vitals anomaly detection, and chronic condition progression modeling.",
+      category: "ai",
+      icon: "brain",
+      accentColor: "#7B8CDE",
     },
     {
-      "name": "HIPAA and GDPR compliance infrastructure including full audit trails, PHI encryption at rest and in transit, automated audit logging, data export capabilities, and privacy request tracking",
-      "description": "HIPAA and GDPR compliance infrastructure including full audit trails, PHI encryption at rest and in transit, automated audit logging, data export capabilities, and privacy request tracking",
-      "category": "core"
+      name: "HIPAA & GDPR Compliance Infrastructure",
+      description:
+        "Comprehensive compliance by design — full PHI audit trails, encryption at rest and in transit, automated audit logging, data export workflows, privacy request tracking, and dedicated compliance reporting tables.",
+      category: "compliance",
+      icon: "lock",
+      accentColor: "#00C9B1",
     },
     {
-      "name": "Real-time vitals monitoring with IoT device integration, configurable critical threshold alerting, and automated anomaly detection",
-      "description": "Real-time vitals monitoring with IoT device integration, configurable critical threshold alerting, and automated anomaly detection",
-      "category": "core"
+      name: "Real-Time Vitals & IoT Monitoring",
+      description:
+        "Connect bedside and wearable IoT devices to continuous vitals streams with configurable critical threshold alerting and automated anomaly detection — ensuring clinical teams respond before conditions escalate.",
+      category: "clinical",
+      icon: "activity",
+      accentColor: "#00C9B1",
     },
     {
-      "name": "Revenue cycle management with intelligent billing, claims scrubbing, claims submission, ICD code mapping assistance, and AI-driven denial prediction",
-      "description": "Revenue cycle management with intelligent billing, claims scrubbing, claims submission, ICD code mapping assistance, and AI-driven denial prediction",
-      "category": "core"
+      name: "Revenue Cycle Management",
+      description:
+        "Accelerate collections and reduce denials with intelligent billing automation, real-time claims scrubbing, ICD code mapping assistance, automated claims submission, and AI-driven denial prediction.",
+      category: "financial",
+      icon: "circle-dollar-sign",
+      accentColor: "#7B8CDE",
     },
     {
-      "name": "HL7 and FHIR data integration with support for REST API, MQTT, and SFTP protocols enabling connectivity to major EHR systems and lab systems",
-      "description": "HL7 and FHIR data integration with support for REST API, MQTT, and SFTP protocols enabling connectivity to major EHR systems and lab systems",
-      "category": "core"
-    }
+      name: "HL7 FHIR Integration",
+      description:
+        "Interoperate with any major EHR, lab system, or health network via REST, MQTT, and SFTP protocols — fully compliant with HL7 FHIR standards for seamless, secure data exchange across your entire healthcare ecosystem.",
+      category: "integration",
+      icon: "network",
+      accentColor: "#00C9B1",
+    },
   ] as const,
+
+  // ─── Platform Overview ────────────────────────────────────────────────────────
+  platformOverview: {
+    eyebrow: "PLATFORM OVERVIEW",
+    headline: "The Unified Patient Repository",
+    subheadline:
+      "A single longitudinal record aggregating every clinical, financial, and operational data stream — accessible in real time across your entire care ecosystem.",
+    sectionAccentBorderColor: "#00C9B1",
+    dataSources: [
+      { label: "EHR Systems", icon: "file-heart", color: "#00C9B1" },
+      { label: "Lab Results", icon: "flask-conical", color: "#00C9B1" },
+      { label: "Billing & RCM", icon: "circle-dollar-sign", color: "#7B8CDE" },
+      { label: "Telehealth", icon: "video", color: "#00C9B1" },
+      { label: "IoT Devices", icon: "activity", color: "#7B8CDE" },
+      { label: "Pharmacy", icon: "pill", color: "#00C9B1" },
+    ],
+    moduleChips: [
+      { label: "Patient Management", icon: "user-round" },
+      { label: "Clinical Encounters", icon: "stethoscope" },
+      { label: "Revenue Cycle", icon: "circle-dollar-sign" },
+      { label: "AI Predictive Engine", icon: "brain" },
+      { label: "HIPAA Compliance", icon: "shield" },
+      { label: "HL7 FHIR Gateway", icon: "network" },
+    ],
+  },
+
+  // ─── AI Insights ─────────────────────────────────────────────────────────────
+  aiInsights: {
+    eyebrow: "AI-POWERED INTELLIGENCE",
+    headline: "Predictive Intelligence at the Point of Decision",
+    subheadline:
+      "Purpose-built machine learning models trained on healthcare-specific data patterns — surfacing the insights your clinical and financial teams need, precisely when they need them.",
+    cards: [
+      {
+        title: "Readmission Risk Scoring",
+        description:
+          "Identify patients at elevated risk of 30-day readmission before discharge. XGBoost and Random Forest models analyze clinical history, diagnosis codes, social determinants, and prior utilization patterns to generate actionable risk stratification.",
+        icon: "brain",
+        accent: "teal" as const,
+        topBorderColor: "#00C9B1",
+        visualType: "bar-chart" as const,
+        staggerIndex: 0,
+      },
+      {
+        title: "Billing Denial Prediction",
+        description:
+          "Prevent revenue leakage at the source. Predictive models analyze claim attributes, payer rules, and coding patterns to flag high-probability denials before submission — giving your billing team time to correct and resubmit.",
+        icon: "shield-check",
+        accent: "lavender" as const,
+        topBorderColor: "#7B8CDE",
+        visualType: "donut-chart" as const,
+        staggerIndex: 1,
+      },
+      {
+        title: "Vitals Anomaly Detection",
+        description:
+          "Continuous Isolation Forest modeling monitors patient vitals streams in real time, surfacing subtle deterioration patterns that traditional threshold alerts miss — enabling earlier, more precise clinical intervention.",
+        icon: "activity",
+        accent: "teal" as const,
+        topBorderColor: "#00C9B1",
+        visualType: "sparkline" as const,
+        staggerIndex: 2,
+      },
+    ],
+  } as const,
+
+  // ─── Modules ─────────────────────────────────────────────────────────────────
+  modules: {
+    eyebrow: "PLATFORM ANATOMY",
+    headline: "23 Tightly Integrated Modules",
+    subheadline:
+      "Every clinical, financial, operational, and compliance workflow — unified in a single coherent platform architecture.",
+    backgroundWatermark: "23",
+    watermarkStyle: {
+      fontSize: "400px",
+      color: "rgba(0, 201, 177, 0.03)",
+    },
+    iconColor: "#00C9B1",
+    iconSize: "48px",
+    cardMinWidth: "200px",
+    cardMinHeight: "180px",
+    items: [
+      { name: "Patient Management", category: "Clinical", icon: "user-round" },
+      { name: "EHR Integration", category: "Integration", icon: "file-heart" },
+      { name: "Clinical Encounters", category: "Clinical", icon: "stethoscope" },
+      { name: "Lab Results", category: "Diagnostics", icon: "flask-conical" },
+      { name: "Prescription Management", category: "Pharmacy", icon: "pill" },
+      { name: "Telehealth", category: "Virtual Care", icon: "video" },
+      {
+        name: "IoT Vitals Monitoring",
+        category: "Remote Monitoring",
+        icon: "activity",
+      },
+      {
+        name: "Revenue Cycle",
+        category: "Financial",
+        icon: "circle-dollar-sign",
+      },
+      { name: "Claims Management", category: "Financial", icon: "file-check" },
+      {
+        name: "Prior Authorization",
+        category: "Financial",
+        icon: "clipboard-check",
+      },
+      { name: "Denial Prevention", category: "Financial", icon: "shield" },
+      { name: "AI Predictive Engine", category: "Intelligence", icon: "brain" },
+      {
+        name: "Risk Stratification",
+        category: "Intelligence",
+        icon: "bar-chart-2",
+      },
+      { name: "Population Health", category: "Analytics", icon: "users" },
+      { name: "HIPAA Compliance", category: "Compliance", icon: "lock" },
+      { name: "GDPR Controls", category: "Compliance", icon: "shield-check" },
+      { name: "Audit Trail", category: "Compliance", icon: "scroll-text" },
+      { name: "HL7 FHIR Gateway", category: "Integration", icon: "network" },
+      {
+        name: "Appointment Scheduling",
+        category: "Operations",
+        icon: "calendar-check",
+      },
+      {
+        name: "Staff & Credentialing",
+        category: "Operations",
+        icon: "badge-check",
+      },
+      { name: "Pharmacy Management", category: "Pharmacy", icon: "package" },
+      {
+        name: "Analytics & Reporting",
+        category: "Analytics",
+        icon: "line-chart",
+      },
+      { name: "Notification Engine", category: "Operations", icon: "bell-ring" },
+    ],
+  } as const,
+
+  // ─── Stats ───────────────────────────────────────────────────────────────────
   stats: [
     {
-      "value": "Beta",
-      "label": "Product Status"
+      value: "354+",
+      label: "REST API Endpoints",
+      numericTarget: 354,
+      suffix: "+",
     },
     {
-      "value": "Express + React",
-      "label": "Built With"
-    }
+      value: "240+",
+      label: "Database Tables",
+      numericTarget: 240,
+      suffix: "+",
+    },
+    {
+      value: "23",
+      label: "Integrated Modules",
+      numericTarget: 23,
+      suffix: "",
+    },
+    {
+      value: "100%",
+      label: "HIPAA Compliant",
+      numericTarget: 100,
+      suffix: "%",
+    },
   ] as const,
-  // Company info — Datacules LLC publishes and maintains these products
+
+  // ─── Compliance ──────────────────────────────────────────────────────────────
+  compliance: {
+    eyebrow: "SECURITY & COMPLIANCE",
+    headline: "Security and Compliance You Can Stake Your Organization On",
+    subheadline:
+      "Every layer of Datacules HealthData 97 is engineered to meet the most demanding healthcare regulatory and security standards — so your team can focus on care, not compliance audits.",
+    sectionBackground:
+      "linear-gradient(180deg, #112744 0%, #0D2137 100%)",
+    tileSize: { width: "240px", height: "200px" },
+    badgeIconSize: "64px",
+    ringAnimation: "compliance-ring 6s linear infinite",
+    statsBar: [
+      { value: "354+", label: "API Endpoints", numericTarget: 354, suffix: "+" },
+      { value: "240+", label: "Database Tables", numericTarget: 240, suffix: "+" },
+      { value: "23", label: "Integrated Modules", numericTarget: 23, suffix: "" },
+      { value: "100%", label: "HIPAA Compliant", numericTarget: 100, suffix: "%" },
+    ],
+    badges: [
+      {
+        title: "HIPAA Compliant",
+        description:
+          "Full PHI protection with encryption at rest and in transit, minimum necessary access controls, and complete audit trail infrastructure.",
+        icon: "shield",
+        accentColor: "#00C9B1",
+        gridPosition: { row: 1, col: 1 },
+      },
+      {
+        title: "GDPR Ready",
+        description:
+          "Privacy by design with data subject rights workflows, consent management, automated data export, and configurable retention policies.",
+        icon: "lock",
+        accentColor: "#00C9B1",
+        gridPosition: { row: 1, col: 2 },
+      },
+      {
+        title: "HL7 FHIR Certified",
+        description:
+          "Native HL7 FHIR R4 support for standardized clinical data exchange, ensuring seamless interoperability across your entire care ecosystem.",
+        icon: "network",
+        accentColor: "#7B8CDE",
+        gridPosition: { row: 2, col: 1 },
+      },
+      {
+        title: "SOC 2 Type II",
+        description:
+          "Independent third-party attestation of our security, availability, and confidentiality controls — giving enterprise procurement teams the assurance they require.",
+        icon: "badge-check",
+        accentColor: "#7B8CDE",
+        gridPosition: { row: 2, col: 2 },
+      },
+    ],
+  },
+
+  // ─── API / Developer Section ─────────────────────────────────────────────────
+  api: {
+    eyebrow: "REST API",
+    headline: "A REST API Built for Enterprise Scale",
+    subheadline:
+      "354+ endpoints covering every clinical, financial, and operational data domain — with HL7 FHIR compliance, OAuth 2.0 security, and comprehensive developer documentation.",
+    sectionBackground: "#061422",
+    codeBlock: {
+      surface: "#0A1628",
+      terminalDots: ["#FF5F57", "#FFBD2E", "#28CA41"],
+      syntaxColors: {
+        string: "#00C9B1",
+        keyword: "#7B8CDE",
+        comment: "#4A6080",
+        property: "#A8BFCC",
+        number: "#00C9B1",
+        punctuation: "#FFFFFF",
+      },
+    },
+    capabilities: [
+      "354+ RESTful endpoints across all 23 platform modules",
+      "HL7 FHIR R4 compliant data exchange",
+      "OAuth 2.0 and JWT authentication with role-based access control",
+      "MQTT protocol support for real-time IoT vitals streaming",
+      "SFTP integration for batch lab and billing data workflows",
+      "Comprehensive Swagger / OpenAPI documentation",
+      "Webhook support for real-time event-driven integrations",
+      "Rate limiting, audit logging, and PHI access controls on every endpoint",
+    ],
+    cta: "View Full API Documentation",
+    sampleEndpoint: "GET /api/v1/patients/{id}/risk-scores",
+    sampleResponse: {
+      patient_id: "pt_8a3f92c1",
+      risk_scores: {
+        readmission_30d: { score: 0.847, tier: "HIGH", confidence: 0.923 },
+        billing_denial: { score: 0.312, tier: "LOW", confidence: 0.881 },
+        vitals_anomaly: { detected: false, last_checked: "2024-01-15T14:32:00Z" },
+      },
+      model_version: "v3.2.1",
+      generated_at: "2024-01-15T14:32:07Z",
+    },
+  },
+
+  // ─── Bottom CTA Section ──────────────────────────────────────────────────────
+  cta: {
+    headline: "Ready to Unify Your Healthcare Data?",
+    subheadline:
+      "See how Datacules HealthData 97 consolidates your clinical, financial, and operational data into one intelligent platform — purpose-built for enterprise healthcare systems.",
+    primary: "Request a Platform Demo",
+    secondary: "Schedule a Technical Review",
+    complianceLine: "SOC 2 Type II  ·  HIPAA  ·  GDPR  ·  HL7 FHIR Compliant",
+    backgroundStyle:
+      "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,201,177,0.12) 0%, transparent 70%)",
+    primaryButtonStyle: {
+      height: "64px",
+      minWidth: "280px",
+      background: "#00C9B1",
+      color: "#0D2137",
+      borderRadius: "12px",
+      fontWeight: "700",
+      pulseAnimation: "pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+    },
+    secondaryButtonStyle: {
+      height: "64px",
+      border: "1px solid rgba(255,255,255,0.2)",
+      color: "#FFFFFF",
+      borderRadius: "12px",
+    },
+  },
+
+  // ─── Company ─────────────────────────────────────────────────────────────────
   company: {
     name: "Datacules LLC",
-    tagline: "Building AI-powered tools for creators and developers",
+    tagline: "Intelligent Healthcare Data Management with AI-Powered Insights",
     url: "https://datacules.com",
   },
-  // Auth routes — used by Navbar and gated pages
+
+  // ─── Auth Routes ─────────────────────────────────────────────────────────────
   auth: {
     login: "/auth/login",
     register: "/auth/register",
     dashboard: "/dashboard",
   },
-  // Content routes
+
+  // ─── Navigation ──────────────────────────────────────────────────────────────
   nav: {
-    blog: "/blog",
+    platform: "/platform",
     features: "/features",
+    aiInsights: "/ai-insights",
+    compliance: "/compliance",
+    api: "/api-reference",
+    pricing: "/pricing",
+    blog: "/blog",
     docs: "/docs",
     about: "/about",
+    contact: "/contact",
   },
+
+  // ─── Navigation Links (ordered, labeled) ─────────────────────────────────────
+  navLinks: [
+    { label: "Platform", href: "/platform" },
+    { label: "AI Insights", href: "/ai-insights" },
+    { label: "Modules", href: "/features" },
+    { label: "Compliance", href: "/compliance" },
+    { label: "API", href: "/api-reference" },
+    { label: "Pricing", href: "/pricing" },
+  ],
+
+  // ─── Logo Placements ──────────────────────────────────────────────────────────
+  logoTreatments: {
+    nav: {
+      maxHeight: "40px",
+      treatment: "full-color",
+      description: "Full color, vertically centered in sticky nav",
+    },
+    heroBadge: {
+      size: "32px",
+      treatment: "white-monochrome",
+      filter: "brightness(0) invert(1)",
+      caption: "by Datacules LLC",
+    },
+    trustBar: {
+      height: "36px",
+      treatment: "white-monochrome",
+      filter: "brightness(0) invert(1) opacity(0.55)",
+      hoverFilter: "brightness(0) invert(1) opacity(1)",
+    },
+    complianceSection: {
+      size: "64px",
+      treatment: "full-color-on-dark",
+      description: "Full color preserved on dark glassmorphism tile",
+    },
+    footer: {
+      maxHeight: "48px",
+      treatment: "full-color",
+      description: "Full color — dark footer background supports full fidelity",
+    },
+  },
+
+  // ─── Footer ──────────────────────────────────────────────────────────────────
+  footer: {
+    tagline: "Intelligent Healthcare Data Management with AI-Powered Insights",
+    complianceBadge: "HIPAA Compliant Platform",
+    background: "#061422",
+    topBorder: "1px solid rgba(255,255,255,0.06)",
+    ecgWaveformOpacity: "0.05",
+    pulsingDotColor: "#00C9B1",
+    product: [
+      { label: "Platform Overview", href: "/platform" },
+      { label: "AI Insights Engine", href: "/ai-insights" },
+      { label: "23 Integrated Modules", href: "/features" },
+      { label: "REST API Reference", href: "/api-reference" },
+      { label: "HL7 FHIR Integration", href: "/integrations" },
+      { label: "Pricing", href: "/pricing" },
+    ],
+    compliance: [
+      { label: "HIPAA Compliance", href: "/compliance/hipaa" },
+      { label: "GDPR Controls", href: "/compliance/gdpr" },
+      { label: "SOC 2 Type II", href: "/compliance/soc2" },
+      { label: "Security Overview", href: "/security" },
+      { label: "Audit & Reporting", href: "/compliance/audit" },
+      { label: "Privacy Policy", href: "/privacy" },
+    ],
+    company: [
+      { label: "About Datacules", href: "/about" },
+      { label: "Blog", href: "/blog" },
+      { label: "Documentation", href: "/docs" },
+      { label: "Contact Sales", href: "/contact" },
+      { label: "Request a Demo", href: "/demo" },
+      { label: "Terms of Service", href: "/terms" },
+    ],
+  },
+
+  // ─── Healthcare Visual Language ───────────────────────────────────────────────
+  healthcareVisuals: {
+    ecgWaveform: {
+      heroOpacity: 0.15,
+      footerOpacity: 0.05,
+      color: "#00C9B1",
+      animationName: "ecg-draw",
+      animationDuration: "4s",
+    },
+    molecularDotGrid: {
+      opacity: 0.03,
+      description: "Radial gradient dot pattern overlay — biological precision cue",
+    },
+    ambientOrbs: {
+      teal: {
+        color: "rgba(0, 201, 177, 0.08)",
+        position: "bottom-left",
+        size: "600px",
+      },
+      lavender: {
+        color: "rgba(123, 140, 222, 0.06)",
+        position: "top-right",
+        size: "500px",
+      },
+    },
+    crossMicro: {
+      symbol: "+",
+      size: "16px",
+      color: "#00C9B1",
+      usage: "Section header eyebrow decoration",
+    },
+    pulseRings: {
+      usage: ["compliance-badge-icons", "demo-cta-button"],
+      color: "#00C9B1",
+      animation: "pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+    },
+    dataFlowDiagram: {
+      nodes: [
+        { id: "ehr", label: "EHR", color: "#00C9B1" },
+        { id: "labs", label: "Labs", color: "#00C9B1" },
+        { id: "billing", label: "Billing", color: "#7B8CDE" },
+        { id: "telehealth", label: "Telehealth", color: "#00C9B1" },
+        { id: "iot", label: "IoT", color: "#7B8CDE" },
+      ],
+      hubLabel: "Unified Patient Record",
+      lineColor: "#00C9B1",
+      lineAnimationName: "stroke-dashoffset",
+    },
+  },
+
   category: "data-platform",
 };
 

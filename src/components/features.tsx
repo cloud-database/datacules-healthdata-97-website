@@ -1,209 +1,770 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
+const features = [
+  {
+    name: "Unified Patient Repository",
+    description:
+      "Aggregates data from EHR, labs, prescriptions, appointments, billing, and telehealth modules into a single comprehensive patient view.",
+    category: "Core Platform",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3" />
+        <path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12" />
+        <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+      </svg>
+    ),
+  },
+  {
+    name: "AI/ML Predictive Engine",
+    description:
+      "Readmission risk scoring, claim denial prediction, no-show forecasting, vitals anomaly detection, and chronic condition progression using XGBoost, Random Forest, and Isolation Forest models.",
+    category: "AI Intelligence",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V12h-4V9.5A4 4 0 0 1 8 6a4 4 0 0 1 4-4z" />
+        <path d="M8 12H5a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1" />
+        <path d="M16 12h3a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1" />
+        <path d="M9 17v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2" />
+        <circle cx="9" cy="15" r="1" fill="#00C9B1" />
+        <circle cx="15" cy="15" r="1" fill="#00C9B1" />
+      </svg>
+    ),
+  },
+  {
+    name: "HIPAA & GDPR Compliance",
+    description:
+      "Full audit trails, PHI encryption at rest and in transit, automated audit logging, data export capabilities, and privacy request tracking.",
+    category: "Security",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+  },
+  {
+    name: "Real-Time Vitals Monitoring",
+    description:
+      "IoT device integration with configurable critical threshold alerting and automated anomaly detection for continuous patient safety oversight.",
+    category: "Monitoring",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
+  },
+  {
+    name: "Revenue Cycle Management",
+    description:
+      "Intelligent billing, claims scrubbing, ICD code mapping assistance, and AI-driven denial prediction to maximize reimbursement and reduce revenue leakage.",
+    category: "Financial",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="5" width="20" height="14" rx="3" />
+        <path d="M2 10h20" />
+        <path d="M7 15h2M15 15h2" />
+      </svg>
+    ),
+  },
+  {
+    name: "HL7 & FHIR Integration",
+    description:
+      "REST API, MQTT, and SFTP protocol support enabling seamless connectivity to major EHR systems, lab systems, and third-party health data sources.",
+    category: "Interoperability",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20" />
+        <path d="M12 2c-2.67 3.33-4 6.67-4 10s1.33 6.67 4 10c2.67-3.33 4-6.67 4-10s-1.33-6.67-4-10z" />
+      </svg>
+    ),
+  },
+];
+
 export function Features() {
-  const features = [
-  {
-    name: "Unified patient repository aggregating data from EHR, labs, prescriptions, appointments, billing, and telehealth modules into a single comprehensive patient view",
-    description: "Unified patient repository aggregating data from EHR, labs, prescriptions, appointments, billing, and telehealth modules into a single comprehensive patient view",
-    category: "core",
-    icon: "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M13 2L4.09 12.96H11L10 22L20.91 11.04H14L13 2Z\" fill=\"#1A3A5C\"/></svg>",
-  },
-  {
-    name: "AI/ML predictive engine covering readmission risk scoring, claim denial prediction, no-show forecasting, vitals anomaly detection, and chronic condition progression using XGBoost, Random Forest, and Isolation Forest models",
-    description: "AI/ML predictive engine covering readmission risk scoring, claim denial prediction, no-show forecasting, vitals anomaly detection, and chronic condition progression using XGBoost, Random Forest, and Isolation Forest models",
-    category: "core",
-    icon: "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z\" fill=\"#1A3A5C\"/><path d=\"M19 14L19.75 17.25L23 18L19.75 18.75L19 22L18.25 18.75L15 18L18.25 17.25L19 14Z\" fill=\"#1A3A5C\" opacity=\"0.6\"/></svg>",
-  },
-  {
-    name: "HIPAA and GDPR compliance infrastructure including full audit trails, PHI encryption at rest and in transit, automated audit logging, data export capabilities, and privacy request tracking",
-    description: "HIPAA and GDPR compliance infrastructure including full audit trails, PHI encryption at rest and in transit, automated audit logging, data export capabilities, and privacy request tracking",
-    category: "core",
-    icon: "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M8 4L2 12L8 20\" stroke=\"#1A3A5C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M16 4L22 12L16 20\" stroke=\"#1A3A5C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-  },
-  {
-    name: "Real-time vitals monitoring with IoT device integration, configurable critical threshold alerting, and automated anomaly detection",
-    description: "Real-time vitals monitoring with IoT device integration, configurable critical threshold alerting, and automated anomaly detection",
-    category: "core",
-    icon: "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M4 4V9H9\" stroke=\"#1A3A5C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M20 20V15H15\" stroke=\"#1A3A5C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M20.49 9A9 9 0 005.64 5.64L4 9M3.51 15A9 9 0 0018.36 18.36L20 15\" stroke=\"#1A3A5C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-  },
-  {
-    name: "Revenue cycle management with intelligent billing, claims scrubbing, claims submission, ICD code mapping assistance, and AI-driven denial prediction",
-    description: "Revenue cycle management with intelligent billing, claims scrubbing, claims submission, ICD code mapping assistance, and AI-driven denial prediction",
-    category: "core",
-    icon: "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M12 2L3 6V12C3 16.55 7.08 20.74 12 22C16.92 20.74 21 16.55 21 12V6L12 2Z\" stroke=\"#1A3A5C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M9 12L11 14L15 10\" stroke=\"#1A3A5C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
-  },
-  {
-    name: "HL7 and FHIR data integration with support for REST API, MQTT, and SFTP protocols enabling connectivity to major EHR systems and lab systems",
-    description: "HL7 and FHIR data integration with support for REST API, MQTT, and SFTP protocols enabling connectivity to major EHR systems and lab systems",
-    category: "core",
-    icon: "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"><circle cx=\"12\" cy=\"12\" r=\"10\" stroke=\"#1A3A5C\" stroke-width=\"2.5\"/><path d=\"M2 12H22M12 2C9.33 5.33 8 8.67 8 12C8 15.33 9.33 18.67 12 22C14.67 18.67 16 15.33 16 12C16 8.67 14.67 5.33 12 2Z\" stroke=\"#1A3A5C\" stroke-width=\"2.5\"/></svg>",
-  }
-  ];
+  const headingRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const comparisonRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    if (headingRef.current) observer.observe(headingRef.current);
+    if (comparisonRef.current) observer.observe(comparisonRef.current);
+    cardRefs.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="features" className="py-24 bg-gray-950">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-4 border border-white/10 bg-white/5 text-gray-400">
-            Features
+    <section
+      id="features"
+      style={{
+        background: "#112744",
+        paddingTop: "120px",
+        paddingBottom: "120px",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      <style>{`
+        /* ── Scroll-triggered fade-up animation ── */
+        .features-animate {
+          opacity: 0;
+          transform: translateY(28px);
+          transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+                      transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .features-animate.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* ── Glassmorphism feature card ── */
+        .feature-card {
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.09);
+          border-top: 3px solid #00C9B1;
+          border-radius: 20px;
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          box-shadow: 0 8px 48px rgba(0, 0, 0, 0.28),
+                      0 1px 0 rgba(255, 255, 255, 0.06) inset;
+          transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+          padding: 40px;
+          position: relative;
+          overflow: hidden;
+        }
+        .feature-card::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 20px;
+          background: linear-gradient(
+            135deg,
+            rgba(0, 201, 177, 0.04) 0%,
+            transparent 60%
+          );
+          pointer-events: none;
+        }
+        .feature-card:hover {
+          border-color: rgba(0, 201, 177, 0.3);
+          border-top-color: #00C9B1;
+          box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4),
+                      0 0 0 1px rgba(0, 201, 177, 0.15),
+                      0 1px 0 rgba(255, 255, 255, 0.08) inset;
+          transform: translateY(-4px);
+        }
+
+        /* ── Icon wrapper ── */
+        .feature-icon-wrap {
+          width: 56px;
+          height: 56px;
+          border-radius: 14px;
+          background: rgba(0, 201, 177, 0.08);
+          border: 1px solid rgba(0, 201, 177, 0.18);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+          transition: background 0.3s ease,
+                      border-color 0.3s ease,
+                      box-shadow 0.3s ease;
+        }
+        .feature-card:hover .feature-icon-wrap {
+          background: rgba(0, 201, 177, 0.14);
+          border-color: rgba(0, 201, 177, 0.35);
+          box-shadow: 0 0 20px rgba(0, 201, 177, 0.2);
+        }
+
+        /* ── Category eyebrow label ── */
+        .feature-category {
+          font-size: 11px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.2em;
+          color: #00C9B1;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          line-height: 1;
+        }
+
+        /* Teal cross micro-decoration (inside card category) */
+        .feature-category-cross {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 14px;
+          height: 14px;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .feature-category-cross::before,
+        .feature-category-cross::after {
+          content: "";
+          position: absolute;
+          background: #00C9B1;
+          border-radius: 1px;
+        }
+        .feature-category-cross::before {
+          width: 2px;
+          height: 10px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .feature-category-cross::after {
+          width: 10px;
+          height: 2px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .feature-name {
+          font-size: 18px;
+          font-weight: 700;
+          color: #ffffff;
+          margin-bottom: 12px;
+          letter-spacing: -0.01em;
+          line-height: 1.35;
+        }
+        .feature-desc {
+          font-size: 15px;
+          color: #A8BFCC;
+          line-height: 1.75;
+        }
+
+        /* ── Comparison glassmorphism card ── */
+        .comparison-card {
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.09);
+          border-radius: 20px;
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          box-shadow: 0 8px 48px rgba(0, 0, 0, 0.28),
+                      0 1px 0 rgba(255, 255, 255, 0.06) inset;
+          overflow: hidden;
+          transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .comparison-card:hover {
+          border-color: rgba(0, 201, 177, 0.2);
+          box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4),
+                      0 0 0 1px rgba(0, 201, 177, 0.1),
+                      0 1px 0 rgba(255, 255, 255, 0.08) inset;
+        }
+
+        /* ── Section heading left-border accent ── */
+        .section-heading-accent {
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+        }
+        .section-heading-accent::before {
+          content: "";
+          display: block;
+          width: 4px;
+          height: 48px;
+          border-radius: 2px;
+          background: #00C9B1;
+          flex-shrink: 0;
+          margin-top: 4px;
+        }
+
+        /* ── Eyebrow cross micro-decoration (section level) ── */
+        .eyebrow-cross {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 16px;
+          height: 16px;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .eyebrow-cross::before,
+        .eyebrow-cross::after {
+          content: "";
+          position: absolute;
+          background: #00C9B1;
+          border-radius: 1px;
+        }
+        .eyebrow-cross::before {
+          width: 2px;
+          height: 12px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .eyebrow-cross::after {
+          width: 12px;
+          height: 2px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        /* ── Feature grid stagger delays ── */
+        .feature-card:nth-child(1) { transition-delay: 0.10s; }
+        .feature-card:nth-child(2) { transition-delay: 0.25s; }
+        .feature-card:nth-child(3) { transition-delay: 0.40s; }
+        .feature-card:nth-child(4) { transition-delay: 0.55s; }
+        .feature-card:nth-child(5) { transition-delay: 0.70s; }
+        .feature-card:nth-child(6) { transition-delay: 0.85s; }
+
+        /* ── Mobile responsive ── */
+        @media (max-width: 768px) {
+          .feature-card {
+            padding: 24px;
+          }
+        }
+        @media (max-width: 640px) {
+          .feature-card {
+            padding: 20px;
+          }
+        }
+      `}</style>
+
+      {/* Subtle ambient background glow — matches section depth */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(ellipse 70% 50% at 80% 20%, rgba(0,201,177,0.05) 0%, transparent 60%), " +
+            "radial-gradient(ellipse 60% 40% at 20% 80%, rgba(123,140,222,0.04) 0%, transparent 60%)",
+          pointerEvents: "none",
+        }}
+      />
+
+      <div
+        style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 1 }}
+      >
+
+        {/* ── Section Heading ── */}
+        <div
+          ref={headingRef}
+          className="features-animate"
+          style={{ marginBottom: "72px" }}
+        >
+          <div className="section-heading-accent">
+            <div>
+              {/* Eyebrow label */}
+              <div
+                style={{
+                  fontSize: "11px",
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.2em",
+                  color: "#00C9B1",
+                  marginBottom: "16px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  lineHeight: 1,
+                }}
+              >
+                <span className="eyebrow-cross" aria-hidden="true" />
+                Platform Capabilities
+              </div>
+
+              <h2
+                style={{
+                  fontSize: "clamp(32px, 5vw, 48px)",
+                  fontWeight: 800,
+                  color: "#ffffff",
+                  letterSpacing: "-0.03em",
+                  lineHeight: 1.15,
+                  marginBottom: "20px",
+                  maxWidth: "640px",
+                }}
+              >
+                Enterprise-Grade Features Built for{" "}
+                <span style={{ color: "#00C9B1" }}>Healthcare</span>
+              </h2>
+
+              <p
+                style={{
+                  fontSize: "17px",
+                  color: "#A8BFCC",
+                  lineHeight: 1.75,
+                  maxWidth: "560px",
+                }}
+              >
+                Every capability purpose-built for the complexity of healthcare
+                data — from unified patient records to AI-powered predictive
+                intelligence.
+              </p>
+            </div>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
-            Built to ship faster
-          </h2>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto">
-            Everything you need, nothing you don&apos;t.
-          </p>
         </div>
 
-        {/* Legacy vs Modern Platform Comparison */}
-        <div className="mb-16 rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
-          <div className="px-6 py-5 border-b border-white/10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-2 border border-white/10 bg-white/5 text-gray-400">
+        {/* ── Legacy vs Modern Comparison Card ── */}
+        <div
+          ref={comparisonRef}
+          className="comparison-card features-animate"
+          style={{ marginBottom: "72px", transitionDelay: "0.1s" }}
+        >
+          {/* Card header */}
+          <div
+            style={{
+              padding: "32px 40px",
+              borderBottom: "1px solid rgba(255,255,255,0.08)",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "11px",
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: "0.2em",
+                color: "#00C9B1",
+                marginBottom: "12px",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                lineHeight: 1,
+              }}
+            >
+              <span className="eyebrow-cross" aria-hidden="true" />
               Platform Evolution
             </div>
-            <h3 className="text-2xl font-bold text-white">
+            <h3
+              style={{
+                fontSize: "22px",
+                fontWeight: 700,
+                color: "#ffffff",
+                letterSpacing: "-0.02em",
+                marginBottom: "8px",
+              }}
+            >
               From Legacy to AI-Powered Intelligence
             </h3>
-            <p className="text-gray-500 text-sm mt-1">
-              See how HealthData97 transforms fragmented healthcare data management into a unified, intelligent platform.
+            <p style={{ fontSize: "14px", color: "#A8BFCC", lineHeight: 1.6 }}>
+              See how HealthData97 transforms fragmented healthcare data
+              management into a unified, intelligent platform.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
-            {/* Legacy / Before */}
-            <div className="p-6 flex flex-col items-center gap-4">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-red-500/10 border border-red-500/20 text-red-400">
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                    <circle cx="5" cy="5" r="4" fill="#ef4444" opacity="0.7"/>
-                  </svg>
+
+          {/* Before / After columns */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            }}
+          >
+            {/* Before */}
+            <div
+              style={{
+                padding: "32px 40px",
+                borderRight: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
+              <div style={{ marginBottom: "20px" }}>
+                <span
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    padding: "4px 12px",
+                    borderRadius: "999px",
+                    fontSize: "11px",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.12em",
+                    background: "rgba(239,68,68,0.1)",
+                    border: "1px solid rgba(239,68,68,0.2)",
+                    color: "#f87171",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: "6px",
+                      height: "6px",
+                      borderRadius: "50%",
+                      background: "#ef4444",
+                      opacity: 0.8,
+                    }}
+                  />
                   Before — Legacy System
                 </span>
               </div>
-              <div className="w-full flex items-center justify-center rounded-xl bg-gray-900 border border-white/10 py-5 px-4">
+
+              <div
+                style={{
+                  borderRadius: "12px",
+                  background: "rgba(0,0,0,0.2)",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  padding: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "24px",
+                  minHeight: "80px",
+                }}
+              >
                 <img
                   src="/old_sample_324x89.png"
-                  alt="Legacy HealthData platform branding — before the AI-powered upgrade"
-                  className="max-w-full h-auto opacity-75"
-                  style={{ maxHeight: 89 }}
+                  alt="Legacy HealthData platform"
+                  style={{
+                    maxHeight: "56px",
+                    opacity: 0.65,
+                    maxWidth: "100%",
+                  }}
                 />
               </div>
-              <ul className="w-full space-y-2 text-sm text-gray-500">
-                <li className="flex items-start gap-2">
-                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <circle cx="8" cy="8" r="7" stroke="#ef4444" strokeWidth="1.5"/>
-                    <path d="M5 5l6 6M11 5l-6 6" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                  Siloed data across disparate EHR and billing modules
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <circle cx="8" cy="8" r="7" stroke="#ef4444" strokeWidth="1.5"/>
-                    <path d="M5 5l6 6M11 5l-6 6" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                  Manual claims processing with high denial rates
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <circle cx="8" cy="8" r="7" stroke="#ef4444" strokeWidth="1.5"/>
-                    <path d="M5 5l6 6M11 5l-6 6" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                  No predictive risk scoring or anomaly detection
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <circle cx="8" cy="8" r="7" stroke="#ef4444" strokeWidth="1.5"/>
-                    <path d="M5 5l6 6M11 5l-6 6" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                  Limited interoperability and integration support
-                </li>
+
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "12px",
+                }}
+              >
+                {[
+                  "Siloed data across disparate EHR and billing modules",
+                  "Manual claims processing with high denial rates",
+                  "No predictive risk scoring or anomaly detection",
+                  "Limited interoperability and integration support",
+                ].map((item, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "10px",
+                      fontSize: "14px",
+                      color: "#A8BFCC",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    <svg
+                      style={{ marginTop: "1px", flexShrink: 0 }}
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <circle
+                        cx="8"
+                        cy="8"
+                        r="7"
+                        stroke="#ef4444"
+                        strokeWidth="1.5"
+                      />
+                      <path
+                        d="M5 5l6 6M11 5l-6 6"
+                        stroke="#ef4444"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Modern / After */}
-            <div className="p-6 flex flex-col items-center gap-4">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                    <circle cx="5" cy="5" r="4" fill="#10b981" opacity="0.7"/>
-                  </svg>
+            {/* After */}
+            <div style={{ padding: "32px 40px" }}>
+              <div style={{ marginBottom: "20px" }}>
+                <span
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    padding: "4px 12px",
+                    borderRadius: "999px",
+                    fontSize: "11px",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.12em",
+                    background: "rgba(0,201,177,0.08)",
+                    border: "1px solid rgba(0,201,177,0.2)",
+                    color: "#00C9B1",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: "6px",
+                      height: "6px",
+                      borderRadius: "50%",
+                      background: "#00C9B1",
+                      opacity: 0.9,
+                    }}
+                  />
                   After — HealthData97 AI Platform
                 </span>
               </div>
-              <div className="w-full flex items-center justify-center rounded-xl bg-[#0d2340] border border-white/10 py-5 px-4">
+
+              <div
+                style={{
+                  borderRadius: "12px",
+                  background: "rgba(0,201,177,0.04)",
+                  border: "1px solid rgba(0,201,177,0.12)",
+                  padding: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "24px",
+                  minHeight: "80px",
+                }}
+              >
                 <img
                   src="/331x89.png"
-                  alt="HealthData97 AI-powered healthcare platform — modern branding"
-                  className="max-w-full h-auto"
-                  style={{ maxHeight: 89 }}
+                  alt="HealthData97 AI-powered healthcare platform"
+                  style={{ maxHeight: "56px", maxWidth: "100%" }}
                 />
               </div>
-              <ul className="w-full space-y-2 text-sm text-gray-400">
-                <li className="flex items-start gap-2">
-                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <circle cx="8" cy="8" r="7" stroke="#10b981" strokeWidth="1.5"/>
-                    <path d="M5 8l2 2 4-4" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  Unified patient repository across all care modules
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <circle cx="8" cy="8" r="7" stroke="#10b981" strokeWidth="1.5"/>
-                    <path d="M5 8l2 2 4-4" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  AI-driven claims scrubbing and denial prediction
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <circle cx="8" cy="8" r="7" stroke="#10b981" strokeWidth="1.5"/>
-                    <path d="M5 8l2 2 4-4" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  XGBoost &amp; Random Forest predictive risk models
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <circle cx="8" cy="8" r="7" stroke="#10b981" strokeWidth="1.5"/>
-                    <path d="M5 8l2 2 4-4" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  Full HL7/FHIR interoperability and HIPAA compliance
-                </li>
+
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "12px",
+                }}
+              >
+                {[
+                  "Unified patient repository across all care modules",
+                  "AI-driven claims scrubbing and denial prediction",
+                  "XGBoost & Random Forest predictive risk models",
+                  "Full HL7/FHIR interoperability and HIPAA compliance",
+                ].map((item, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "10px",
+                      fontSize: "14px",
+                      color: "#A8BFCC",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    <svg
+                      style={{ marginTop: "1px", flexShrink: 0 }}
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <circle
+                        cx="8"
+                        cy="8"
+                        r="7"
+                        stroke="#00C9B1"
+                        strokeWidth="1.5"
+                      />
+                      <path
+                        d="M5 8l2 2 4-4"
+                        stroke="#00C9B1"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
-          {/* Arrow connector row */}
-          <div className="hidden md:flex absolute pointer-events-none" aria-hidden="true" />
-          <div className="flex items-center justify-center py-4 border-t border-white/10 bg-white/[0.02]">
-            <div className="flex items-center gap-3 text-xs text-gray-500 font-medium uppercase tracking-widest">
-              <span className="text-red-400">Legacy Platform</span>
-              <svg width="32" height="16" viewBox="0 0 32 16" fill="none">
-                <path d="M0 8h28M22 2l8 6-8 6" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="text-emerald-400">HealthData97 AI</span>
-            </div>
+          {/* Card footer transition arrow */}
+          <div
+            style={{
+              padding: "16px 40px",
+              borderTop: "1px solid rgba(255,255,255,0.07)",
+              background: "rgba(255,255,255,0.01)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "16px",
+            }}
+          >
+            <span
+              style={{
+                fontSize: "12px",
+                fontWeight: 600,
+                color: "#f87171",
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+              }}
+            >
+              Legacy Platform
+            </span>
+            <svg width="40" height="16" viewBox="0 0 40 16" fill="none">
+              <path
+                d="M0 8h36M28 2l8 6-8 6"
+                stroke="#A8BFCC"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span
+              style={{
+                fontSize: "12px",
+                fontWeight: 600,
+                color: "#00C9B1",
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+              }}
+            >
+              HealthData97 AI
+            </span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* ── Feature Cards Grid ── */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+            gap: "24px",
+          }}
+        >
           {features.map((feature, i) => (
             <div
               key={i}
-              className="group relative rounded-2xl border border-white/10 bg-white/5 p-6 card-hover overflow-hidden"
+              ref={(el) => {
+                cardRefs.current[i] = el;
+              }}
+              className="feature-card features-animate"
+              style={{ transitionDelay: `${0.1 + i * 0.15}s` }}
             >
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
-                style={{
-                  background: `radial-gradient(ellipse at top left, rgba(var(--brand-primary-rgb), 0.08), transparent 60%)`,
-                }}
-              />
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                style={{ background: `rgba(var(--brand-primary-rgb), 0.12)` }}
-                dangerouslySetInnerHTML={{ __html: feature.icon }}
-              />
-              <h3 className="text-lg font-bold text-white mb-2 group-hover:gradient-text transition-colors">
-                {feature.name}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                {feature.description}
-              </p>
+              {/* Teal icon in glassmorphism wrapper */}
+              <div className="feature-icon-wrap">{feature.icon}</div>
+
+              {/* Category eyebrow with teal cross micro-decoration */}
+              <div className="feature-category">
+                <span className="feature-category-cross" aria-hidden="true" />
+                {feature.category}
+              </div>
+
+              <h3 className="feature-name">{feature.name}</h3>
+              <p className="feature-desc">{feature.description}</p>
             </div>
           ))}
         </div>

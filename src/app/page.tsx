@@ -1,8 +1,14 @@
 import type { Metadata } from 'next';
+import { PageLoader } from '@/components/loader';
 import Hero from '@/components/hero';
+import { TrustBar } from '@/components/trust-bar';
+import { PlatformOverview } from '@/components/platform-overview';
+import { AIInsights } from '@/components/ai-insights';
+import { ModulesGrid } from '@/components/modules-grid';
+import { Compliance } from '@/components/compliance';
+import { ApiSection } from '@/components/api-section';
+import { Cta } from '@/components/cta-section';
 import { Features } from '@/components/features';
-import { ValueProps } from '@/components/value-props';
-import { Cta } from '@/components/cta';
 import { BRAND } from '@/lib/brand';
 
 export const metadata: Metadata = {
@@ -13,10 +19,16 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <PageLoader />
       <Hero />
-      <Features />
-      <ValueProps />
+      <TrustBar />
+      <PlatformOverview />
+      <AIInsights />
+      <ModulesGrid />
+      <Compliance />
+      <ApiSection />
       <Cta />
+      <Features />
     </>
   );
 }
