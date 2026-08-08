@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const features = [
   {
@@ -326,6 +327,29 @@ export function Features() {
         .feature-card:nth-child(5) { transition-delay: 0.70s; }
         .feature-card:nth-child(6) { transition-delay: 0.85s; }
 
+        /* ── Illustrative image container inside feature card ── */
+        .feature-card-image {
+          border-radius: 12px;
+          overflow: hidden;
+          width: 100%;
+          margin-bottom: 24px;
+          background: rgba(0, 201, 177, 0.04);
+          border: 1px solid rgba(0, 201, 177, 0.10);
+        }
+
+        /* ── Comparison image container ── */
+        .comparison-image-container {
+          border-radius: 12px;
+          overflow: hidden;
+          width: 100%;
+          position: relative;
+          margin-bottom: 24px;
+          min-height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
         /* ── Mobile responsive ── */
         @media (max-width: 768px) {
           .feature-card {
@@ -505,27 +529,23 @@ export function Features() {
                 </span>
               </div>
 
+              {/* Legacy image — rounded-xl overflow-hidden grid card, layout equal to text */}
               <div
+                className="comparison-image-container"
                 style={{
-                  borderRadius: "12px",
                   background: "rgba(0,0,0,0.2)",
                   border: "1px solid rgba(255,255,255,0.07)",
                   padding: "20px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: "24px",
-                  minHeight: "80px",
                 }}
               >
-                <img
+                <Image
                   src="/old_sample_324x89.png"
                   alt="Legacy HealthData platform"
-                  style={{
-                    maxHeight: "56px",
-                    opacity: 0.65,
-                    maxWidth: "100%",
-                  }}
+                  width={324}
+                  height={89}
+                  sizes="(max-width: 768px) 100vw, 324px"
+                  className="w-full h-auto object-contain"
+                  style={{ opacity: 0.65, maxHeight: "56px", width: "auto" }}
                 />
               </div>
 
@@ -615,23 +635,23 @@ export function Features() {
                 </span>
               </div>
 
+              {/* HealthData97 image — rounded-xl overflow-hidden grid card, layout equal to text */}
               <div
+                className="comparison-image-container"
                 style={{
-                  borderRadius: "12px",
                   background: "rgba(0,201,177,0.04)",
                   border: "1px solid rgba(0,201,177,0.12)",
                   padding: "20px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: "24px",
-                  minHeight: "80px",
                 }}
               >
-                <img
+                <Image
                   src="/331x89.png"
                   alt="HealthData97 AI-powered healthcare platform"
-                  style={{ maxHeight: "56px", maxWidth: "100%" }}
+                  width={331}
+                  height={89}
+                  sizes="(max-width: 768px) 100vw, 331px"
+                  className="w-full h-auto object-contain"
+                  style={{ maxHeight: "56px", width: "auto" }}
                 />
               </div>
 
@@ -754,7 +774,7 @@ export function Features() {
               className="feature-card features-animate"
               style={{ transitionDelay: `${0.1 + i * 0.15}s` }}
             >
-              {/* Teal icon in glassmorphism wrapper */}
+              {/* Teal icon in glassmorphism wrapper — layout equal to text content */}
               <div className="feature-icon-wrap">{feature.icon}</div>
 
               {/* Category eyebrow with teal cross micro-decoration */}

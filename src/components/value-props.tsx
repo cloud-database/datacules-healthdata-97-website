@@ -99,13 +99,30 @@ const stats = [
   },
 ]
 
+/**
+ * Trust-bar badge data.
+ * Each badge renders its abbreviation as a styled text label inside a
+ * uniform container — no external image required. When real badge image
+ * files exist at /public/images/brand/ the `img` field can be populated
+ * and the Image component below will render them; otherwise the text
+ * fallback is used automatically.
+ */
+const trustBadges = [
+  { label: 'HIPAA',  abbr: 'HIPAA',  img: null },
+  { label: 'GDPR',   abbr: 'GDPR',   img: null },
+  { label: 'HL7',    abbr: 'HL7',    img: null },
+  { label: 'FHIR',   abbr: 'FHIR',   img: null },
+  { label: 'SOC 2',  abbr: 'SOC 2',  img: null },
+  { label: 'ICD-10', abbr: 'ICD-10', img: null },
+]
+
 const integrationLogos = [
   { name: 'HL7 FHIR', abbr: 'FHIR' },
   { name: 'REST API', abbr: 'REST' },
-  { name: 'MQTT', abbr: 'MQTT' },
-  { name: 'SFTP', abbr: 'SFTP' },
-  { name: 'ICD-10', abbr: 'ICD' },
-  { name: 'HL7 v2', abbr: 'HL7' },
+  { name: 'MQTT',     abbr: 'MQTT' },
+  { name: 'SFTP',     abbr: 'SFTP' },
+  { name: 'ICD-10',   abbr: 'ICD'  },
+  { name: 'HL7 v2',   abbr: 'HL7'  },
 ]
 
 export function ValueProps() {
@@ -225,6 +242,47 @@ export function ValueProps() {
           border-radius: 20px;
           box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2),
                       0 1px 0 rgba(255, 255, 255, 0.04) inset;
+        }
+
+        /* ── Trust badge container ── */
+        .trust-badge-container {
+          background: rgba(255, 255, 255, 0.025);
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          border-radius: 20px;
+          box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2),
+                      0 1px 0 rgba(255, 255, 255, 0.04) inset;
+        }
+
+        /* ── Individual trust badge cell ── */
+        .trust-badge {
+          border: 1px solid rgba(255, 255, 255, 0.10);
+          border-radius: 10px;
+          padding: 12px;
+          /* 80px wide keeps all badges uniform */
+          width: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          /* height: 40px — standardised badge height */
+          height: 40px;
+          transition: border-color 0.25s ease, background 0.25s ease;
+        }
+        .trust-badge:hover {
+          border-color: rgba(0, 201, 177, 0.35);
+          background: rgba(0, 201, 177, 0.06);
+        }
+
+        /*
+         * Images inside trust badges are inverted to white on the dark
+         * section background using Tailwind-equivalent CSS.
+         * brightness(0) turns the image solid black; invert(1) flips to white.
+         */
+        .trust-badge img,
+        .trust-badge-img {
+          filter: brightness(0) invert(1);
+          height: 40px;
+          width: auto;
+          object-fit: contain;
         }
 
         /* ── Primary CTA button ── */
@@ -519,6 +577,104 @@ export function ValueProps() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ══════════════════════════════════════════════
+          LAYER 2B — Trust / compliance badge strip
+          Badges are baseline-aligned, gap-8 (32px), each constrained
+          to h-[40px] w-20 with border border-white/10 rounded-lg p-3.
+          Images (when present) receive filter brightness-0 invert for
+          white rendering on the dark background.
+      ══════════════════════════════════════════════ */}
+      <div className="relative z-10 depth-band-mid py-12">
+        {/* Band border lines */}
+        <div className="absolute top-0 left-0 right-0 teal-top-line pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 white-section-line pointer-events-none" />
+
+        <div className="max-w-[1280px] mx-auto px-6">
+          <div className="trust-badge-container vp-animate vp-delay-4" style={{ padding: '28px 32px' }}>
+
+            {/* Panel eyebrow */}
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                className="w-3.5 h-3.5 flex-shrink-0"
+                style={{ color: '#00C9B1' }}
+              >
+                <path
+                  d="M8 2v12M2 8h12"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <p
+                className="text-[11px] font-semibold tracking-[0.2em] uppercase"
+                style={{ color: '#A8BFCC' }}
+              >
+                Compliance &amp; Certification Standards
+              </p>
+            </div>
+
+            {/*
+              Badge row:
+              - flex-wrap so it reflows on mobile
+              - items-baseline ensures all badge bottoms align on the same baseline
+              - gap-8 (32px) between every badge — matches spec
+              - On mobile (< 5 items visible) collapses to 2-col grid automatically
+                via flex-wrap + justify-center
+            */}
+            <div className="flex flex-wrap items-baseline justify-center gap-8">
+              {trustBadges.map((badge) => (
+                /*
+                  Each badge cell:
+                  w-20   → 80px fixed width  (uniform across all badges)
+                  h-10   → 40px fixed height (standardised badge height)
+                  border border-white/10 rounded-lg p-3
+                  flex items-center justify-center
+                */
+                <div
+                  key={badge.abbr}
+                  className="
+                    w-20 h-10
+                    border border-white/10
+                    rounded-lg
+                    p-3
+                    flex items-center justify-center
+                    transition-colors duration-200
+                    hover:border-[rgba(0,201,177,0.35)]
+                    hover:bg-[rgba(0,201,177,0.06)]
+                  "
+                >
+                  {badge.img ? (
+                    /*
+                      next/image is used for real badge image files.
+                      filter brightness-0 invert = Tailwind classes that
+                      produce `filter: brightness(0) invert(1)` making any
+                      coloured logo render as solid white on dark backgrounds.
+                    */
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={`/images/brand/${badge.img}`}
+                      alt={badge.label}
+                      className="trust-badge-img brightness-0 invert"
+                      style={{ height: '40px', width: 'auto', objectFit: 'contain' }}
+                    />
+                  ) : (
+                    /* Text fallback — rendered in Electric Teal for visual cohesion */
+                    <span
+                      className="text-[10px] font-bold tracking-[0.06em] uppercase leading-none text-center"
+                      style={{ color: '#00C9B1' }}
+                    >
+                      {badge.abbr}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

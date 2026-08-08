@@ -108,70 +108,116 @@ function PulsingDot() {
   );
 }
 
-/* ── Full-colour Datacules logo rendered as inline SVG ───────────────────
-   Used in the footer brand column at max-height 48 px.
-   Inline SVG avoids any missing image-file risk while preserving full colour
-   fidelity exactly as specified in the design brief.
+/* ── Footer Logo — next/image light variant at 48px height ──────────────
+   Attempts to load the white/light logo from /public/images/brand/.
+   Falls back gracefully to the inline SVG wordmark if the file is absent.
 ────────────────────────────────────────────────────────────────────────── */
-function DataculesLogoFull({ height = 48 }: { height?: number }) {
-  /* Keep aspect ratio ≈ 5.5 : 1 */
-  const width = Math.round(height * 5.5);
+function FooterLogo() {
+  /* Aspect ratio ≈ 5.5 : 1  →  width = 48 × 5.5 = 264 */
+  const logoHeight = 48;
+  const logoWidth = 264;
 
   return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 264 48"
-      fill="none"
-      aria-label="Datacules LLC — HealthData 97 logo"
-      role="img"
+    <div
+      className="relative flex-shrink-0"
+      style={{ width: logoWidth, height: logoHeight, opacity: 0.8 }}
     >
-      <defs>
-        <linearGradient id="ftLogoIconGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#00C9B1" />
-          <stop offset="100%" stopColor="#0A9B8A" />
-        </linearGradient>
-      </defs>
-
-      {/* ── Icon mark — rounded square + cross + inner circle ── */}
-      <rect width="48" height="48" rx="10" fill="url(#ftLogoIconGrad)" />
-      {/* Horizontal + vertical cross */}
-      <path
-        d="M24 10 L24 38 M10 24 L38 24"
-        stroke="#061422"
-        strokeWidth="4"
-        strokeLinecap="round"
+      <Image
+        src="/images/brand/logo-light.png"
+        alt="Datacules HealthData 97"
+        width={logoWidth}
+        height={logoHeight}
+        sizes="264px"
+        className="object-contain object-left"
+        style={{ width: '100%', height: '100%' }}
+        priority={false}
+        onError={(e) => {
+          /* Hide the broken image element; the fallback SVG below becomes visible */
+          (e.currentTarget as HTMLImageElement).style.display = 'none';
+          const fallback = (e.currentTarget as HTMLImageElement)
+            .nextElementSibling as HTMLElement | null;
+          if (fallback) fallback.style.display = 'flex';
+        }}
       />
-      {/* Central dot */}
-      <circle cx="24" cy="24" r="5" fill="#061422" />
 
-      {/* Thin separator */}
-      <line x1="55" y1="10" x2="55" y2="38" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+      {/* ── Inline-SVG fallback — hidden until onError fires ── */}
+      <span
+        aria-hidden="true"
+        style={{
+          display: 'none',
+          position: 'absolute',
+          inset: 0,
+          alignItems: 'center',
+        }}
+      >
+        <svg
+          width={logoWidth}
+          height={logoHeight}
+          viewBox="0 0 264 48"
+          fill="none"
+          aria-label="Datacules LLC — HealthData 97 logo"
+          role="img"
+        >
+          <defs>
+            <linearGradient
+              id="ftLogoIconGradFallback"
+              x1="0"
+              y1="0"
+              x2="48"
+              y2="48"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0%" stopColor="#00C9B1" />
+              <stop offset="100%" stopColor="#0A9B8A" />
+            </linearGradient>
+          </defs>
 
-      {/* ── Wordmark ── */}
-      <text
-        x="62"
-        y="20"
-        fontFamily="'Inter', 'Plus Jakarta Sans', system-ui, sans-serif"
-        fontWeight="800"
-        fontSize="17"
-        fill="#FFFFFF"
-        letterSpacing="-0.5"
-      >
-        Datacules
-      </text>
-      <text
-        x="62"
-        y="37"
-        fontFamily="'Inter', 'Plus Jakarta Sans', system-ui, sans-serif"
-        fontWeight="500"
-        fontSize="11"
-        fill="#00C9B1"
-        letterSpacing="0.8"
-      >
-        HEALTHDATA 97
-      </text>
-    </svg>
+          {/* Icon mark */}
+          <rect width="48" height="48" rx="10" fill="url(#ftLogoIconGradFallback)" />
+          <path
+            d="M24 10 L24 38 M10 24 L38 24"
+            stroke="#061422"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+          <circle cx="24" cy="24" r="5" fill="#061422" />
+
+          {/* Separator */}
+          <line
+            x1="55"
+            y1="10"
+            x2="55"
+            y2="38"
+            stroke="rgba(255,255,255,0.1)"
+            strokeWidth="1"
+          />
+
+          {/* Wordmark */}
+          <text
+            x="62"
+            y="20"
+            fontFamily="'Inter', 'Plus Jakarta Sans', system-ui, sans-serif"
+            fontWeight="800"
+            fontSize="17"
+            fill="#FFFFFF"
+            letterSpacing="-0.5"
+          >
+            Datacules
+          </text>
+          <text
+            x="62"
+            y="37"
+            fontFamily="'Inter', 'Plus Jakarta Sans', system-ui, sans-serif"
+            fontWeight="500"
+            fontSize="11"
+            fill="#00C9B1"
+            letterSpacing="0.8"
+          >
+            HEALTHDATA 97
+          </text>
+        </svg>
+      </span>
+    </div>
   );
 }
 
@@ -272,8 +318,8 @@ export function Footer() {
 
           {/* ── Column 1 — Brand ─────────────────────────────────────── */}
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
-            {/* Full-colour logo at specified 48 px height */}
-            <DataculesLogoFull height={48} />
+            {/* Light/white logo via next/image at 48px height, opacity-80 */}
+            <FooterLogo />
 
             {/* Tagline — specified verbatim in the brief */}
             <p

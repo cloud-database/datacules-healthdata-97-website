@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { BRAND } from '@/lib/brand';
 
@@ -91,10 +92,6 @@ export function Navbar() {
 
         /* ── Logo hover brightness ── */
         .logo-img {
-          height: 40px;
-          width: auto;
-          object-fit: contain;
-          display: block;
           transition: opacity 0.22s ease, filter 0.22s ease;
         }
         .logo-img:hover {
@@ -156,18 +153,19 @@ export function Navbar() {
             className="flex items-center flex-shrink-0"
             aria-label="Datacules LLC — Home"
           >
-            {/*
-              Full-color logo image — max-height 40px as specified.
-              Displayed at full color on the dark navy navbar background.
-              Uses Next.js <img> equivalent here; swap to <Image> if desired.
-            */}
-            <img
-              src="/331x89.png"
+            <Image
+              src="/images/brand/331x89.png"
               alt={BRAND.name}
-              className="logo-img"
               width={148}
               height={40}
-              loading="eager"
+              priority
+              className="logo-img"
+              style={{
+                height: '40px',
+                width: 'auto',
+                objectFit: 'contain',
+                display: 'block',
+              }}
             />
           </Link>
 

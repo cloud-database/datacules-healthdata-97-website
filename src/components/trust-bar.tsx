@@ -16,6 +16,93 @@ const PARTNER_LOGOS = [
   { name: 'Google Health', src: '/logos/google-health.png', fallback: 'Google Health' },
 ]
 
+const COMPLIANCE_BADGES = [
+  {
+    name: 'HIPAA',
+    src: '/images/brand/hipaa-badge.png',
+    fallback: 'HIPAA',
+  },
+  {
+    name: 'GDPR',
+    src: '/images/brand/gdpr-badge.png',
+    fallback: 'GDPR',
+  },
+  {
+    name: 'HL7',
+    src: '/images/brand/hl7-badge.png',
+    fallback: 'HL7',
+  },
+  {
+    name: 'FHIR',
+    src: '/images/brand/fhir-badge.png',
+    fallback: 'FHIR',
+  },
+]
+
+function BadgeItem({ badge }: { badge: (typeof COMPLIANCE_BADGES)[0] }) {
+  return (
+    <div
+      className="flex-shrink-0 flex flex-col items-center justify-center gap-2 w-20 p-3 border border-white/10 rounded-lg"
+      aria-label={badge.name}
+    >
+      <BadgeContent badge={badge} />
+    </div>
+  )
+}
+
+function BadgeContent({ badge }: { badge: (typeof COMPLIANCE_BADGES)[0] }) {
+  return (
+    <div className="relative flex flex-col items-center justify-center w-full">
+      <div className="relative w-full flex items-center justify-center" style={{ height: '32px' }}>
+        <Image
+          src={badge.src}
+          alt={badge.name}
+          width={48}
+          height={32}
+          className="object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+          sizes="48px"
+          onError={(e) => {
+            // Hide the image and show fallback text on error
+            const target = e.currentTarget as HTMLImageElement
+            target.style.display = 'none'
+            const fallback = target.nextElementSibling as HTMLElement | null
+            if (fallback) fallback.style.display = 'block'
+          }}
+        />
+        <span
+          className="trust-bar-badge-fallback hidden whitespace-nowrap select-none text-center"
+          style={{
+            fontFamily: 'Inter, "Plus Jakarta Sans", sans-serif',
+            fontSize: '11px',
+            fontWeight: 700,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color: '#ffffff',
+            opacity: 0.75,
+            lineHeight: 1,
+          }}
+        >
+          {badge.fallback}
+        </span>
+      </div>
+      <span
+        style={{
+          fontFamily: 'Inter, "Plus Jakarta Sans", sans-serif',
+          fontSize: '9px',
+          fontWeight: 600,
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase',
+          color: 'rgba(168, 191, 204, 0.7)',
+          lineHeight: 1,
+          marginTop: '4px',
+        }}
+      >
+        {badge.name}
+      </span>
+    </div>
+  )
+}
+
 function LogoItem({
   logo,
   index,
@@ -96,7 +183,6 @@ export function TrustBar() {
       className="relative w-full overflow-hidden trust-bar-section"
       style={{
         background: 'rgba(255, 255, 255, 0.02)',
-        /* Hairline divider above — separates from hero */
         borderTop: '1px solid rgba(255, 255, 255, 0.07)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.07)',
       }}
@@ -108,7 +194,6 @@ export function TrustBar() {
         style={{ paddingTop: '32px', paddingBottom: '24px' }}
       >
         <div className="flex items-center gap-2">
-          {/* Teal cross/plus micro-decoration */}
           <span
             aria-hidden="true"
             style={{
@@ -137,6 +222,29 @@ export function TrustBar() {
         </div>
       </div>
 
+      {/* Compliance badges — HIPAA / GDPR / HL7 / FHIR */}
+      <div
+        className="flex items-center justify-center gap-4 md:gap-6 flex-wrap md:flex-nowrap"
+        style={{ paddingBottom: '28px', paddingLeft: '24px', paddingRight: '24px' }}
+        aria-label="Compliance certifications"
+      >
+        {COMPLIANCE_BADGES.map((badge) => (
+          <BadgeItem key={badge.name} badge={badge} />
+        ))}
+      </div>
+
+      {/* Hairline divider between badges and marquee */}
+      <div
+        aria-hidden="true"
+        style={{
+          height: '1px',
+          background: 'rgba(255,255,255,0.05)',
+          marginBottom: '24px',
+          marginLeft: '40px',
+          marginRight: '40px',
+        }}
+      />
+
       {/* Marquee container with left/right fade masks */}
       <div
         className="relative w-full overflow-hidden"
@@ -148,12 +256,6 @@ export function TrustBar() {
             'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
         }}
       >
-        {/*
-         * Marquee track — logos duplicated for seamless infinite loop.
-         * The animation translates the track by exactly -50% of its own width,
-         * which is the width of one full set (Set A + separator), causing a
-         * perfectly seamless loop back to the start.
-         */}
         <div
           ref={trackRef}
           className="trust-bar-track flex items-center"
@@ -184,8 +286,6 @@ export function TrustBar() {
             transform: translateX(0);
           }
           100% {
-            /* Translate exactly half the total track width — the width of one
-               full set — for a pixel-perfect seamless loop. */
             transform: translateX(-50%);
           }
         }

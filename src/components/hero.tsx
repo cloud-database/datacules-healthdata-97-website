@@ -514,15 +514,71 @@ function DataFlowVisualization() {
 }
 
 /* ─────────────────────────────────────────────
+   Mock Browser Frame — wraps product/UI screenshots
+   Renders a styled dark browser chrome bar above
+   the image with three traffic-light dots and a
+   fake URL bar. Applies shadow-2xl and rounded
+   corners so the image feels native to the section.
+───────────────────────────────────────────── */
+function MockBrowserFrame({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      className="relative rounded-[20px] overflow-hidden shadow-2xl"
+      style={{
+        background: 'rgba(255,255,255,0.04)',
+        border: '1px solid rgba(255,255,255,0.09)',
+        boxShadow:
+          '0 8px 48px rgba(0,0,0,0.3), 0 0 80px rgba(0,201,177,0.07), inset 0 1px 0 rgba(255,255,255,0.06)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+      }}
+    >
+      {/* Browser chrome bar */}
+      <div
+        className="flex items-center gap-2 px-4 py-3"
+        style={{
+          background: 'rgba(6,20,34,0.92)',
+          borderBottom: '1px solid rgba(255,255,255,0.07)',
+        }}
+      >
+        {/* Traffic-light dots */}
+        <span
+          className="w-3 h-3 rounded-full"
+          style={{ background: 'rgba(255,95,87,0.72)' }}
+        />
+        <span
+          className="w-3 h-3 rounded-full"
+          style={{ background: 'rgba(255,189,46,0.72)' }}
+        />
+        <span
+          className="w-3 h-3 rounded-full"
+          style={{ background: 'rgba(39,201,63,0.72)' }}
+        />
+        {/* Fake URL bar */}
+        <div
+          className="ml-4 flex-1 max-w-xs h-5 rounded-md flex items-center px-3"
+          style={{
+            background: 'rgba(255,255,255,0.04)',
+            border: '1px solid rgba(255,255,255,0.07)',
+          }}
+        >
+          <span
+            className="text-[10px] tracking-wide"
+            style={{ color: '#4A6080', fontFamily: '"Inter", system-ui, sans-serif' }}
+          >
+            app.healthdata97.com/dashboard
+          </span>
+        </div>
+      </div>
+
+      {/* Slotted content — screenshot image goes here */}
+      {children}
+    </div>
+  )
+}
+
+/* ─────────────────────────────────────────────
    Hero Section — Full Redesign
-   - Layered gradient background (#0D2137 → #061422)
-   - ECG waveform SVG animation (bottom third, 15% opacity)
-   - Ambient glow orbs (teal bottom-left, lavender top-right)
-   - Molecular dot-grid overlay
-   - Serif headline with teal gradient "Intelligent" word
-   - Two CTA buttons (primary solid teal, secondary ghost)
-   - Animated data-flow SVG diagram (desktop canvas, mobile static)
-   - Platform preview screenshot block
 ───────────────────────────────────────────── */
 export default function Hero() {
   return (
@@ -534,11 +590,6 @@ export default function Hero() {
     >
       {/* ════════════════════════════════════════
           BACKGROUND LAYER STACK
-          Layer 0 → molecular dot-grid (3% opacity)
-          Layer 1 → teal ambient orb, bottom-left
-          Layer 2 → lavender ambient orb, top-right
-          Layer 3 → subtle mid-page radial depth vignette
-          Layer 4 → ECG waveform, bottom third
       ════════════════════════════════════════ */}
 
       {/* Layer 0: Molecular / cellular dot-grid overlay */}
@@ -582,7 +633,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Layer 3: Mid-page radial depth vignette — adds richness without flatness */}
+      {/* Layer 3: Mid-page radial depth vignette */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
@@ -597,9 +648,6 @@ export default function Hero() {
 
       {/* ════════════════════════════════════════
           MAIN CONTENT GRID
-          Left column  → copy, headline, CTAs, trust badges
-          Right column → animated data-flow diagram (desktop)
-                         static diagram (mobile)
       ════════════════════════════════════════ */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 pt-32 pb-16 w-full flex flex-col lg:flex-row items-center gap-16">
 
@@ -618,7 +666,6 @@ export default function Hero() {
               fontFamily: '"Inter", system-ui, sans-serif',
             }}
           >
-            {/* Healthcare cross micro-icon */}
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
               <rect x="4" y="0" width="2" height="10" rx="1" fill="#00C9B1" />
               <rect x="0" y="4" width="10" height="2" rx="1" fill="#00C9B1" />
@@ -630,11 +677,7 @@ export default function Hero() {
             {BRAND.tagline}
           </div>
 
-          {/* ── H1 — Fraunces / Playfair Display premium serif ──
-              "Healthcare Data," on line 1
-              "Unified and Intelligent" on line 2
-              "Intelligent" receives Electric Teal gradient treatment
-          ── */}
+          {/* ── H1 ── */}
           <h1
             className="mb-8 text-white"
             style={{
@@ -664,7 +707,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          {/* ── Subheadline — Inter, #A8BFCC, 20px, max-width 560px ── */}
+          {/* ── Subheadline ── */}
           <p
             className="mb-10"
             style={{
@@ -680,14 +723,10 @@ export default function Hero() {
             transform patient outcomes.
           </p>
 
-          {/* ── CTA Button Pair ──
-              Primary  → solid Electric Teal #00C9B1, Deep Navy text
-              Secondary → ghost, 1px solid rgba(255,255,255,0.2), white text
-              Both: 56px height, 12px border-radius, hover animations
-          ── */}
+          {/* ── CTA Button Pair ── */}
           <div className="flex flex-wrap gap-4 mb-12">
 
-            {/* Primary CTA — "Request a Platform Demo" */}
+            {/* Primary CTA */}
             <Link
               href="#contact"
               className="inline-flex items-center gap-2.5 font-semibold rounded-xl select-none"
@@ -738,7 +777,7 @@ export default function Hero() {
               </svg>
             </Link>
 
-            {/* Secondary CTA — "Explore the Platform" ghost */}
+            {/* Secondary CTA */}
             <Link
               href="#features"
               className="inline-flex items-center gap-2 font-semibold text-white rounded-xl select-none"
@@ -841,11 +880,7 @@ export default function Hero() {
         {/* ════════════════════════════════════════
             RIGHT COLUMN — Animated Data-Flow Diagram
             Desktop: full canvas animation
-              - 5 source node orbs: EHR, Labs, Billing, Telehealth, IoT
-              - Animated particle streams flowing to center hub
-              - Pulsing orbit rings, glow effects
-              - Interactive hover state per node
-            Mobile: static SVG version (performance-optimised)
+            Mobile: static SVG version
         ════════════════════════════════════════ */}
         <div className="flex-shrink-0 hidden lg:flex flex-col items-center justify-center gap-4">
           {/* Section label above visualization */}
@@ -909,8 +944,10 @@ export default function Hero() {
 
       {/* ════════════════════════════════════════
           PLATFORM PREVIEW BLOCK
-          Browser-chrome screenshot container
-          with gradient bottom fade
+          Product screenshot wrapped in MockBrowserFrame.
+          - On desktop: full width below the copy/diagram grid
+          - On mobile: stacks naturally below text (mt-8 via
+            the outer padding flow; no absolute positioning)
       ════════════════════════════════════════ */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 pb-24 w-full">
 
@@ -941,74 +978,33 @@ export default function Hero() {
           />
         </div>
 
-        {/* Screenshot container — glassmorphism card */}
-        <div
-          className="relative rounded-[20px] overflow-hidden"
-          style={{
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.09)',
-            boxShadow:
-              '0 8px 48px rgba(0,0,0,0.3), 0 0 80px rgba(0,201,177,0.07), inset 0 1px 0 rgba(255,255,255,0.06)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-          }}
-        >
-          {/* Browser chrome bar */}
-          <div
-            className="flex items-center gap-2 px-4 py-3"
-            style={{
-              background: 'rgba(6,20,34,0.92)',
-              borderBottom: '1px solid rgba(255,255,255,0.07)',
-            }}
-          >
-            <span
-              className="w-3 h-3 rounded-full"
-              style={{ background: 'rgba(255,95,87,0.72)' }}
-            />
-            <span
-              className="w-3 h-3 rounded-full"
-              style={{ background: 'rgba(255,189,46,0.72)' }}
-            />
-            <span
-              className="w-3 h-3 rounded-full"
-              style={{ background: 'rgba(39,201,63,0.72)' }}
-            />
-            <div
-              className="ml-4 flex-1 max-w-xs h-5 rounded-md flex items-center px-3"
-              style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.07)',
-              }}
-            >
-              <span
-                className="text-[10px] tracking-wide"
-                style={{ color: '#4A6080', fontFamily: '"Inter", system-ui, sans-serif' }}
-              >
-                app.healthdata97.com/dashboard
-              </span>
+        {/* ── MockBrowserFrame wraps the product screenshot ──
+            On mobile the entire block sits below the text column
+            thanks to the flex-col flow in the parent grid.
+            mt-8 is applied on small screens via the wrapper div.  */}
+        <div className="mt-0 md:mt-8 lg:mt-0">
+          <MockBrowserFrame>
+            {/* Screenshot image — Next.js Image with priority for LCP */}
+            <div className="relative">
+              <Image
+                src="/1376x768.png"
+                alt="HealthData97 Platform Dashboard — unified health data infrastructure"
+                width={1376}
+                height={768}
+                priority
+                className="w-full h-auto block"
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
+              />
+              {/* Bottom gradient fade — blends screenshot into section */}
+              <div
+                className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(to bottom, transparent 0%, rgba(6,20,34,0.7) 100%)',
+                }}
+              />
             </div>
-          </div>
-
-          {/* Screenshot image — Next.js Image with priority for LCP */}
-          <div className="relative">
-            <Image
-              src="/1376x768.png"
-              alt="HealthData97 Platform Dashboard — unified health data infrastructure"
-              width={1376}
-              height={768}
-              priority
-              className="w-full h-auto block"
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
-            />
-            {/* Bottom gradient fade — blends screenshot into section */}
-            <div
-              className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
-              style={{
-                background:
-                  'linear-gradient(to bottom, transparent 0%, rgba(6,20,34,0.7) 100%)',
-              }}
-            />
-          </div>
+          </MockBrowserFrame>
         </div>
 
         <p
