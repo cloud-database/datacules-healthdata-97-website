@@ -341,6 +341,81 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Dashboard Product Preview */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pb-20 w-full">
+        {/* Label */}
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <span
+            className="h-px flex-1 max-w-[120px] rounded-full"
+            style={{ background: 'linear-gradient(to right, transparent, rgba(0,194,168,0.4))' }}
+          />
+          <span
+            className="text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full"
+            style={{
+              color: 'var(--brand-accent)',
+              background: 'rgba(0,194,168,0.08)',
+              border: '1px solid rgba(0,194,168,0.2)',
+            }}
+          >
+            Platform Preview
+          </span>
+          <span
+            className="h-px flex-1 max-w-[120px] rounded-full"
+            style={{ background: 'linear-gradient(to left, transparent, rgba(0,194,168,0.4))' }}
+          />
+        </div>
+
+        {/* Screenshot container */}
+        <div
+          className="relative rounded-2xl overflow-hidden"
+          style={{
+            border: '1px solid rgba(0,194,168,0.2)',
+            boxShadow: '0 0 80px rgba(0,194,168,0.12), 0 32px 64px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)',
+          }}
+        >
+          {/* Top browser-chrome bar */}
+          <div
+            className="flex items-center gap-2 px-4 py-3"
+            style={{
+              background: 'rgba(10,30,51,0.95)',
+              borderBottom: '1px solid rgba(0,194,168,0.12)',
+            }}
+          >
+            <span className="w-3 h-3 rounded-full" style={{ background: 'rgba(255,95,87,0.7)' }} />
+            <span className="w-3 h-3 rounded-full" style={{ background: 'rgba(255,189,46,0.7)' }} />
+            <span className="w-3 h-3 rounded-full" style={{ background: 'rgba(39,201,63,0.7)' }} />
+            <div
+              className="ml-4 flex-1 max-w-xs h-5 rounded-md flex items-center px-3"
+              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              <span className="text-[10px] text-slate-500 tracking-wide">app.healthdata97.com/dashboard</span>
+            </div>
+          </div>
+
+          {/* Screenshot image */}
+          <div className="relative">
+            <img
+              src="/1376x768.png"
+              alt="HealthData97 Platform Dashboard — unified health data infrastructure"
+              className="w-full h-auto block"
+              style={{ display: 'block' }}
+            />
+            {/* Subtle bottom gradient overlay to blend into page */}
+            <div
+              className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+              style={{
+                background: 'linear-gradient(to bottom, transparent 0%, rgba(10,30,51,0.6) 100%)',
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Caption */}
+        <p className="text-center text-xs text-slate-500 mt-4 tracking-wide">
+          Unified healthcare data platform — real-time EHR, labs, billing &amp; device integration
+        </p>
+      </div>
+
       {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"

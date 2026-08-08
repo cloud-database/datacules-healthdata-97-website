@@ -53,6 +53,134 @@ export function Features() {
           </p>
         </div>
 
+        {/* Legacy vs Modern Platform Comparison */}
+        <div className="mb-16 rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+          <div className="px-6 py-5 border-b border-white/10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-2 border border-white/10 bg-white/5 text-gray-400">
+              Platform Evolution
+            </div>
+            <h3 className="text-2xl font-bold text-white">
+              From Legacy to AI-Powered Intelligence
+            </h3>
+            <p className="text-gray-500 text-sm mt-1">
+              See how HealthData97 transforms fragmented healthcare data management into a unified, intelligent platform.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            {/* Legacy / Before */}
+            <div className="p-6 flex flex-col items-center gap-4">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-red-500/10 border border-red-500/20 text-red-400">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                    <circle cx="5" cy="5" r="4" fill="#ef4444" opacity="0.7"/>
+                  </svg>
+                  Before — Legacy System
+                </span>
+              </div>
+              <div className="w-full flex items-center justify-center rounded-xl bg-gray-900 border border-white/10 py-5 px-4">
+                <img
+                  src="/old_sample_324x89.png"
+                  alt="Legacy HealthData platform branding — before the AI-powered upgrade"
+                  className="max-w-full h-auto opacity-75"
+                  style={{ maxHeight: 89 }}
+                />
+              </div>
+              <ul className="w-full space-y-2 text-sm text-gray-500">
+                <li className="flex items-start gap-2">
+                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="#ef4444" strokeWidth="1.5"/>
+                    <path d="M5 5l6 6M11 5l-6 6" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                  Siloed data across disparate EHR and billing modules
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="#ef4444" strokeWidth="1.5"/>
+                    <path d="M5 5l6 6M11 5l-6 6" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                  Manual claims processing with high denial rates
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="#ef4444" strokeWidth="1.5"/>
+                    <path d="M5 5l6 6M11 5l-6 6" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                  No predictive risk scoring or anomaly detection
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="#ef4444" strokeWidth="1.5"/>
+                    <path d="M5 5l6 6M11 5l-6 6" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                  Limited interoperability and integration support
+                </li>
+              </ul>
+            </div>
+
+            {/* Modern / After */}
+            <div className="p-6 flex flex-col items-center gap-4">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                    <circle cx="5" cy="5" r="4" fill="#10b981" opacity="0.7"/>
+                  </svg>
+                  After — HealthData97 AI Platform
+                </span>
+              </div>
+              <div className="w-full flex items-center justify-center rounded-xl bg-[#0d2340] border border-white/10 py-5 px-4">
+                <img
+                  src="/331x89.png"
+                  alt="HealthData97 AI-powered healthcare platform — modern branding"
+                  className="max-w-full h-auto"
+                  style={{ maxHeight: 89 }}
+                />
+              </div>
+              <ul className="w-full space-y-2 text-sm text-gray-400">
+                <li className="flex items-start gap-2">
+                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="#10b981" strokeWidth="1.5"/>
+                    <path d="M5 8l2 2 4-4" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Unified patient repository across all care modules
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="#10b981" strokeWidth="1.5"/>
+                    <path d="M5 8l2 2 4-4" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  AI-driven claims scrubbing and denial prediction
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="#10b981" strokeWidth="1.5"/>
+                    <path d="M5 8l2 2 4-4" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  XGBoost &amp; Random Forest predictive risk models
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="#10b981" strokeWidth="1.5"/>
+                    <path d="M5 8l2 2 4-4" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Full HL7/FHIR interoperability and HIPAA compliance
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Arrow connector row */}
+          <div className="hidden md:flex absolute pointer-events-none" aria-hidden="true" />
+          <div className="flex items-center justify-center py-4 border-t border-white/10 bg-white/[0.02]">
+            <div className="flex items-center gap-3 text-xs text-gray-500 font-medium uppercase tracking-widest">
+              <span className="text-red-400">Legacy Platform</span>
+              <svg width="32" height="16" viewBox="0 0 32 16" fill="none">
+                <path d="M0 8h28M22 2l8 6-8 6" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="text-emerald-400">HealthData97 AI</span>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((feature, i) => (
             <div

@@ -9,8 +9,12 @@ export function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50">
       <div className="mx-4 mt-4">
         <nav className="max-w-6xl mx-auto rounded-2xl bg-gray-950/80 backdrop-blur-xl border border-white/10 px-6 h-16 flex items-center justify-between shadow-lg shadow-black/20">
-          <Link href="/" className="flex items-center gap-3 font-bold text-xl text-white hover:opacity-90 transition-opacity">
-            <span className="text-2xl font-black gradient-text">{BRAND.name}</span>
+          <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+            <img
+              src="/331x89.png"
+              alt={BRAND.name}
+              className="h-10 w-auto object-contain"
+            />
           </Link>
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
