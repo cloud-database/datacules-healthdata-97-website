@@ -60,7 +60,7 @@ export function Compliance() {
       id="security"
       ref={sectionRef}
       className="py-24 lg:py-32"
-      style={{ background: 'linear-gradient(180deg, #112744 0%, #0D2137 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0B5A94 0%, #06487A 100%)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

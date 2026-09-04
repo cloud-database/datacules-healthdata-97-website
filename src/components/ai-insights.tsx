@@ -52,7 +52,7 @@ export function AIInsights() {
     <section
       id="ai"
       ref={sectionRef}
-      className="py-24 lg:py-32 bg-[#0D2137]"
+      className="py-24 lg:py-32 bg-[#06487A]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}

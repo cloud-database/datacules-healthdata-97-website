@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Shield } from 'lucide-react';
@@ -47,7 +49,7 @@ export function Footer() {
   return (
     <footer
       className="relative border-t border-white/[0.06] overflow-hidden"
-      style={{ background: '#061422' }}
+      style={{ background: '#043A62' }}
     >
       {/* ECG waveform */}
       <div

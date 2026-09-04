@@ -21,7 +21,7 @@ export function Cta() {
     <section
       id="demo"
       ref={sectionRef}
-      className="py-24 lg:py-36 bg-[#0D2137] relative overflow-hidden"
+      className="py-24 lg:py-36 bg-[#06487A] relative overflow-hidden"
     >
       {/* Ambient glow */}
       <div

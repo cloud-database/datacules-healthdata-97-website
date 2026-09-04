@@ -50,7 +50,7 @@ const sections = [
 
 export default function TermsPage() {
   return (
-    <main className="bg-[#0D2137] min-h-screen">
+    <main className="bg-[#06487A] min-h-screen">
       <section className="pt-40 pb-24 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="section-eyebrow mb-5">Legal</div>
         <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Terms of Use</h1>

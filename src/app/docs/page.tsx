@@ -37,7 +37,7 @@ const sections = [
 
 export default function DocsPage() {
   return (
-    <main className="bg-[#0D2137] min-h-screen">
+    <main className="bg-[#06487A] min-h-screen">
       <section className="pt-40 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <div className="section-eyebrow mb-5">Developer Documentation</div>
@@ -105,7 +105,7 @@ export default function DocsPage() {
           <h2 className="text-2xl font-bold text-white mb-6">API Quick Reference</h2>
           <div
             className="rounded-2xl border border-white/[0.07] overflow-hidden"
-            style={{ background: '#0A1628' }}
+            style={{ background: '#043E68' }}
           >
             <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.07]">
               <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />

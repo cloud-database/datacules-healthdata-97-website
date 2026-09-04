@@ -5,9 +5,9 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          primary: '#0D2137',
-          secondary: '#112744',
-          deep: '#061422',
+          primary: '#06487A',
+          secondary: '#0B5A94',
+          deep: '#043A62',
           accent: '#3B82F6',
           light: '#60A5FA',
           muted: '#A8BFCC',
@@ -87,8 +87,8 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, #0D2137 0%, #0A1E30 50%, #061422 100%)',
-        'section-gradient': 'linear-gradient(180deg, #112744 0%, #0D2137 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #06487A 0%, #054270 50%, #043A62 100%)',
+        'section-gradient': 'linear-gradient(180deg, #0B5A94 0%, #06487A 100%)',
         'card-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%)',
         'accent-gradient': 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
       },

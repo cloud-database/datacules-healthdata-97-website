@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0D2137]"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#06487A]"
       style={{ paddingTop: 'calc(var(--nav-height) + 60px)', paddingBottom: '80px' }}
     >
       {/* Ambient glows */}

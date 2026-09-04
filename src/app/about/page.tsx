@@ -37,7 +37,7 @@ const pillars = [
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#0D2137] min-h-screen">
+    <main className="bg-[#06487A] min-h-screen">
       {/* Hero */}
       <section className="pt-40 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
@@ -92,7 +92,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our approach */}
-      <section className="py-20 border-t border-white/[0.06] bg-[#112744]">
+      <section className="py-20 border-t border-white/[0.06] bg-[#0B5A94]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 max-w-2xl">
             Our Approach to Healthcare Data

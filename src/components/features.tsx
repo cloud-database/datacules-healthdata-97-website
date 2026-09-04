@@ -103,7 +103,7 @@ export function Features() {
     <section
       id="capabilities"
       ref={sectionRef}
-      className="py-24 lg:py-32 bg-[#112744]"
+      className="py-24 lg:py-32 bg-[#0B5A94]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}

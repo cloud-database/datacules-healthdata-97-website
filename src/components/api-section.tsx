@@ -33,7 +33,7 @@ export function ApiSection() {
     <section
       id="architecture"
       ref={sectionRef}
-      className="py-24 lg:py-32 bg-[#061422]"
+      className="py-24 lg:py-32 bg-[#043A62]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -80,7 +80,7 @@ export function ApiSection() {
           {/* Code block */}
           <div
             className="animate-on-scroll stagger-2 rounded-2xl overflow-hidden border border-white/[0.07]"
-            style={{ background: '#0A1628' }}
+            style={{ background: '#043E68' }}
           >
             {/* Terminal header */}
             <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.07]">

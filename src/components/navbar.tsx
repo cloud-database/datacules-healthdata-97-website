@@ -28,7 +28,7 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0D2137]/95 backdrop-blur-xl border-b border-white/5 shadow-nav'
+          ? 'bg-[#06487A]/95 backdrop-blur-xl border-b border-white/5 shadow-nav'
           : 'bg-transparent'
       }`}
       style={{ height: 'var(--nav-height)' }}
@@ -37,7 +37,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" aria-label="Datacules HealthData 97 — Home">
           <Image
-            src="/331x89.png"
+            src="/1207x302.png"
             alt="Datacules HealthData 97"
             width={165}
             height={44}
@@ -83,7 +83,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div
-          className="lg:hidden bg-[#0D2137]/98 backdrop-blur-xl border-b border-white/5"
+          className="lg:hidden bg-[#06487A]/98 backdrop-blur-xl border-b border-white/5"
           style={{ animation: 'slideDown 0.25s ease-out forwards' }}
         >
           <nav className="max-w-8xl mx-auto px-4 py-4 flex flex-col gap-1" aria-label="Mobile navigation">

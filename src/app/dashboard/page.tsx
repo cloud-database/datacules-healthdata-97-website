@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-[#0D2137] pt-24">
+    <div className="min-h-screen bg-[#06487A] pt-24">
       <div className="max-w-5xl mx-auto px-6 py-16">
         {/* Header */}
         <div className="mb-12">
@@ -22,7 +22,7 @@ export default function DashboardPage() {
         {/* Product access card */}
         <div
           className="rounded-2xl p-8 mb-8 relative overflow-hidden border border-[#3B82F6]/20"
-          style={{ background: 'linear-gradient(135deg, #0D2137 0%, #112744 100%)' }}
+          style={{ background: 'linear-gradient(135deg, #06487A 0%, #0B5A94 100%)' }}
         >
           <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 80% at 80% 50%, rgba(59,130,246,0.12) 0%, transparent 70%)' }} />
           <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">

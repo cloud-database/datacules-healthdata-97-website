@@ -11,7 +11,7 @@ const capabilities = [
 
 export function TrustBar() {
   return (
-    <div className="bg-[#061422] border-y border-white/5 py-5">
+    <div className="bg-[#043A62] border-y border-white/5 py-5">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <p className="text-[10px] font-semibold tracking-[0.2em] text-[#4A6080] uppercase whitespace-nowrap flex-shrink-0">

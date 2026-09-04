@@ -11,13 +11,13 @@ export const BRAND = {
   designSystem: {
     colors: {
       // Backgrounds
-      bgPrimary: "#0D2137",
-      bgSecondary: "#112744",
-      bgDeep: "#061422",
+      bgPrimary: "#06487A",
+      bgSecondary: "#0B5A94",
+      bgDeep: "#043A62",
       bgHeroGradient:
-        "linear-gradient(135deg, #0D2137 0%, #0A1E30 50%, #061422 100%)",
+        "linear-gradient(135deg, #06487A 0%, #054270 50%, #043A62 100%)",
       bgComplianceGradient:
-        "linear-gradient(180deg, #112744 0%, #0D2137 100%)",
+        "linear-gradient(180deg, #0B5A94 0%, #06487A 100%)",
       // Accents
       accentTeal: "#3B82F6",
       accentLavender: "#60A5FA",
@@ -110,7 +110,7 @@ export const BRAND = {
 
   // ─── Brand Colors (legacy alias kept for existing consumers) ────────────────
   colors: {
-    primary: "#0D2137",
+    primary: "#06487A",
     accent: "#3B82F6",
     secondary: "#60A5FA",
   },
@@ -382,7 +382,7 @@ export const BRAND = {
     subheadline:
       "Every layer of Datacules HealthData 97 is engineered to meet the most demanding healthcare regulatory and security standards — so your team can focus on care, not compliance audits.",
     sectionBackground:
-      "linear-gradient(180deg, #112744 0%, #0D2137 100%)",
+      "linear-gradient(180deg, #0B5A94 0%, #06487A 100%)",
     tileSize: { width: "240px", height: "200px" },
     badgeIconSize: "64px",
     ringAnimation: "compliance-ring 6s linear infinite",
@@ -434,9 +434,9 @@ export const BRAND = {
     headline: "A REST API Built for Enterprise Scale",
     subheadline:
       "354+ endpoints covering every clinical, financial, and operational data domain — with HL7 FHIR compliance, OAuth 2.0 security, and comprehensive developer documentation.",
-    sectionBackground: "#061422",
+    sectionBackground: "#043A62",
     codeBlock: {
-      surface: "#0A1628",
+      surface: "#043E68",
       terminalDots: ["#FF5F57", "#FFBD2E", "#28CA41"],
       syntaxColors: {
         string: "#3B82F6",
@@ -485,7 +485,7 @@ export const BRAND = {
       height: "64px",
       minWidth: "280px",
       background: "#3B82F6",
-      color: "#0D2137",
+      color: "#06487A",
       borderRadius: "12px",
       fontWeight: "700",
       pulseAnimation: "pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
@@ -571,7 +571,7 @@ export const BRAND = {
   footer: {
     tagline: "Intelligent Healthcare Data Management with AI-Powered Insights",
     complianceBadge: "HIPAA Compliant Platform",
-    background: "#061422",
+    background: "#043A62",
     topBorder: "1px solid rgba(255,255,255,0.06)",
     ecgWaveformOpacity: "0.05",
     pulsingDotColor: "#3B82F6",

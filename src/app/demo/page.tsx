@@ -32,7 +32,7 @@ export default function DemoPage() {
   };
 
   return (
-    <main className="bg-[#0D2137] min-h-screen">
+    <main className="bg-[#06487A] min-h-screen">
       <section className="pt-40 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left */}
@@ -133,11 +133,11 @@ export default function DemoPage() {
                     <select
                       id="role"
                       name="role"
-                      className="w-full bg-[#0D2137] border border-white/[0.09] rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#3B82F6]/50 transition-colors"
+                      className="w-full bg-[#06487A] border border-white/[0.09] rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#3B82F6]/50 transition-colors"
                     >
                       <option value="" disabled>Select role</option>
                       {roles.map((r) => (
-                        <option key={r} value={r} className="bg-[#0D2137]">{r}</option>
+                        <option key={r} value={r} className="bg-[#06487A]">{r}</option>
                       ))}
                     </select>
                   </div>
@@ -148,11 +148,11 @@ export default function DemoPage() {
                     <select
                       id="org-size"
                       name="organizationSize"
-                      className="w-full bg-[#0D2137] border border-white/[0.09] rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#3B82F6]/50 transition-colors"
+                      className="w-full bg-[#06487A] border border-white/[0.09] rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#3B82F6]/50 transition-colors"
                     >
                       <option value="" disabled>Select size</option>
                       {sizes.map((s) => (
-                        <option key={s} value={s} className="bg-[#0D2137]">{s}</option>
+                        <option key={s} value={s} className="bg-[#06487A]">{s}</option>
                       ))}
                     </select>
                   </div>

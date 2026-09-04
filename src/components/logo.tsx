@@ -9,7 +9,7 @@ export function Logo({ variant = 'full', className = '' }: LogoProps) {
   if (variant === 'compact') {
     return (
       <Image
-        src="/331x89.png"
+        src="/1207x302.png"
         alt="Datacules HealthData 97"
         width={165}
         height={44}

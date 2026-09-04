@@ -19,7 +19,7 @@ export function PageLoader() {
         position: 'fixed',
         inset: 0,
         zIndex: 9999,
-        background: '#0D2137',
+        background: '#06487A',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

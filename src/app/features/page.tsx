@@ -95,7 +95,7 @@ const modulesByCategory = [
 
 export default function FeaturesPage() {
   return (
-    <main className="bg-[#0D2137] min-h-screen">
+    <main className="bg-[#06487A] min-h-screen">
       {/* Header */}
       <section className="pt-40 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">

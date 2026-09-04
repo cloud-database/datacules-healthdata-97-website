@@ -66,7 +66,7 @@ export function ModulesGrid() {
     <section
       id="modules"
       ref={sectionRef}
-      className="py-24 lg:py-32 bg-[#061422] relative overflow-hidden"
+      className="py-24 lg:py-32 bg-[#043A62] relative overflow-hidden"
     >
       {/* Watermark */}
       <div

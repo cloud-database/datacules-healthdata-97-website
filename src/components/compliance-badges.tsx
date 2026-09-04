@@ -1,3 +1,5 @@
+'use client';
+
 import { ShieldCheck, Lock, Network, BadgeCheck } from 'lucide-react';
 
 const badges = [
