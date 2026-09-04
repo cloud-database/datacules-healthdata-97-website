@@ -4,8 +4,8 @@ interface LogoProps {
 }
 
 export function Logo({ variant = 'full', className = '' }: LogoProps) {
-  const width = variant === 'compact' ? 160 : 300;
-  const height = variant === 'compact' ? 40 : 75;
+  const width = variant === 'compact' ? 240 : 450;
+  const height = variant === 'compact' ? 60 : 112;
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
@@ -28,8 +28,8 @@ export function LogoImage({ className = '' }: { className?: string }) {
     <img
       src="/logo.svg"
       alt="Datacules HealthData 97"
-      width={300}
-      height={75}
+      width={450}
+      height={112}
       className={`object-contain ${className}`}
     />
   );

@@ -36,7 +36,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         {/* Logo — SVG with transparent background, blends naturally with any dark bg */}
         <Link href="/" aria-label="Datacules HealthData 97 — Home">
-          <DataculesLogoSVG compact={false} className="h-9 w-auto" />
+          <DataculesLogoSVG compact={false} className="h-[54px] w-auto" />
         </Link>
 
         {/* Desktop Nav */}

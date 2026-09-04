@@ -75,8 +75,8 @@ export function Footer() {
               <img
                 src="/logo.svg"
                 alt="Datacules HealthData 97"
-                width={220}
-                height={55}
+                width={330}
+                height={83}
                 className="object-contain"
               />
             </Link>
