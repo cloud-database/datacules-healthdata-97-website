@@ -24,8 +24,8 @@ interface ComplianceBadge {
 }
 
 function ShieldIcon({ color }: { color: 'teal' | 'lavender' }) {
-  const stroke = color === 'teal' ? '#00C9B1' : '#7B8CDE'
-  const glow = color === 'teal' ? 'rgba(0,201,177,0.25)' : 'rgba(123,140,222,0.25)'
+  const stroke = color === 'teal' ? '#3B82F6' : '#60A5FA'
+  const glow = color === 'teal' ? 'rgba(59,130,246,0.25)' : 'rgba(96,165,250,0.25)'
   return (
     <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -63,8 +63,8 @@ function ShieldIcon({ color }: { color: 'teal' | 'lavender' }) {
 }
 
 function LockIcon({ color }: { color: 'teal' | 'lavender' }) {
-  const stroke = color === 'teal' ? '#00C9B1' : '#7B8CDE'
-  const glow = color === 'teal' ? 'rgba(0,201,177,0.15)' : 'rgba(123,140,222,0.15)'
+  const stroke = color === 'teal' ? '#3B82F6' : '#60A5FA'
+  const glow = color === 'teal' ? 'rgba(59,130,246,0.15)' : 'rgba(96,165,250,0.15)'
   return (
     <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="14" y="28" width="36" height="28" rx="4" stroke={stroke} strokeWidth="2" fill={glow} />
@@ -82,8 +82,8 @@ function LockIcon({ color }: { color: 'teal' | 'lavender' }) {
 }
 
 function NetworkIcon({ color }: { color: 'teal' | 'lavender' }) {
-  const stroke = color === 'teal' ? '#00C9B1' : '#7B8CDE'
-  const glow = color === 'teal' ? 'rgba(0,201,177,0.2)' : 'rgba(123,140,222,0.2)'
+  const stroke = color === 'teal' ? '#3B82F6' : '#60A5FA'
+  const glow = color === 'teal' ? 'rgba(59,130,246,0.2)' : 'rgba(96,165,250,0.2)'
   return (
     <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="32" cy="32" r="6" stroke={stroke} strokeWidth="2" fill={glow} />
@@ -100,8 +100,8 @@ function NetworkIcon({ color }: { color: 'teal' | 'lavender' }) {
 }
 
 function AuditIcon({ color }: { color: 'teal' | 'lavender' }) {
-  const stroke = color === 'teal' ? '#00C9B1' : '#7B8CDE'
-  const glow = color === 'teal' ? 'rgba(0,201,177,0.15)' : 'rgba(123,140,222,0.15)'
+  const stroke = color === 'teal' ? '#3B82F6' : '#60A5FA'
+  const glow = color === 'teal' ? 'rgba(59,130,246,0.15)' : 'rgba(96,165,250,0.15)'
   return (
     <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="14" y="8" width="36" height="48" rx="4" stroke={stroke} strokeWidth="2" fill={glow} />
@@ -148,11 +148,11 @@ const badges: ComplianceBadge[] = [
 
 function AnimatedRing({ color, index }: { color: 'teal' | 'lavender'; index: number }) {
   const outerStroke =
-    color === 'teal' ? 'rgba(0,201,177,0.55)' : 'rgba(123,140,222,0.55)'
+    color === 'teal' ? 'rgba(59,130,246,0.55)' : 'rgba(96,165,250,0.55)'
   const innerStroke =
-    color === 'teal' ? 'rgba(0,201,177,0.22)' : 'rgba(123,140,222,0.22)'
+    color === 'teal' ? 'rgba(59,130,246,0.22)' : 'rgba(96,165,250,0.22)'
   const midStroke =
-    color === 'teal' ? 'rgba(0,201,177,0.14)' : 'rgba(123,140,222,0.14)'
+    color === 'teal' ? 'rgba(59,130,246,0.14)' : 'rgba(96,165,250,0.14)'
 
   // Use deterministic names based on index only — no random suffix
   const outerAnim = `compliance-spin-outer-${index}`
@@ -228,7 +228,7 @@ function AnimatedRing({ color, index }: { color: 'teal' | 'lavender'; index: num
         cx="70"
         cy="70"
         r="36"
-        stroke={color === 'teal' ? 'rgba(0,201,177,0.07)' : 'rgba(123,140,222,0.07)'}
+        stroke={color === 'teal' ? 'rgba(59,130,246,0.07)' : 'rgba(96,165,250,0.07)'}
         strokeWidth="1"
       />
     </svg>
@@ -286,13 +286,13 @@ function StatCounter({
       <span
         aria-live="polite"
         style={{
-          color: '#00C9B1',
+          color: '#3B82F6',
           fontSize: 'clamp(24px, 3vw, 32px)',
           fontWeight: 700,
           lineHeight: 1.1,
           fontVariantNumeric: 'tabular-nums',
           letterSpacing: '-0.02em',
-          textShadow: '0 0 24px rgba(0,201,177,0.35)',
+          textShadow: '0 0 24px rgba(59,130,246,0.35)',
         }}
       >
         {count}
@@ -390,12 +390,12 @@ export function Compliance() {
           0%, 100% {
             opacity: 1;
             transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(0,201,177,0.55);
+            box-shadow: 0 0 0 0 rgba(59,130,246,0.55);
           }
           50% {
             opacity: 0.75;
             transform: scale(0.88);
-            box-shadow: 0 0 0 7px rgba(0,201,177,0);
+            box-shadow: 0 0 0 7px rgba(59,130,246,0);
           }
         }
 
@@ -424,18 +424,18 @@ export function Compliance() {
         }
 
         .compliance-tile.teal:hover {
-          border-color: rgba(0,201,177,0.32);
+          border-color: rgba(59,130,246,0.32);
           box-shadow:
             0 20px 72px rgba(0,0,0,0.42),
-            0 0 0 1px rgba(0,201,177,0.18),
+            0 0 0 1px rgba(59,130,246,0.18),
             0 1px 0 rgba(255,255,255,0.08) inset;
         }
 
         .compliance-tile.lavender:hover {
-          border-color: rgba(123,140,222,0.32);
+          border-color: rgba(96,165,250,0.32);
           box-shadow:
             0 20px 72px rgba(0,0,0,0.42),
-            0 0 0 1px rgba(123,140,222,0.18),
+            0 0 0 1px rgba(96,165,250,0.18),
             0 1px 0 rgba(255,255,255,0.08) inset;
         }
 
@@ -475,8 +475,8 @@ export function Compliance() {
           background: linear-gradient(
             90deg,
             transparent 0%,
-            rgba(0,201,177,0.35) 30%,
-            rgba(123,140,222,0.35) 70%,
+            rgba(59,130,246,0.35) 30%,
+            rgba(96,165,250,0.35) 70%,
             transparent 100%
           );
         }
@@ -524,9 +524,9 @@ export function Compliance() {
             inset: 0,
             pointerEvents: 'none',
             background:
-              'radial-gradient(ellipse 75% 50% at 50% 15%, rgba(0,201,177,0.05) 0%, transparent 65%), ' +
-              'radial-gradient(ellipse 55% 45% at 85% 85%, rgba(123,140,222,0.045) 0%, transparent 60%), ' +
-              'radial-gradient(ellipse 40% 40% at 10% 70%, rgba(0,201,177,0.025) 0%, transparent 60%)',
+              'radial-gradient(ellipse 75% 50% at 50% 15%, rgba(59,130,246,0.05) 0%, transparent 65%), ' +
+              'radial-gradient(ellipse 55% 45% at 85% 85%, rgba(96,165,250,0.045) 0%, transparent 60%), ' +
+              'radial-gradient(ellipse 40% 40% at 10% 70%, rgba(59,130,246,0.025) 0%, transparent 60%)',
           }}
         />
 
@@ -554,7 +554,7 @@ export function Compliance() {
             fontSize: '280px',
             fontWeight: 900,
             letterSpacing: '-0.06em',
-            color: 'rgba(0,201,177,0.018)',
+            color: 'rgba(59,130,246,0.018)',
             lineHeight: 1,
             userSelect: 'none',
             pointerEvents: 'none',
@@ -590,7 +590,7 @@ export function Compliance() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                color: '#00C9B1',
+                color: '#3B82F6',
                 fontSize: '11px',
                 fontWeight: 600,
                 letterSpacing: '0.2em',
@@ -603,7 +603,7 @@ export function Compliance() {
                   fontSize: '14px',
                   fontWeight: 700,
                   lineHeight: 1,
-                  color: '#00C9B1',
+                  color: '#3B82F6',
                 }}
               >
                 ✚
@@ -625,7 +625,7 @@ export function Compliance() {
               Enterprise-Grade Security,{' '}
               <span
                 style={{
-                  background: 'linear-gradient(90deg, #00C9B1 0%, #7B8CDE 100%)',
+                  background: 'linear-gradient(90deg, #3B82F6 0%, #60A5FA 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -660,19 +660,19 @@ export function Compliance() {
             }}
           >
             {badges.map((badge, index) => {
-              const accentColor = badge.color === 'teal' ? '#00C9B1' : '#7B8CDE'
+              const accentColor = badge.color === 'teal' ? '#3B82F6' : '#60A5FA'
               const accentRgbaStrong =
                 badge.color === 'teal'
-                  ? 'rgba(0,201,177,0.65)'
-                  : 'rgba(123,140,222,0.65)'
+                  ? 'rgba(59,130,246,0.65)'
+                  : 'rgba(96,165,250,0.65)'
               const glowColor =
                 badge.color === 'teal'
-                  ? 'rgba(0,201,177,0.08)'
-                  : 'rgba(123,140,222,0.08)'
+                  ? 'rgba(59,130,246,0.08)'
+                  : 'rgba(96,165,250,0.08)'
               const iconGlow =
                 badge.color === 'teal'
-                  ? 'rgba(0,201,177,0.45)'
-                  : 'rgba(123,140,222,0.45)'
+                  ? 'rgba(59,130,246,0.45)'
+                  : 'rgba(96,165,250,0.45)'
 
               return (
                 <div
@@ -824,7 +824,7 @@ export function Compliance() {
                 inset: 0,
                 borderRadius: '20px',
                 background:
-                  'radial-gradient(ellipse 60% 70% at 50% 100%, rgba(0,201,177,0.04) 0%, transparent 70%)',
+                  'radial-gradient(ellipse 60% 70% at 50% 100%, rgba(59,130,246,0.04) 0%, transparent 70%)',
                 pointerEvents: 'none',
               }}
             />
@@ -886,10 +886,10 @@ export function Compliance() {
                   width: '8px',
                   height: '8px',
                   borderRadius: '50%',
-                  background: '#00C9B1',
+                  background: '#3B82F6',
                   flexShrink: 0,
                   animation: 'pulse-dot-compliance 2.4s ease-in-out infinite',
-                  boxShadow: '0 0 0 0 rgba(0,201,177,0.5)',
+                  boxShadow: '0 0 0 0 rgba(59,130,246,0.5)',
                 }}
               />
               <span>

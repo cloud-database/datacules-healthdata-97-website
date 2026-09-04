@@ -39,7 +39,7 @@ export function Navbar() {
           left: 0;
           width: 0%;
           height: 1.5px;
-          background: linear-gradient(90deg, #00C9B1 0%, #7B8CDE 100%);
+          background: linear-gradient(90deg, #3B82F6 0%, #60A5FA 100%);
           border-radius: 2px;
           transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -82,9 +82,9 @@ export function Navbar() {
 
         /* ── CTA button pulse on hover ── */
         @keyframes ctaPulse {
-          0%   { box-shadow: 0 2px 12px rgba(0,201,177,0.28), 0 0 0 0   rgba(0,201,177,0.38); }
-          65%  { box-shadow: 0 4px 22px rgba(0,201,177,0.42), 0 0 0 9px rgba(0,201,177,0);    }
-          100% { box-shadow: 0 4px 22px rgba(0,201,177,0.42), 0 0 0 0   rgba(0,201,177,0);    }
+          0%   { box-shadow: 0 2px 12px rgba(59,130,246,0.28), 0 0 0 0   rgba(59,130,246,0.38); }
+          65%  { box-shadow: 0 4px 22px rgba(59,130,246,0.42), 0 0 0 9px rgba(59,130,246,0);    }
+          100% { box-shadow: 0 4px 22px rgba(59,130,246,0.42), 0 0 0 0   rgba(59,130,246,0);    }
         }
         .cta-btn:hover {
           animation: ctaPulse 0.65s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -114,7 +114,7 @@ export function Navbar() {
         }
         .mobile-nav-link:hover {
           color: #ffffff;
-          background: rgba(0, 201, 177, 0.07);
+          background: rgba(59, 130, 246, 0.07);
         }
 
         /* ── Glassmorphism navbar background transitions ── */
@@ -154,10 +154,10 @@ export function Navbar() {
             aria-label="Datacules LLC — Home"
           >
             <Image
-              src="/images/brand/331x89.png"
+              src="/1207x302.png"
               alt={BRAND.name}
-              width={148}
-              height={40}
+              width={188}
+              height={47}
               priority
               className="logo-img"
               style={{
@@ -182,24 +182,24 @@ export function Navbar() {
               href={BRAND.auth.register}
               className="cta-btn flex items-center justify-center px-6 rounded-xl text-sm font-semibold select-none"
               style={{
-                background: 'linear-gradient(135deg, #00C9B1 0%, #00B09E 100%)',
+                background: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)',
                 color: '#0D2137',
                 height: '40px',
                 minWidth: '160px',
                 letterSpacing: '0.01em',
-                boxShadow: '0 2px 12px rgba(0,201,177,0.28)',
+                boxShadow: '0 2px 12px rgba(59,130,246,0.28)',
                 transition: 'transform 0.2s cubic-bezier(0.4,0,0.2,1), background 0.2s ease',
                 textDecoration: 'none',
               }}
               onMouseEnter={e => {
                 const el = e.currentTarget as HTMLElement;
                 el.style.transform = 'scale(1.03)';
-                el.style.background = 'linear-gradient(135deg, #00DBC3 0%, #00C9B1 100%)';
+                el.style.background = 'linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%)';
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLElement;
                 el.style.transform = 'scale(1)';
-                el.style.background = 'linear-gradient(135deg, #00C9B1 0%, #00B09E 100%)';
+                el.style.background = 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)';
               }}
             >
               {BRAND.messaging.cta}
@@ -308,13 +308,13 @@ export function Navbar() {
               href={BRAND.auth.register}
               className="rounded-xl text-center text-sm font-semibold"
               style={{
-                background: 'linear-gradient(135deg, #00C9B1 0%, #00B09E 100%)',
+                background: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)',
                 color: '#0D2137',
                 minHeight: '48px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 2px 16px rgba(0,201,177,0.30)',
+                boxShadow: '0 2px 16px rgba(59,130,246,0.30)',
                 transition: 'opacity 0.2s ease, transform 0.2s cubic-bezier(0.4,0,0.2,1)',
                 letterSpacing: '0.01em',
                 textDecoration: 'none',

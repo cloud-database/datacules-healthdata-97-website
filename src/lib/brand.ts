@@ -19,21 +19,21 @@ export const BRAND = {
       bgComplianceGradient:
         "linear-gradient(180deg, #112744 0%, #0D2137 100%)",
       // Accents
-      accentTeal: "#00C9B1",
-      accentLavender: "#7B8CDE",
+      accentTeal: "#3B82F6",
+      accentLavender: "#60A5FA",
       // Text
       textPrimary: "#FFFFFF",
       textSecondary: "#A8BFCC",
       // Surfaces
       surfaceCard: "rgba(255, 255, 255, 0.04)",
       surfaceBorder: "rgba(255, 255, 255, 0.09)",
-      surfaceBorderHover: "rgba(0, 201, 177, 0.3)",
+      surfaceBorderHover: "rgba(59, 130, 246, 0.3)",
       surfaceTrustBar: "rgba(255, 255, 255, 0.02)",
       // Glows
-      glowTeal: "rgba(0, 201, 177, 0.08)",
-      glowLavender: "rgba(123, 140, 222, 0.06)",
+      glowTeal: "rgba(59, 130, 246, 0.08)",
+      glowLavender: "rgba(96, 165, 250, 0.06)",
       glowCtaRadial:
-        "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,201,177,0.12) 0%, transparent 70%)",
+        "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(59,130,246,0.12) 0%, transparent 70%)",
     },
     typography: {
       fontPrimary: "Inter, 'Plus Jakarta Sans', sans-serif",
@@ -81,9 +81,9 @@ export const BRAND = {
         transition: "all 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
       },
       hover: {
-        borderColor: "rgba(0, 201, 177, 0.3)",
+        borderColor: "rgba(59, 130, 246, 0.3)",
         boxShadow:
-          "0 16px 64px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 201, 177, 0.15), 0 1px 0 rgba(255,255,255,0.08) inset",
+          "0 16px 64px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(59, 130, 246, 0.15), 0 1px 0 rgba(255,255,255,0.08) inset",
         transform: "translateY(-4px)",
       },
     },
@@ -111,8 +111,8 @@ export const BRAND = {
   // ─── Brand Colors (legacy alias kept for existing consumers) ────────────────
   colors: {
     primary: "#0D2137",
-    accent: "#00C9B1",
-    secondary: "#7B8CDE",
+    accent: "#3B82F6",
+    secondary: "#60A5FA",
   },
 
   // ─── Messaging ───────────────────────────────────────────────────────────────
@@ -144,19 +144,19 @@ export const BRAND = {
       headline: "Enterprise-Wide Data Unification",
       body: "Consolidate EHR, billing, telehealth, labs, prescriptions, and IoT streams into a single authoritative patient record across 23 integrated modules — accessible through 354+ REST API endpoints.",
       icon: "layers",
-      accentColor: "#00C9B1",
+      accentColor: "#3B82F6",
     },
     {
       headline: "AI That Surfaces What Matters",
       body: "Purpose-built predictive models deliver readmission risk scores, billing denial forecasts, and real-time vitals anomaly detection — with statistical fallback coverage for maximum reliability.",
       icon: "brain",
-      accentColor: "#7B8CDE",
+      accentColor: "#60A5FA",
     },
     {
       headline: "Compliance Engineered From the Ground Up",
       body: "HIPAA and GDPR controls, PHI encryption at rest and in transit, configurable audit log retention, and dedicated compliance infrastructure — built into the platform architecture, not bolted on.",
       icon: "shield-check",
-      accentColor: "#00C9B1",
+      accentColor: "#3B82F6",
     },
   ] as const,
 
@@ -168,7 +168,7 @@ export const BRAND = {
         "Aggregate clinical, financial, and operational data from EHR, labs, prescriptions, appointments, billing, and telehealth into a single longitudinal patient record — giving every care team member a complete, real-time view.",
       category: "core",
       icon: "database",
-      accentColor: "#00C9B1",
+      accentColor: "#3B82F6",
     },
     {
       name: "AI-Powered Predictive Analytics",
@@ -176,7 +176,7 @@ export const BRAND = {
         "Identify high-risk patients before adverse events occur. Our predictive engine covers readmission risk scoring, claim denial prediction, appointment no-show forecasting, vitals anomaly detection, and chronic condition progression modeling.",
       category: "ai",
       icon: "brain",
-      accentColor: "#7B8CDE",
+      accentColor: "#60A5FA",
     },
     {
       name: "HIPAA & GDPR Compliance Infrastructure",
@@ -184,7 +184,7 @@ export const BRAND = {
         "Comprehensive compliance by design — full PHI audit trails, encryption at rest and in transit, automated audit logging, data export workflows, privacy request tracking, and dedicated compliance reporting tables.",
       category: "compliance",
       icon: "lock",
-      accentColor: "#00C9B1",
+      accentColor: "#3B82F6",
     },
     {
       name: "Real-Time Vitals & IoT Monitoring",
@@ -192,7 +192,7 @@ export const BRAND = {
         "Connect bedside and wearable IoT devices to continuous vitals streams with configurable critical threshold alerting and automated anomaly detection — ensuring clinical teams respond before conditions escalate.",
       category: "clinical",
       icon: "activity",
-      accentColor: "#00C9B1",
+      accentColor: "#3B82F6",
     },
     {
       name: "Revenue Cycle Management",
@@ -200,7 +200,7 @@ export const BRAND = {
         "Accelerate collections and reduce denials with intelligent billing automation, real-time claims scrubbing, ICD code mapping assistance, automated claims submission, and AI-driven denial prediction.",
       category: "financial",
       icon: "circle-dollar-sign",
-      accentColor: "#7B8CDE",
+      accentColor: "#60A5FA",
     },
     {
       name: "HL7 FHIR Integration",
@@ -208,7 +208,7 @@ export const BRAND = {
         "Interoperate with any major EHR, lab system, or health network via REST, MQTT, and SFTP protocols — fully compliant with HL7 FHIR standards for seamless, secure data exchange across your entire healthcare ecosystem.",
       category: "integration",
       icon: "network",
-      accentColor: "#00C9B1",
+      accentColor: "#3B82F6",
     },
   ] as const,
 
@@ -218,14 +218,14 @@ export const BRAND = {
     headline: "The Unified Patient Repository",
     subheadline:
       "A single longitudinal record aggregating every clinical, financial, and operational data stream — accessible in real time across your entire care ecosystem.",
-    sectionAccentBorderColor: "#00C9B1",
+    sectionAccentBorderColor: "#3B82F6",
     dataSources: [
-      { label: "EHR Systems", icon: "file-heart", color: "#00C9B1" },
-      { label: "Lab Results", icon: "flask-conical", color: "#00C9B1" },
-      { label: "Billing & RCM", icon: "circle-dollar-sign", color: "#7B8CDE" },
-      { label: "Telehealth", icon: "video", color: "#00C9B1" },
-      { label: "IoT Devices", icon: "activity", color: "#7B8CDE" },
-      { label: "Pharmacy", icon: "pill", color: "#00C9B1" },
+      { label: "EHR Systems", icon: "file-heart", color: "#3B82F6" },
+      { label: "Lab Results", icon: "flask-conical", color: "#3B82F6" },
+      { label: "Billing & RCM", icon: "circle-dollar-sign", color: "#60A5FA" },
+      { label: "Telehealth", icon: "video", color: "#3B82F6" },
+      { label: "IoT Devices", icon: "activity", color: "#60A5FA" },
+      { label: "Pharmacy", icon: "pill", color: "#3B82F6" },
     ],
     moduleChips: [
       { label: "Patient Management", icon: "user-round" },
@@ -250,7 +250,7 @@ export const BRAND = {
           "Identify patients at elevated risk of 30-day readmission before discharge. XGBoost and Random Forest models analyze clinical history, diagnosis codes, social determinants, and prior utilization patterns to generate actionable risk stratification.",
         icon: "brain",
         accent: "teal" as const,
-        topBorderColor: "#00C9B1",
+        topBorderColor: "#3B82F6",
         visualType: "bar-chart" as const,
         staggerIndex: 0,
       },
@@ -260,7 +260,7 @@ export const BRAND = {
           "Prevent revenue leakage at the source. Predictive models analyze claim attributes, payer rules, and coding patterns to flag high-probability denials before submission — giving your billing team time to correct and resubmit.",
         icon: "shield-check",
         accent: "lavender" as const,
-        topBorderColor: "#7B8CDE",
+        topBorderColor: "#60A5FA",
         visualType: "donut-chart" as const,
         staggerIndex: 1,
       },
@@ -270,7 +270,7 @@ export const BRAND = {
           "Continuous Isolation Forest modeling monitors patient vitals streams in real time, surfacing subtle deterioration patterns that traditional threshold alerts miss — enabling earlier, more precise clinical intervention.",
         icon: "activity",
         accent: "teal" as const,
-        topBorderColor: "#00C9B1",
+        topBorderColor: "#3B82F6",
         visualType: "sparkline" as const,
         staggerIndex: 2,
       },
@@ -286,9 +286,9 @@ export const BRAND = {
     backgroundWatermark: "23",
     watermarkStyle: {
       fontSize: "400px",
-      color: "rgba(0, 201, 177, 0.03)",
+      color: "rgba(59, 130, 246, 0.03)",
     },
-    iconColor: "#00C9B1",
+    iconColor: "#3B82F6",
     iconSize: "48px",
     cardMinWidth: "200px",
     cardMinHeight: "180px",
@@ -398,7 +398,7 @@ export const BRAND = {
         description:
           "Full PHI protection with encryption at rest and in transit, minimum necessary access controls, and complete audit trail infrastructure.",
         icon: "shield",
-        accentColor: "#00C9B1",
+        accentColor: "#3B82F6",
         gridPosition: { row: 1, col: 1 },
       },
       {
@@ -406,7 +406,7 @@ export const BRAND = {
         description:
           "Privacy by design with data subject rights workflows, consent management, automated data export, and configurable retention policies.",
         icon: "lock",
-        accentColor: "#00C9B1",
+        accentColor: "#3B82F6",
         gridPosition: { row: 1, col: 2 },
       },
       {
@@ -414,7 +414,7 @@ export const BRAND = {
         description:
           "Native HL7 FHIR R4 support for standardized clinical data exchange, ensuring seamless interoperability across your entire care ecosystem.",
         icon: "network",
-        accentColor: "#7B8CDE",
+        accentColor: "#60A5FA",
         gridPosition: { row: 2, col: 1 },
       },
       {
@@ -422,7 +422,7 @@ export const BRAND = {
         description:
           "Independent third-party attestation of our security, availability, and confidentiality controls — giving enterprise procurement teams the assurance they require.",
         icon: "badge-check",
-        accentColor: "#7B8CDE",
+        accentColor: "#60A5FA",
         gridPosition: { row: 2, col: 2 },
       },
     ],
@@ -439,11 +439,11 @@ export const BRAND = {
       surface: "#0A1628",
       terminalDots: ["#FF5F57", "#FFBD2E", "#28CA41"],
       syntaxColors: {
-        string: "#00C9B1",
-        keyword: "#7B8CDE",
+        string: "#3B82F6",
+        keyword: "#60A5FA",
         comment: "#4A6080",
         property: "#A8BFCC",
-        number: "#00C9B1",
+        number: "#3B82F6",
         punctuation: "#FFFFFF",
       },
     },
@@ -480,11 +480,11 @@ export const BRAND = {
     secondary: "Schedule a Technical Review",
     complianceLine: "SOC 2 Type II  ·  HIPAA  ·  GDPR  ·  HL7 FHIR Compliant",
     backgroundStyle:
-      "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,201,177,0.12) 0%, transparent 70%)",
+      "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(59,130,246,0.12) 0%, transparent 70%)",
     primaryButtonStyle: {
       height: "64px",
       minWidth: "280px",
-      background: "#00C9B1",
+      background: "#3B82F6",
       color: "#0D2137",
       borderRadius: "12px",
       fontWeight: "700",
@@ -574,7 +574,7 @@ export const BRAND = {
     background: "#061422",
     topBorder: "1px solid rgba(255,255,255,0.06)",
     ecgWaveformOpacity: "0.05",
-    pulsingDotColor: "#00C9B1",
+    pulsingDotColor: "#3B82F6",
     product: [
       { label: "Platform Overview", href: "/platform" },
       { label: "AI Insights Engine", href: "/ai-insights" },
@@ -606,7 +606,7 @@ export const BRAND = {
     ecgWaveform: {
       heroOpacity: 0.15,
       footerOpacity: 0.05,
-      color: "#00C9B1",
+      color: "#3B82F6",
       animationName: "ecg-draw",
       animationDuration: "4s",
     },
@@ -616,12 +616,12 @@ export const BRAND = {
     },
     ambientOrbs: {
       teal: {
-        color: "rgba(0, 201, 177, 0.08)",
+        color: "rgba(59, 130, 246, 0.08)",
         position: "bottom-left",
         size: "600px",
       },
       lavender: {
-        color: "rgba(123, 140, 222, 0.06)",
+        color: "rgba(96, 165, 250, 0.06)",
         position: "top-right",
         size: "500px",
       },
@@ -629,24 +629,24 @@ export const BRAND = {
     crossMicro: {
       symbol: "+",
       size: "16px",
-      color: "#00C9B1",
+      color: "#3B82F6",
       usage: "Section header eyebrow decoration",
     },
     pulseRings: {
       usage: ["compliance-badge-icons", "demo-cta-button"],
-      color: "#00C9B1",
+      color: "#3B82F6",
       animation: "pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
     },
     dataFlowDiagram: {
       nodes: [
-        { id: "ehr", label: "EHR", color: "#00C9B1" },
-        { id: "labs", label: "Labs", color: "#00C9B1" },
-        { id: "billing", label: "Billing", color: "#7B8CDE" },
-        { id: "telehealth", label: "Telehealth", color: "#00C9B1" },
-        { id: "iot", label: "IoT", color: "#7B8CDE" },
+        { id: "ehr", label: "EHR", color: "#3B82F6" },
+        { id: "labs", label: "Labs", color: "#3B82F6" },
+        { id: "billing", label: "Billing", color: "#60A5FA" },
+        { id: "telehealth", label: "Telehealth", color: "#3B82F6" },
+        { id: "iot", label: "IoT", color: "#60A5FA" },
       ],
       hubLabel: "Unified Patient Record",
-      lineColor: "#00C9B1",
+      lineColor: "#3B82F6",
       lineAnimationName: "stroke-dashoffset",
     },
   },

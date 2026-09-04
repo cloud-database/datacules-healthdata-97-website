@@ -6,8 +6,8 @@ module.exports = {
       colors: {
         brand: {
           primary: '#1A3A5C',
-          accent: '#00C2A8',
-          secondary: '#0D7E8A',
+          accent: '#3B82F6',
+          secondary: '#1D4ED8',
         },
       },
       fontFamily: {

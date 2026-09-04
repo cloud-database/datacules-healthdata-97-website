@@ -42,13 +42,13 @@ const API_CAPABILITIES = [
 function getSyntaxColor(valueType: string): string {
   switch (valueType) {
     case 'string':
-      return '#00C9B1'
+      return '#3B82F6'
     case 'number':
       return '#F0A500'
     case 'boolean':
-      return '#7B8CDE'
+      return '#60A5FA'
     case 'array':
-      return '#00C9B1'
+      return '#3B82F6'
     case 'brace':
       return 'rgba(255,255,255,0.7)'
     default:
@@ -97,7 +97,7 @@ export function ApiSection() {
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'radial-gradient(rgba(0,201,177,0.18) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(rgba(59,130,246,0.18) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
           opacity: 0.03,
           pointerEvents: 'none',
@@ -115,7 +115,7 @@ export function ApiSection() {
           width: '700px',
           height: '320px',
           background:
-            'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(0,201,177,0.07) 0%, transparent 70%)',
+            'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(59,130,246,0.07) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -130,7 +130,7 @@ export function ApiSection() {
           width: '400px',
           height: '400px',
           background:
-            'radial-gradient(ellipse 60% 60% at 100% 0%, rgba(123,140,222,0.06) 0%, transparent 70%)',
+            'radial-gradient(ellipse 60% 60% at 100% 0%, rgba(96,165,250,0.06) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -160,7 +160,7 @@ export function ApiSection() {
           >
             <span
               style={{
-                color: '#00C9B1',
+                color: '#3B82F6',
                 fontSize: '13px',
                 lineHeight: 1,
               }}
@@ -169,7 +169,7 @@ export function ApiSection() {
             </span>
             <span
               style={{
-                color: '#00C9B1',
+                color: '#3B82F6',
                 fontSize: '11px',
                 fontWeight: 600,
                 letterSpacing: '0.2em',
@@ -196,7 +196,7 @@ export function ApiSection() {
             Built for{' '}
             <span
               style={{
-                background: 'linear-gradient(135deg, #00C9B1 0%, #7B8CDE 100%)',
+                background: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -251,9 +251,9 @@ export function ApiSection() {
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLDivElement
-                el.style.borderColor = 'rgba(0,201,177,0.3)'
+                el.style.borderColor = 'rgba(59,130,246,0.3)'
                 el.style.boxShadow =
-                  '0 16px 64px rgba(0,0,0,0.48), 0 0 0 1px rgba(0,201,177,0.15), 0 1px 0 rgba(255,255,255,0.08) inset'
+                  '0 16px 64px rgba(0,0,0,0.48), 0 0 0 1px rgba(59,130,246,0.15), 0 1px 0 rgba(255,255,255,0.08) inset'
                 el.style.transform = 'translateY(-4px)'
               }}
               onMouseLeave={(e) => {
@@ -337,7 +337,7 @@ export function ApiSection() {
                       width: '6px',
                       height: '6px',
                       borderRadius: '50%',
-                      background: '#00C9B1',
+                      background: '#3B82F6',
                       animation: 'api-pulse 2s ease-in-out infinite',
                     }}
                   />
@@ -347,7 +347,7 @@ export function ApiSection() {
                         'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
                       fontSize: '11px',
                       fontWeight: 700,
-                      color: '#00C9B1',
+                      color: '#3B82F6',
                     }}
                   >
                     200 OK
@@ -394,7 +394,7 @@ export function ApiSection() {
                     return (
                       <div key={idx}>
                         {/* Key */}
-                        <span style={{ color: '#7B8CDE' }}>{line.content}</span>
+                        <span style={{ color: '#60A5FA' }}>{line.content}</span>
                         {/* Colon */}
                         <span style={{ color: 'rgba(255,255,255,0.4)' }}>{line.suffix}</span>
                         {/* Value */}
@@ -472,9 +472,9 @@ export function ApiSection() {
                     fontSize: '11px',
                     fontFamily:
                       'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
-                    background: 'rgba(0,201,177,0.08)',
-                    border: '1px solid rgba(0,201,177,0.22)',
-                    color: '#00C9B1',
+                    background: 'rgba(59,130,246,0.08)',
+                    border: '1px solid rgba(59,130,246,0.22)',
+                    color: '#3B82F6',
                   }}
                 >
                   {endpoint}
@@ -518,7 +518,7 @@ export function ApiSection() {
                       fontWeight: 700,
                       lineHeight: 1,
                       marginBottom: '4px',
-                      background: 'linear-gradient(135deg, #00C9B1 0%, #7B8CDE 100%)',
+                      background: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                       backgroundClip: 'text',
@@ -565,8 +565,8 @@ export function ApiSection() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       marginTop: '2px',
-                      background: 'rgba(0,201,177,0.15)',
-                      border: '1px solid rgba(0,201,177,0.32)',
+                      background: 'rgba(59,130,246,0.15)',
+                      border: '1px solid rgba(59,130,246,0.32)',
                     }}
                   >
                     <svg
@@ -578,7 +578,7 @@ export function ApiSection() {
                     >
                       <path
                         d="M1 4L3.5 6.5L9 1"
-                        stroke="#00C9B1"
+                        stroke="#3B82F6"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -624,9 +624,9 @@ export function ApiSection() {
                     borderRadius: '8px',
                     fontSize: '12px',
                     fontWeight: 600,
-                    background: 'rgba(123,140,222,0.1)',
-                    border: '1px solid rgba(123,140,222,0.26)',
-                    color: '#7B8CDE',
+                    background: 'rgba(96,165,250,0.1)',
+                    border: '1px solid rgba(96,165,250,0.26)',
+                    color: '#60A5FA',
                     fontFamily: 'Inter, Plus Jakarta Sans, sans-serif',
                   }}
                 >
@@ -659,24 +659,24 @@ export function ApiSection() {
                   fontSize: '15px',
                   fontWeight: 600,
                   fontFamily: 'Inter, Plus Jakarta Sans, sans-serif',
-                  border: '1px solid rgba(0,201,177,0.42)',
-                  color: '#00C9B1',
-                  background: 'rgba(0,201,177,0.06)',
+                  border: '1px solid rgba(59,130,246,0.42)',
+                  color: '#3B82F6',
+                  background: 'rgba(59,130,246,0.06)',
                   textDecoration: 'none',
                   transition: 'all 0.22s cubic-bezier(0.4,0,0.2,1)',
                   whiteSpace: 'nowrap',
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement
-                  el.style.background = 'rgba(0,201,177,0.13)'
-                  el.style.borderColor = 'rgba(0,201,177,0.65)'
-                  el.style.boxShadow = '0 0 24px rgba(0,201,177,0.18)'
+                  el.style.background = 'rgba(59,130,246,0.13)'
+                  el.style.borderColor = 'rgba(59,130,246,0.65)'
+                  el.style.boxShadow = '0 0 24px rgba(59,130,246,0.18)'
                   el.style.transform = 'scale(1.03)'
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement
-                  el.style.background = 'rgba(0,201,177,0.06)'
-                  el.style.borderColor = 'rgba(0,201,177,0.42)'
+                  el.style.background = 'rgba(59,130,246,0.06)'
+                  el.style.borderColor = 'rgba(59,130,246,0.42)'
                   el.style.boxShadow = 'none'
                   el.style.transform = 'scale(1)'
                 }}
@@ -692,14 +692,14 @@ export function ApiSection() {
                 >
                   <path
                     d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                    stroke="#00C9B1"
+                    stroke="#3B82F6"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <polyline
                     points="14,2 14,8 20,8"
-                    stroke="#00C9B1"
+                    stroke="#3B82F6"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -709,7 +709,7 @@ export function ApiSection() {
                     y1="13"
                     x2="8"
                     y2="13"
-                    stroke="#00C9B1"
+                    stroke="#3B82F6"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                   />
@@ -718,7 +718,7 @@ export function ApiSection() {
                     y1="17"
                     x2="8"
                     y2="17"
-                    stroke="#00C9B1"
+                    stroke="#3B82F6"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                   />
@@ -736,7 +736,7 @@ export function ApiSection() {
                 >
                   <path
                     d="M5 12h14M12 5l7 7-7 7"
-                    stroke="#00C9B1"
+                    stroke="#3B82F6"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"

@@ -8,12 +8,12 @@ const valuePropositionDetails = [
   {
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
-        <rect x="4" y="8" width="40" height="32" rx="4" stroke="#00C9B1" strokeWidth="2.5" strokeLinejoin="round"/>
-        <path d="M14 24h4l4-8 4 16 4-12 4 8h4" stroke="#00C9B1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="24" cy="24" r="2" fill="#00C9B1"/>
+        <rect x="4" y="8" width="40" height="32" rx="4" stroke="#3B82F6" strokeWidth="2.5" strokeLinejoin="round"/>
+        <path d="M14 24h4l4-8 4 16 4-12 4 8h4" stroke="#3B82F6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="24" cy="24" r="2" fill="#3B82F6"/>
       </svg>
     ),
-    accentColor: '#00C9B1',
+    accentColor: '#3B82F6',
     accentRgb: '0,201,177',
     title: String(BRAND.valuePropositions[0]),
     description:
@@ -23,13 +23,13 @@ const valuePropositionDetails = [
   {
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
-        <circle cx="24" cy="24" r="18" stroke="#7B8CDE" strokeWidth="2.5"/>
-        <path d="M16 24l5 5 11-10" stroke="#7B8CDE" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M24 6v4M24 38v4M6 24h4M38 24h4" stroke="#7B8CDE" strokeWidth="2" strokeLinecap="round"/>
-        <circle cx="24" cy="24" r="4" fill="#7B8CDE" fillOpacity="0.15"/>
+        <circle cx="24" cy="24" r="18" stroke="#60A5FA" strokeWidth="2.5"/>
+        <path d="M16 24l5 5 11-10" stroke="#60A5FA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M24 6v4M24 38v4M6 24h4M38 24h4" stroke="#60A5FA" strokeWidth="2" strokeLinecap="round"/>
+        <circle cx="24" cy="24" r="4" fill="#60A5FA" fillOpacity="0.15"/>
       </svg>
     ),
-    accentColor: '#7B8CDE',
+    accentColor: '#60A5FA',
     accentRgb: '123,140,222',
     title: String(BRAND.valuePropositions[1]),
     description:
@@ -39,11 +39,11 @@ const valuePropositionDetails = [
   {
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
-        <path d="M24 4L8 12v12c0 9.94 6.84 19.24 16 22 9.16-2.76 16-12.06 16-22V12L24 4z" stroke="#00C9B1" strokeWidth="2.5" strokeLinejoin="round"/>
-        <path d="M17 24l4 4 10-10" stroke="#00C9B1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M24 4L8 12v12c0 9.94 6.84 19.24 16 22 9.16-2.76 16-12.06 16-22V12L24 4z" stroke="#3B82F6" strokeWidth="2.5" strokeLinejoin="round"/>
+        <path d="M17 24l4 4 10-10" stroke="#3B82F6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
-    accentColor: '#00C9B1',
+    accentColor: '#3B82F6',
     accentRgb: '0,201,177',
     title: String(BRAND.valuePropositions[2]),
     description:
@@ -59,7 +59,7 @@ const stats = [
     sublabel: 'through unified patient data visibility',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#00C9B1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -69,9 +69,9 @@ const stats = [
     sublabel: 'with AI-driven claims scrubbing and ICD mapping',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5">
-        <rect x="2" y="3" width="20" height="14" rx="2" stroke="#00C9B1" strokeWidth="2"/>
-        <path d="M8 21h8M12 17v4" stroke="#00C9B1" strokeWidth="2" strokeLinecap="round"/>
-        <path d="M7 10l3 3 5-5" stroke="#00C9B1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <rect x="2" y="3" width="20" height="14" rx="2" stroke="#3B82F6" strokeWidth="2"/>
+        <path d="M8 21h8M12 17v4" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M7 10l3 3 5-5" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -81,8 +81,8 @@ const stats = [
     sublabel: 'via real-time IoT vitals monitoring and alerting',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5">
-        <circle cx="12" cy="12" r="10" stroke="#00C9B1" strokeWidth="2"/>
-        <path d="M12 6v6l4 2" stroke="#00C9B1" strokeWidth="2" strokeLinecap="round"/>
+        <circle cx="12" cy="12" r="10" stroke="#3B82F6" strokeWidth="2"/>
+        <path d="M12 6v6l4 2" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round"/>
       </svg>
     ),
   },
@@ -92,8 +92,8 @@ const stats = [
     sublabel: 'with automated HIPAA/GDPR audit trail generation',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5">
-        <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z" stroke="#00C9B1" strokeWidth="2" strokeLinejoin="round"/>
-        <path d="M9 12l2 2 4-4" stroke="#00C9B1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z" stroke="#3B82F6" strokeWidth="2" strokeLinejoin="round"/>
+        <path d="M9 12l2 2 4-4" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -189,16 +189,16 @@ export function ValueProps() {
           transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glass-card:hover {
-          border-color: rgba(0, 201, 177, 0.3);
+          border-color: rgba(59, 130, 246, 0.3);
           box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4),
-                      0 0 0 1px rgba(0, 201, 177, 0.15),
+                      0 0 0 1px rgba(59, 130, 246, 0.15),
                       0 1px 0 rgba(255, 255, 255, 0.08) inset;
           transform: translateY(-4px);
         }
         .glass-card-lavender:hover {
-          border-color: rgba(123, 140, 222, 0.3) !important;
+          border-color: rgba(96, 165, 250, 0.3) !important;
           box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4),
-                      0 0 0 1px rgba(123, 140, 222, 0.15),
+                      0 0 0 1px rgba(96, 165, 250, 0.15),
                       0 1px 0 rgba(255, 255, 255, 0.08) inset !important;
           transform: translateY(-4px);
         }
@@ -215,9 +215,9 @@ export function ValueProps() {
           transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glass-stat-card:hover {
-          border-color: rgba(0, 201, 177, 0.25);
+          border-color: rgba(59, 130, 246, 0.25);
           box-shadow: 0 16px 64px rgba(0, 0, 0, 0.35),
-                      0 0 0 1px rgba(0, 201, 177, 0.12),
+                      0 0 0 1px rgba(59, 130, 246, 0.12),
                       0 1px 0 rgba(255, 255, 255, 0.08) inset;
           transform: translateY(-3px);
         }
@@ -230,8 +230,8 @@ export function ValueProps() {
           transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .integration-chip:hover {
-          border-color: rgba(0, 201, 177, 0.3);
-          background: rgba(0, 201, 177, 0.05);
+          border-color: rgba(59, 130, 246, 0.3);
+          background: rgba(59, 130, 246, 0.05);
           transform: translateY(-2px);
         }
 
@@ -268,8 +268,8 @@ export function ValueProps() {
           transition: border-color 0.25s ease, background 0.25s ease;
         }
         .trust-badge:hover {
-          border-color: rgba(0, 201, 177, 0.35);
-          background: rgba(0, 201, 177, 0.06);
+          border-color: rgba(59, 130, 246, 0.35);
+          background: rgba(59, 130, 246, 0.06);
         }
 
         /*
@@ -287,7 +287,7 @@ export function ValueProps() {
 
         /* ── Primary CTA button ── */
         .vp-cta-btn {
-          background: #00C9B1;
+          background: #3B82F6;
           color: #0D2137;
           height: 56px;
           padding: 0 32px;
@@ -298,18 +298,18 @@ export function ValueProps() {
           align-items: center;
           gap: 8px;
           transition: all 0.2s ease;
-          box-shadow: 0 4px 24px rgba(0, 201, 177, 0.25);
+          box-shadow: 0 4px 24px rgba(59, 130, 246, 0.25);
           text-decoration: none;
         }
         .vp-cta-btn:hover {
           transform: scale(1.03);
-          box-shadow: 0 8px 32px rgba(0, 201, 177, 0.4);
+          box-shadow: 0 8px 32px rgba(59, 130, 246, 0.4);
           background: #00dcc4;
         }
 
         /* ── Teal gradient text ── */
         .teal-gradient-text {
-          background: linear-gradient(135deg, #00C9B1, #7B8CDE);
+          background: linear-gradient(135deg, #3B82F6, #60A5FA);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -328,7 +328,7 @@ export function ValueProps() {
           transform: translateY(-50%);
           width: 4px;
           height: 48px;
-          background: #00C9B1;
+          background: #3B82F6;
           border-radius: 2px;
         }
 
@@ -347,9 +347,9 @@ export function ValueProps() {
           height: 1px;
           background: linear-gradient(
             to right,
-            rgba(0, 201, 177, 0.0),
-            rgba(0, 201, 177, 0.25),
-            rgba(0, 201, 177, 0.0)
+            rgba(59, 130, 246, 0.0),
+            rgba(59, 130, 246, 0.25),
+            rgba(59, 130, 246, 0.0)
           );
         }
         .white-section-line {
@@ -366,7 +366,7 @@ export function ValueProps() {
           background: linear-gradient(
             to right,
             transparent,
-            rgba(0, 201, 177, 0.12),
+            rgba(59, 130, 246, 0.12),
             transparent
           );
         }
@@ -375,7 +375,7 @@ export function ValueProps() {
           background: linear-gradient(
             to right,
             transparent,
-            rgba(0, 201, 177, 0.15),
+            rgba(59, 130, 246, 0.15),
             transparent
           );
         }
@@ -399,7 +399,7 @@ export function ValueProps() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(rgba(0,201,177,0.06) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(rgba(59,130,246,0.06) 1px, transparent 1px)`,
           backgroundSize: '32px 32px',
           opacity: 0.6,
         }}
@@ -409,14 +409,14 @@ export function ValueProps() {
       <div
         className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(123,140,222,0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(96,165,250,0.08) 0%, transparent 70%)',
           transform: 'translate(30%, -20%)',
         }}
       />
       <div
         className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(0,201,177,0.07) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 70%)',
           transform: 'translate(-30%, 30%)',
         }}
       />
@@ -425,7 +425,7 @@ export function ValueProps() {
       <div
         className="absolute top-0 left-0 right-0 h-[1px] pointer-events-none"
         style={{
-          background: 'linear-gradient(to right, transparent, rgba(0,201,177,0.2), transparent)',
+          background: 'linear-gradient(to right, transparent, rgba(59,130,246,0.2), transparent)',
         }}
       />
 
@@ -440,7 +440,7 @@ export function ValueProps() {
               viewBox="0 0 16 16"
               fill="none"
               className="w-4 h-4 flex-shrink-0"
-              style={{ color: '#00C9B1' }}
+              style={{ color: '#3B82F6' }}
             >
               <path
                 d="M8 2v12M2 8h12"
@@ -451,7 +451,7 @@ export function ValueProps() {
             </svg>
             <span
               className="text-[11px] font-semibold tracking-[0.2em] uppercase"
-              style={{ color: '#00C9B1' }}
+              style={{ color: '#3B82F6' }}
             >
               Why Datacules HealthData 97
             </span>
@@ -499,7 +499,7 @@ export function ValueProps() {
               viewBox="0 0 16 16"
               fill="none"
               className="w-3.5 h-3.5 flex-shrink-0"
-              style={{ color: '#00C9B1' }}
+              style={{ color: '#3B82F6' }}
             >
               <path
                 d="M8 2v12M2 8h12"
@@ -602,7 +602,7 @@ export function ValueProps() {
                 viewBox="0 0 16 16"
                 fill="none"
                 className="w-3.5 h-3.5 flex-shrink-0"
-                style={{ color: '#00C9B1' }}
+                style={{ color: '#3B82F6' }}
               >
                 <path
                   d="M8 2v12M2 8h12"
@@ -645,8 +645,8 @@ export function ValueProps() {
                     p-3
                     flex items-center justify-center
                     transition-colors duration-200
-                    hover:border-[rgba(0,201,177,0.35)]
-                    hover:bg-[rgba(0,201,177,0.06)]
+                    hover:border-[rgba(59,130,246,0.35)]
+                    hover:bg-[rgba(59,130,246,0.06)]
                   "
                 >
                   {badge.img ? (
@@ -667,7 +667,7 @@ export function ValueProps() {
                     /* Text fallback — rendered in Electric Teal for visual cohesion */
                     <span
                       className="text-[10px] font-bold tracking-[0.06em] uppercase leading-none text-center"
-                      style={{ color: '#00C9B1' }}
+                      style={{ color: '#3B82F6' }}
                     >
                       {badge.abbr}
                     </span>
@@ -698,7 +698,7 @@ export function ValueProps() {
                 viewBox="0 0 16 16"
                 fill="none"
                 className="w-3.5 h-3.5 flex-shrink-0"
-                style={{ color: '#00C9B1' }}
+                style={{ color: '#3B82F6' }}
               >
                 <path
                   d="M8 2v12M2 8h12"
@@ -726,8 +726,8 @@ export function ValueProps() {
                   <span
                     className="text-[11px] font-bold px-2 py-1 rounded-md"
                     style={{
-                      background: 'rgba(0,201,177,0.12)',
-                      color: '#00C9B1',
+                      background: 'rgba(59,130,246,0.12)',
+                      color: '#3B82F6',
                       letterSpacing: '0.05em',
                     }}
                   >
@@ -762,7 +762,7 @@ export function ValueProps() {
               viewBox="0 0 16 16"
               fill="none"
               className="w-3.5 h-3.5 flex-shrink-0"
-              style={{ color: '#00C9B1' }}
+              style={{ color: '#3B82F6' }}
             >
               <path
                 d="M8 2v12M2 8h12"
@@ -791,8 +791,8 @@ export function ValueProps() {
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center"
                   style={{
-                    background: 'rgba(0,201,177,0.1)',
-                    border: '1px solid rgba(0,201,177,0.2)',
+                    background: 'rgba(59,130,246,0.1)',
+                    border: '1px solid rgba(59,130,246,0.2)',
                   }}
                 >
                   {stat.icon}
@@ -801,7 +801,7 @@ export function ValueProps() {
                 {/* Stat value — Electric Teal, bold */}
                 <div
                   className="text-[40px] font-extrabold tracking-[-0.03em] leading-none"
-                  style={{ color: '#00C9B1' }}
+                  style={{ color: '#3B82F6' }}
                 >
                   {stat.value}
                 </div>
@@ -838,7 +838,7 @@ export function ValueProps() {
               width: '600px',
               height: '300px',
               background:
-                'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,201,177,0.07) 0%, transparent 70%)',
+                'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(59,130,246,0.07) 0%, transparent 70%)',
             }}
           />
         </div>

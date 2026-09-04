@@ -190,8 +190,8 @@ export default function BlogPage() {
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1A3A5C]/40 border border-[#1A3A5C]/60 text-xs font-medium text-[#00C2A8] mb-5 tracking-wider uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00C2A8] animate-pulse-slow" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1A3A5C]/40 border border-[#1A3A5C]/60 text-xs font-medium text-[#3B82F6] mb-5 tracking-wider uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse-slow" />
             Healthcare Data Insights Blog
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
@@ -219,21 +219,21 @@ export default function BlogPage() {
           <div
             className="absolute inset-0 opacity-5"
             style={{
-              backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,194,168,0.4) 39px, rgba(0,194,168,0.4) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,194,168,0.4) 39px, rgba(0,194,168,0.4) 40px)`,
+              backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(59,130,246,0.4) 39px, rgba(59,130,246,0.4) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(59,130,246,0.4) 39px, rgba(59,130,246,0.4) 40px)`,
             }}
           />
           <div className="relative grid lg:grid-cols-2 gap-0">
             {/* Left: content */}
             <div className="p-8 lg:p-12 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-4">
-                <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#00C2A8]/15 text-[#00C2A8] border border-[#00C2A8]/25 uppercase tracking-wider">
+                <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#3B82F6]/15 text-[#3B82F6] border border-[#3B82F6]/25 uppercase tracking-wider">
                   Featured
                 </span>
                 <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-900/60 text-blue-200 border border-blue-700/40">
                   Clinical Analytics
                 </span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white leading-snug mb-4 group-hover:text-[#00C2A8] transition-colors">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white leading-snug mb-4 group-hover:text-[#3B82F6] transition-colors">
                 Unifying EHR, Claims, Labs & IoT Data: The Architecture Powering Modern Health Systems
               </h2>
               <p className="text-white/55 text-base leading-relaxed mb-6">
@@ -246,7 +246,7 @@ export default function BlogPage() {
               </div>
               <Link
                 href="#"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#00C2A8]/10 border border-[#00C2A8]/30 text-[#00C2A8] text-sm font-medium hover:bg-[#00C2A8]/20 transition-colors w-fit"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#3B82F6]/10 border border-[#3B82F6]/30 text-[#3B82F6] text-sm font-medium hover:bg-[#3B82F6]/20 transition-colors w-fit"
               >
                 Read Article
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -262,7 +262,7 @@ export default function BlogPage() {
                 <div className="rounded-xl bg-[#0A1E35]/80 border border-white/10 p-6 backdrop-blur-sm">
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs text-white/40 uppercase tracking-wider">Readmission Risk Score</span>
-                    <span className="text-xs text-[#00C2A8]">Live</span>
+                    <span className="text-xs text-[#3B82F6]">Live</span>
                   </div>
                   <div className="flex items-end gap-1 h-20 mb-4">
                     {[40, 55, 35, 70, 50, 85, 60, 45, 78, 55, 90, 65].map((h, i) => (
@@ -275,7 +275,7 @@ export default function BlogPage() {
                             ? 'rgba(239,68,68,0.7)'
                             : h > 55
                             ? 'rgba(251,191,36,0.6)'
-                            : 'rgba(0,194,168,0.5)',
+                            : 'rgba(59,130,246,0.5)',
                         }}
                       />
                     ))}
@@ -284,7 +284,7 @@ export default function BlogPage() {
                     {[
                       { label: 'High Risk', val: '127', color: 'text-red-400' },
                       { label: 'Med Risk', val: '843', color: 'text-amber-400' },
-                      { label: 'Low Risk', val: '3.2K', color: 'text-[#00C2A8]' },
+                      { label: 'Low Risk', val: '3.2K', color: 'text-[#3B82F6]' },
                     ].map(s => (
                       <div key={s.label} className="text-center">
                         <div className={`text-lg font-bold ${s.color}`}>{s.val}</div>
@@ -294,7 +294,7 @@ export default function BlogPage() {
                   </div>
                 </div>
                 {/* Floating badge */}
-                <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-lg bg-[#00C2A8]/15 border border-[#00C2A8]/30 text-xs text-[#00C2A8] font-medium whitespace-nowrap">
+                <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-lg bg-[#3B82F6]/15 border border-[#3B82F6]/30 text-xs text-[#3B82F6] font-medium whitespace-nowrap">
                   AI Risk Stratification
                 </div>
               </div>
@@ -312,7 +312,7 @@ export default function BlogPage() {
               onClick={() => setActiveCategory(cat.id)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeCategory === cat.id
-                  ? 'bg-[#00C2A8] text-[#070E1A]'
+                  ? 'bg-[#3B82F6] text-[#070E1A]'
                   : 'bg-white/5 text-white/50 hover:bg-white/10 hover:text-white/80 border border-white/8'
               }`}
             >
@@ -333,14 +333,14 @@ export default function BlogPage() {
                 <Link
                   key={article.id}
                   href="#"
-                  className="group block rounded-xl bg-[#0A1628]/60 border border-white/7 p-5 hover:border-[#00C2A8]/30 hover:bg-[#0A1628]/80 transition-all"
+                  className="group block rounded-xl bg-[#0A1628]/60 border border-white/7 p-5 hover:border-[#3B82F6]/30 hover:bg-[#0A1628]/80 transition-all"
                 >
                   <div className="flex items-center gap-2 mb-3">
                     <span className={`px-2 py-0.5 rounded text-xs font-medium ${CATEGORY_COLORS[article.category] ?? 'bg-white/10 text-white/60'}`}>
                       {article.categoryLabel}
                     </span>
                   </div>
-                  <h3 className="text-sm font-semibold text-white/90 leading-snug mb-2 group-hover:text-[#00C2A8] transition-colors line-clamp-3">
+                  <h3 className="text-sm font-semibold text-white/90 leading-snug mb-2 group-hover:text-[#3B82F6] transition-colors line-clamp-3">
                     {article.title}
                   </h3>
                   <p className="text-xs text-white/40 leading-relaxed mb-4 line-clamp-3">
@@ -374,7 +374,7 @@ export default function BlogPage() {
                       {i + 1}
                     </span>
                     <div>
-                      <div className="text-xs text-[#00C2A8]/70 mb-0.5">{item.category}</div>
+                      <div className="text-xs text-[#3B82F6]/70 mb-0.5">{item.category}</div>
                       <div className="text-sm text-white/70 font-medium group-hover:text-white transition-colors leading-snug">
                         {item.title}
                       </div>
@@ -386,9 +386,9 @@ export default function BlogPage() {
             </div>
 
             {/* Newsletter signup */}
-            <div className="rounded-xl bg-gradient-to-br from-[#0A2035] to-[#0A1628] border border-[#00C2A8]/20 p-5">
-              <div className="w-8 h-8 rounded-lg bg-[#00C2A8]/15 flex items-center justify-center mb-3">
-                <svg className="w-4 h-4 text-[#00C2A8]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="rounded-xl bg-gradient-to-br from-[#0A2035] to-[#0A1628] border border-[#3B82F6]/20 p-5">
+              <div className="w-8 h-8 rounded-lg bg-[#3B82F6]/15 flex items-center justify-center mb-3">
+                <svg className="w-4 h-4 text-[#3B82F6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
@@ -397,7 +397,7 @@ export default function BlogPage() {
                 Weekly roundup of clinical analytics, compliance updates, and interoperability news — no fluff.
               </p>
               {subscribed ? (
-                <div className="text-xs text-[#00C2A8] py-2">
+                <div className="text-xs text-[#3B82F6] py-2">
                   ✓ You&apos;re subscribed. Watch your inbox.
                 </div>
               ) : (
@@ -407,11 +407,11 @@ export default function BlogPage() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder="your@health-system.org"
-                    className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder-white/25 focus:outline-none focus:border-[#00C2A8]/40"
+                    className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder-white/25 focus:outline-none focus:border-[#3B82F6]/40"
                   />
                   <button
                     type="submit"
-                    className="w-full py-2 rounded-lg bg-[#00C2A8] text-[#070E1A] text-sm font-semibold hover:bg-[#00C2A8]/90 transition-colors"
+                    className="w-full py-2 rounded-lg bg-[#3B82F6] text-[#070E1A] text-sm font-semibold hover:bg-[#3B82F6]/90 transition-colors"
                   >
                     Subscribe Free
                   </button>
@@ -454,7 +454,7 @@ export default function BlogPage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/#waitlist"
-              className="px-6 py-3 rounded-xl bg-[#00C2A8] text-[#070E1A] font-semibold hover:bg-[#00C2A8]/90 transition-colors"
+              className="px-6 py-3 rounded-xl bg-[#3B82F6] text-[#070E1A] font-semibold hover:bg-[#3B82F6]/90 transition-colors"
             >
               Request Early Access
             </Link>

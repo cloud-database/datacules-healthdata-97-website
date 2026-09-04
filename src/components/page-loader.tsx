@@ -62,9 +62,9 @@ export function PageLoader() {
         style={{
           height: '100%',
           width: `${progress}%`,
-          background: 'linear-gradient(90deg, #00C9B1, #7B8CDE)',
+          background: 'linear-gradient(90deg, #3B82F6, #60A5FA)',
           transition: 'width 0.05s linear',
-          boxShadow: '0 0 8px rgba(0, 201, 177, 0.8), 0 0 16px rgba(0, 201, 177, 0.4)',
+          boxShadow: '0 0 8px rgba(59, 130, 246, 0.8), 0 0 16px rgba(59, 130, 246, 0.4)',
           position: 'relative',
         }}
       >
@@ -78,8 +78,8 @@ export function PageLoader() {
             width: '80px',
             height: '2px',
             background:
-              'linear-gradient(90deg, transparent, rgba(0, 201, 177, 0.6), #00C9B1)',
-            boxShadow: '0 0 12px 2px rgba(0, 201, 177, 0.9)',
+              'linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), #3B82F6)',
+            boxShadow: '0 0 12px 2px rgba(59, 130, 246, 0.9)',
           }}
         />
       </div>

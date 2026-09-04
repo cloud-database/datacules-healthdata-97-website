@@ -168,7 +168,7 @@ function DotSeparator() {
           width: '3px',
           height: '3px',
           borderRadius: '50%',
-          background: 'rgba(0, 201, 177, 0.35)',
+          background: 'rgba(59, 130, 246, 0.35)',
         }}
       />
     </div>
@@ -197,7 +197,7 @@ export function TrustBar() {
           <span
             aria-hidden="true"
             style={{
-              color: '#00C9B1',
+              color: '#3B82F6',
               fontSize: '14px',
               fontWeight: 700,
               lineHeight: 1,

@@ -10,7 +10,7 @@ const features = [
       "Aggregates data from EHR, labs, prescriptions, appointments, billing, and telehealth modules into a single comprehensive patient view.",
     category: "Core Platform",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <ellipse cx="12" cy="5" rx="9" ry="3" />
         <path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12" />
         <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
@@ -23,13 +23,13 @@ const features = [
       "Readmission risk scoring, claim denial prediction, no-show forecasting, vitals anomaly detection, and chronic condition progression using XGBoost, Random Forest, and Isolation Forest models.",
     category: "AI Intelligence",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V12h-4V9.5A4 4 0 0 1 8 6a4 4 0 0 1 4-4z" />
         <path d="M8 12H5a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1" />
         <path d="M16 12h3a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1" />
         <path d="M9 17v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2" />
-        <circle cx="9" cy="15" r="1" fill="#00C9B1" />
-        <circle cx="15" cy="15" r="1" fill="#00C9B1" />
+        <circle cx="9" cy="15" r="1" fill="#3B82F6" />
+        <circle cx="15" cy="15" r="1" fill="#3B82F6" />
       </svg>
     ),
   },
@@ -39,7 +39,7 @@ const features = [
       "Full audit trails, PHI encryption at rest and in transit, automated audit logging, data export capabilities, and privacy request tracking.",
     category: "Security",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" />
         <path d="M9 12l2 2 4-4" />
       </svg>
@@ -51,7 +51,7 @@ const features = [
       "IoT device integration with configurable critical threshold alerting and automated anomaly detection for continuous patient safety oversight.",
     category: "Monitoring",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
       </svg>
     ),
@@ -62,7 +62,7 @@ const features = [
       "Intelligent billing, claims scrubbing, ICD code mapping assistance, and AI-driven denial prediction to maximize reimbursement and reduce revenue leakage.",
     category: "Financial",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="5" width="20" height="14" rx="3" />
         <path d="M2 10h20" />
         <path d="M7 15h2M15 15h2" />
@@ -75,7 +75,7 @@ const features = [
       "REST API, MQTT, and SFTP protocol support enabling seamless connectivity to major EHR systems, lab systems, and third-party health data sources.",
     category: "Interoperability",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
         <path d="M2 12h20" />
         <path d="M12 2c-2.67 3.33-4 6.67-4 10s1.33 6.67 4 10c2.67-3.33 4-6.67 4-10s-1.33-6.67-4-10z" />
@@ -138,7 +138,7 @@ export function Features() {
         .feature-card {
           background: rgba(255, 255, 255, 0.04);
           border: 1px solid rgba(255, 255, 255, 0.09);
-          border-top: 3px solid #00C9B1;
+          border-top: 3px solid #3B82F6;
           border-radius: 20px;
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
@@ -156,16 +156,16 @@ export function Features() {
           border-radius: 20px;
           background: linear-gradient(
             135deg,
-            rgba(0, 201, 177, 0.04) 0%,
+            rgba(59, 130, 246, 0.04) 0%,
             transparent 60%
           );
           pointer-events: none;
         }
         .feature-card:hover {
-          border-color: rgba(0, 201, 177, 0.3);
-          border-top-color: #00C9B1;
+          border-color: rgba(59, 130, 246, 0.3);
+          border-top-color: #3B82F6;
           box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4),
-                      0 0 0 1px rgba(0, 201, 177, 0.15),
+                      0 0 0 1px rgba(59, 130, 246, 0.15),
                       0 1px 0 rgba(255, 255, 255, 0.08) inset;
           transform: translateY(-4px);
         }
@@ -175,8 +175,8 @@ export function Features() {
           width: 56px;
           height: 56px;
           border-radius: 14px;
-          background: rgba(0, 201, 177, 0.08);
-          border: 1px solid rgba(0, 201, 177, 0.18);
+          background: rgba(59, 130, 246, 0.08);
+          border: 1px solid rgba(59, 130, 246, 0.18);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -186,9 +186,9 @@ export function Features() {
                       box-shadow 0.3s ease;
         }
         .feature-card:hover .feature-icon-wrap {
-          background: rgba(0, 201, 177, 0.14);
-          border-color: rgba(0, 201, 177, 0.35);
-          box-shadow: 0 0 20px rgba(0, 201, 177, 0.2);
+          background: rgba(59, 130, 246, 0.14);
+          border-color: rgba(59, 130, 246, 0.35);
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
         }
 
         /* ── Category eyebrow label ── */
@@ -197,7 +197,7 @@ export function Features() {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.2em;
-          color: #00C9B1;
+          color: #3B82F6;
           margin-bottom: 10px;
           display: flex;
           align-items: center;
@@ -219,7 +219,7 @@ export function Features() {
         .feature-category-cross::after {
           content: "";
           position: absolute;
-          background: #00C9B1;
+          background: #3B82F6;
           border-radius: 1px;
         }
         .feature-category-cross::before {
@@ -264,9 +264,9 @@ export function Features() {
           transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .comparison-card:hover {
-          border-color: rgba(0, 201, 177, 0.2);
+          border-color: rgba(59, 130, 246, 0.2);
           box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4),
-                      0 0 0 1px rgba(0, 201, 177, 0.1),
+                      0 0 0 1px rgba(59, 130, 246, 0.1),
                       0 1px 0 rgba(255, 255, 255, 0.08) inset;
         }
 
@@ -282,7 +282,7 @@ export function Features() {
           width: 4px;
           height: 48px;
           border-radius: 2px;
-          background: #00C9B1;
+          background: #3B82F6;
           flex-shrink: 0;
           margin-top: 4px;
         }
@@ -301,7 +301,7 @@ export function Features() {
         .eyebrow-cross::after {
           content: "";
           position: absolute;
-          background: #00C9B1;
+          background: #3B82F6;
           border-radius: 1px;
         }
         .eyebrow-cross::before {
@@ -333,8 +333,8 @@ export function Features() {
           overflow: hidden;
           width: 100%;
           margin-bottom: 24px;
-          background: rgba(0, 201, 177, 0.04);
-          border: 1px solid rgba(0, 201, 177, 0.10);
+          background: rgba(59, 130, 246, 0.04);
+          border: 1px solid rgba(59, 130, 246, 0.10);
         }
 
         /* ── Comparison image container ── */
@@ -370,8 +370,8 @@ export function Features() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 70% 50% at 80% 20%, rgba(0,201,177,0.05) 0%, transparent 60%), " +
-            "radial-gradient(ellipse 60% 40% at 20% 80%, rgba(123,140,222,0.04) 0%, transparent 60%)",
+            "radial-gradient(ellipse 70% 50% at 80% 20%, rgba(59,130,246,0.05) 0%, transparent 60%), " +
+            "radial-gradient(ellipse 60% 40% at 20% 80%, rgba(96,165,250,0.04) 0%, transparent 60%)",
           pointerEvents: "none",
         }}
       />
@@ -395,7 +395,7 @@ export function Features() {
                   fontWeight: 600,
                   textTransform: "uppercase",
                   letterSpacing: "0.2em",
-                  color: "#00C9B1",
+                  color: "#3B82F6",
                   marginBottom: "16px",
                   display: "flex",
                   alignItems: "center",
@@ -419,7 +419,7 @@ export function Features() {
                 }}
               >
                 Enterprise-Grade Features Built for{" "}
-                <span style={{ color: "#00C9B1" }}>Healthcare</span>
+                <span style={{ color: "#3B82F6" }}>Healthcare</span>
               </h2>
 
               <p
@@ -457,7 +457,7 @@ export function Features() {
                 fontWeight: 600,
                 textTransform: "uppercase",
                 letterSpacing: "0.2em",
-                color: "#00C9B1",
+                color: "#3B82F6",
                 marginBottom: "12px",
                 display: "flex",
                 alignItems: "center",
@@ -617,9 +617,9 @@ export function Features() {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.12em",
-                    background: "rgba(0,201,177,0.08)",
-                    border: "1px solid rgba(0,201,177,0.2)",
-                    color: "#00C9B1",
+                    background: "rgba(59,130,246,0.08)",
+                    border: "1px solid rgba(59,130,246,0.2)",
+                    color: "#3B82F6",
                   }}
                 >
                   <span
@@ -627,7 +627,7 @@ export function Features() {
                       width: "6px",
                       height: "6px",
                       borderRadius: "50%",
-                      background: "#00C9B1",
+                      background: "#3B82F6",
                       opacity: 0.9,
                     }}
                   />
@@ -639,16 +639,16 @@ export function Features() {
               <div
                 className="comparison-image-container"
                 style={{
-                  background: "rgba(0,201,177,0.04)",
-                  border: "1px solid rgba(0,201,177,0.12)",
+                  background: "rgba(59,130,246,0.04)",
+                  border: "1px solid rgba(59,130,246,0.12)",
                   padding: "20px",
                 }}
               >
                 <Image
-                  src="/331x89.png"
+                  src="/1207x302.png"
                   alt="HealthData97 AI-powered healthcare platform"
-                  width={331}
-                  height={89}
+                  width={1207}
+                  height={302}
                   sizes="(max-width: 768px) 100vw, 331px"
                   className="w-full h-auto object-contain"
                   style={{ maxHeight: "56px", width: "auto" }}
@@ -693,12 +693,12 @@ export function Features() {
                         cx="8"
                         cy="8"
                         r="7"
-                        stroke="#00C9B1"
+                        stroke="#3B82F6"
                         strokeWidth="1.5"
                       />
                       <path
                         d="M5 8l2 2 4-4"
-                        stroke="#00C9B1"
+                        stroke="#3B82F6"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -747,7 +747,7 @@ export function Features() {
               style={{
                 fontSize: "12px",
                 fontWeight: 600,
-                color: "#00C9B1",
+                color: "#3B82F6",
                 textTransform: "uppercase",
                 letterSpacing: "0.1em",
               }}

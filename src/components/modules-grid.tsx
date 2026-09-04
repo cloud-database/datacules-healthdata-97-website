@@ -274,7 +274,7 @@ export function ModulesGrid() {
           style={{
             fontSize: 'clamp(260px, 35vw, 480px)',
             fontWeight: 900,
-            color: 'rgba(0, 201, 177, 0.028)',
+            color: 'rgba(59, 130, 246, 0.028)',
             lineHeight: 1,
             userSelect: 'none',
             letterSpacing: '-0.06em',
@@ -310,7 +310,7 @@ export function ModulesGrid() {
           height: '520px',
           borderRadius: '50%',
           background:
-            'radial-gradient(circle, rgba(0,201,177,0.07) 0%, transparent 70%)',
+            'radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 70%)',
           filter: 'blur(48px)',
         }}
       />
@@ -324,7 +324,7 @@ export function ModulesGrid() {
           height: '400px',
           borderRadius: '50%',
           background:
-            'radial-gradient(circle, rgba(123,140,222,0.065) 0%, transparent 70%)',
+            'radial-gradient(circle, rgba(96,165,250,0.065) 0%, transparent 70%)',
           filter: 'blur(48px)',
         }}
       />
@@ -341,7 +341,7 @@ export function ModulesGrid() {
             <span
               aria-hidden="true"
               style={{
-                color: '#00C9B1',
+                color: '#3B82F6',
                 fontSize: '14px',
                 fontWeight: 700,
                 lineHeight: 1,
@@ -352,7 +352,7 @@ export function ModulesGrid() {
             <span
               className="font-semibold uppercase"
               style={{
-                color: '#00C9B1',
+                color: '#3B82F6',
                 fontSize: '11px',
                 letterSpacing: '0.2em',
               }}
@@ -371,7 +371,7 @@ export function ModulesGrid() {
                 height: '56px',
                 borderRadius: '99px',
                 background:
-                  'linear-gradient(180deg, #00C9B1 0%, rgba(0,201,177,0.25) 100%)',
+                  'linear-gradient(180deg, #3B82F6 0%, rgba(59,130,246,0.25) 100%)',
               }}
             />
             <div>
@@ -405,19 +405,19 @@ export function ModulesGrid() {
           {modules.map((mod, index) => {
             const Icon = mod.icon
             const isTeal = mod.color === 'teal'
-            const accentColor = isTeal ? '#00C9B1' : '#7B8CDE'
+            const accentColor = isTeal ? '#3B82F6' : '#60A5FA'
             const iconBg = isTeal
-              ? 'rgba(0, 201, 177, 0.10)'
-              : 'rgba(123, 140, 222, 0.10)'
+              ? 'rgba(59, 130, 246, 0.10)'
+              : 'rgba(96, 165, 250, 0.10)'
             const iconGlow = isTeal
-              ? '0 0 20px rgba(0, 201, 177, 0.20)'
-              : '0 0 20px rgba(123, 140, 222, 0.20)'
+              ? '0 0 20px rgba(59, 130, 246, 0.20)'
+              : '0 0 20px rgba(96, 165, 250, 0.20)'
             const tagBg = isTeal
-              ? 'rgba(0, 201, 177, 0.08)'
-              : 'rgba(123, 140, 222, 0.08)'
+              ? 'rgba(59, 130, 246, 0.08)'
+              : 'rgba(96, 165, 250, 0.08)'
             const tagBorder = isTeal
-              ? 'rgba(0, 201, 177, 0.24)'
-              : 'rgba(123, 140, 222, 0.24)'
+              ? 'rgba(59, 130, 246, 0.24)'
+              : 'rgba(96, 165, 250, 0.24)'
 
             // Stagger delay cycles across 4 columns
             const colIndex = index % 4
@@ -449,17 +449,17 @@ export function ModulesGrid() {
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLDivElement
-                    el.style.borderColor = 'rgba(0, 201, 177, 0.30)'
+                    el.style.borderColor = 'rgba(59, 130, 246, 0.30)'
                     el.style.borderTopColor = accentColor
                     el.style.boxShadow =
-                      '0 16px 64px rgba(0, 0, 0, 0.40), 0 0 0 1px rgba(0, 201, 177, 0.15), 0 1px 0 rgba(255,255,255,0.08) inset'
+                      '0 16px 64px rgba(0, 0, 0, 0.40), 0 0 0 1px rgba(59, 130, 246, 0.15), 0 1px 0 rgba(255,255,255,0.08) inset'
                     el.style.transform = 'translateY(-4px)'
                     // Boost icon glow on hover
                     const iconEl = el.querySelector<HTMLDivElement>('.icon-wrap')
                     if (iconEl) {
                       iconEl.style.boxShadow = isTeal
-                        ? '0 0 32px rgba(0, 201, 177, 0.35)'
-                        : '0 0 32px rgba(123, 140, 222, 0.35)'
+                        ? '0 0 32px rgba(59, 130, 246, 0.35)'
+                        : '0 0 32px rgba(96, 165, 250, 0.35)'
                     }
                   }}
                   onMouseLeave={(e) => {
@@ -564,7 +564,7 @@ export function ModulesGrid() {
                     className="font-bold leading-none tabular-nums"
                     style={{
                       fontSize: '32px',
-                      color: '#00C9B1',
+                      color: '#3B82F6',
                       letterSpacing: '-0.03em',
                       fontFamily: 'Inter, "Plus Jakarta Sans", sans-serif',
                     }}

@@ -9,11 +9,11 @@ interface MiniBarChartProps {
 
 function MiniBarChart({ visible }: MiniBarChartProps) {
   const bars = [
-    { height: 40, label: 'Low', color: '#00C9B1' },
-    { height: 65, label: 'Med', color: '#00C9B1' },
+    { height: 40, label: 'Low', color: '#3B82F6' },
+    { height: 65, label: 'Med', color: '#3B82F6' },
     { height: 85, label: 'High', color: '#FF6B6B' },
-    { height: 55, label: 'Med', color: '#00C9B1' },
-    { height: 30, label: 'Low', color: '#00C9B1' },
+    { height: 55, label: 'Med', color: '#3B82F6' },
+    { height: 30, label: 'Low', color: '#3B82F6' },
   ]
 
   return (
@@ -35,7 +35,7 @@ function MiniBarChart({ visible }: MiniBarChartProps) {
         >
           Risk Distribution
         </span>
-        <span style={{ fontSize: '11px', color: '#00C9B1', fontWeight: 600 }}>
+        <span style={{ fontSize: '11px', color: '#3B82F6', fontWeight: 600 }}>
           Live Model
         </span>
       </div>
@@ -108,7 +108,7 @@ function MiniDonut({ visible }: MiniDonutProps) {
         >
           Denial Prevention
         </span>
-        <span style={{ fontSize: '11px', color: '#7B8CDE', fontWeight: 600 }}>
+        <span style={{ fontSize: '11px', color: '#60A5FA', fontWeight: 600 }}>
           AI Model
         </span>
       </div>
@@ -128,7 +128,7 @@ function MiniDonut({ visible }: MiniDonutProps) {
               cy="36"
               r={radius}
               fill="none"
-              stroke="rgba(123,140,222,0.15)"
+              stroke="rgba(96,165,250,0.15)"
               strokeWidth="6"
             />
             <circle
@@ -136,7 +136,7 @@ function MiniDonut({ visible }: MiniDonutProps) {
               cy="36"
               r={radius}
               fill="none"
-              stroke="#7B8CDE"
+              stroke="#60A5FA"
               strokeWidth="6"
               strokeLinecap="round"
               strokeDasharray={circumference}
@@ -148,7 +148,7 @@ function MiniDonut({ visible }: MiniDonutProps) {
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
             <span
-              style={{ fontSize: '15px', fontWeight: 700, color: '#7B8CDE' }}
+              style={{ fontSize: '15px', fontWeight: 700, color: '#60A5FA' }}
             >
               {visible ? `${percentage}%` : '0%'}
             </span>
@@ -170,7 +170,7 @@ function MiniDonut({ visible }: MiniDonutProps) {
               Denials Caught
             </div>
             <div
-              style={{ fontSize: '18px', color: '#7B8CDE', fontWeight: 700 }}
+              style={{ fontSize: '18px', color: '#60A5FA', fontWeight: 700 }}
             >
               ↓ 67%
             </div>
@@ -258,8 +258,8 @@ function MiniSparkline({ visible }: MiniSparklineProps) {
               x2="0"
               y2="1"
             >
-              <stop offset="0%" stopColor="#00C9B1" stopOpacity="0.3" />
-              <stop offset="100%" stopColor="#00C9B1" stopOpacity="0" />
+              <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#3B82F6" stopOpacity="0" />
             </linearGradient>
             <clipPath id="sparkClip">
               <rect
@@ -282,7 +282,7 @@ function MiniSparkline({ visible }: MiniSparklineProps) {
           <path
             d={pathD}
             fill="none"
-            stroke="#00C9B1"
+            stroke="#3B82F6"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -332,20 +332,20 @@ function BrainIcon() {
     >
       <path
         d="M16 4C13.8 4 12 5.8 12 8C10.3 8.4 9 9.9 9 11.7C7.3 12.2 6 13.8 6 15.7C6 17.6 7.3 19.2 9 19.7V22C9 24.2 10.8 26 13 26H19C21.2 26 23 24.2 23 22V19.7C24.7 19.2 26 17.6 26 15.7C26 13.8 24.7 12.2 23 11.7C23 9.9 21.7 8.4 20 8C20 5.8 18.2 4 16 4Z"
-        stroke="#00C9B1"
+        stroke="#3B82F6"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M16 4V14M12 8L16 12M20 8L16 12M9 19.7L13 17M23 19.7L19 17M9 11.7L12 13M23 11.7L20 13"
-        stroke="#00C9B1"
+        stroke="#3B82F6"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
         opacity="0.6"
       />
-      <circle cx="16" cy="15" r="2" fill="#00C9B1" opacity="0.8" />
+      <circle cx="16" cy="15" r="2" fill="#3B82F6" opacity="0.8" />
     </svg>
   )
 }
@@ -362,14 +362,14 @@ function ShieldCheckIcon() {
     >
       <path
         d="M16 4L7 8V16C7 20.97 11.05 25.6 16 27C20.95 25.6 25 20.97 25 16V8L16 4Z"
-        stroke="#7B8CDE"
+        stroke="#60A5FA"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M11.5 16L14.5 19L20.5 13"
-        stroke="#7B8CDE"
+        stroke="#60A5FA"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -390,14 +390,14 @@ function HeartbeatIcon() {
     >
       <path
         d="M4 17H8L10 13L13 21L15 15L17 19L19 17H28"
-        stroke="#00C9B1"
+        stroke="#3B82F6"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M16 26C16 26 6 20 6 12C6 9.24 8.24 7 11 7C12.74 7 14.28 7.88 15.2 9.2L16 10.4L16.8 9.2C17.72 7.88 19.26 7 21 7C23.76 7 26 9.24 26 12"
-        stroke="#00C9B1"
+        stroke="#3B82F6"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -420,7 +420,7 @@ function AIInsightCard({
 }) {
   const [hovered, setHovered] = useState(false)
 
-  const isLavender = card.accentColor === '#7B8CDE'
+  const isLavender = card.accentColor === '#60A5FA'
   const rgbAccent = isLavender ? '123,140,222' : '0,201,177'
   const staggerDelay = `${index * 0.15}s`
 
@@ -465,8 +465,8 @@ function AIInsightCard({
           right: 0,
           height: '3px',
           background: isLavender
-            ? 'linear-gradient(90deg, transparent 0%, #7B8CDE 40%, #7B8CDE 60%, transparent 100%)'
-            : 'linear-gradient(90deg, transparent 0%, #00C9B1 40%, #00C9B1 60%, transparent 100%)',
+            ? 'linear-gradient(90deg, transparent 0%, #60A5FA 40%, #60A5FA 60%, transparent 100%)'
+            : 'linear-gradient(90deg, transparent 0%, #3B82F6 40%, #3B82F6 60%, transparent 100%)',
           borderRadius: '20px 20px 0 0',
         }}
         aria-hidden="true"
@@ -648,7 +648,7 @@ export function AIInsights() {
       title: 'Readmission Risk Scoring',
       description:
         'AI models analyze 200+ clinical variables to predict 30-day readmission risk for each patient, enabling proactive care interventions before discharge.',
-      accentColor: '#00C9B1',
+      accentColor: '#3B82F6',
       icon: <BrainIcon />,
       chart: 'bar',
       stat: '31%',
@@ -659,7 +659,7 @@ export function AIInsights() {
       title: 'Billing Denial Prediction',
       description:
         'Machine learning models trained on millions of claims detect denial risk patterns in real-time, allowing billing teams to intervene before submission.',
-      accentColor: '#7B8CDE',
+      accentColor: '#60A5FA',
       icon: <ShieldCheckIcon />,
       chart: 'donut',
       stat: '67%',
@@ -670,7 +670,7 @@ export function AIInsights() {
       title: 'Vitals Anomaly Detection',
       description:
         'Continuous real-time analysis of patient vitals streams detects early deterioration signals — surfacing critical anomalies hours before traditional thresholds trigger.',
-      accentColor: '#00C9B1',
+      accentColor: '#3B82F6',
       icon: <HeartbeatIcon />,
       chart: 'sparkline',
       stat: '4.2hrs',
@@ -699,7 +699,7 @@ export function AIInsights() {
           width: '640px',
           height: '640px',
           background:
-            'radial-gradient(circle, rgba(123,140,222,0.07) 0%, transparent 70%)',
+            'radial-gradient(circle, rgba(96,165,250,0.07) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -712,7 +712,7 @@ export function AIInsights() {
           width: '520px',
           height: '520px',
           background:
-            'radial-gradient(circle, rgba(0,201,177,0.05) 0%, transparent 70%)',
+            'radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -766,7 +766,7 @@ export function AIInsights() {
             >
               <path
                 d="M7 1V13M1 7H13"
-                stroke="#00C9B1"
+                stroke="#3B82F6"
                 strokeWidth="2"
                 strokeLinecap="round"
               />
@@ -774,7 +774,7 @@ export function AIInsights() {
             <span
               style={{
                 fontSize: '11px',
-                color: '#00C9B1',
+                color: '#3B82F6',
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
                 fontFamily: 'Inter, sans-serif',
@@ -792,7 +792,7 @@ export function AIInsights() {
             >
               <path
                 d="M7 1V13M1 7H13"
-                stroke="#00C9B1"
+                stroke="#3B82F6"
                 strokeWidth="2"
                 strokeLinecap="round"
               />
@@ -815,7 +815,7 @@ export function AIInsights() {
             <span
               style={{
                 background:
-                  'linear-gradient(135deg, #00C9B1 0%, #7B8CDE 100%)',
+                  'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',

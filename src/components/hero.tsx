@@ -27,10 +27,10 @@ function EcgWaveform() {
     >
       <defs>
         <linearGradient id="ecgFade" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#00C9B1" stopOpacity="0" />
-          <stop offset="8%" stopColor="#00C9B1" stopOpacity="1" />
-          <stop offset="92%" stopColor="#00C9B1" stopOpacity="1" />
-          <stop offset="100%" stopColor="#00C9B1" stopOpacity="0" />
+          <stop offset="0%" stopColor="#3B82F6" stopOpacity="0" />
+          <stop offset="8%" stopColor="#3B82F6" stopOpacity="1" />
+          <stop offset="92%" stopColor="#3B82F6" stopOpacity="1" />
+          <stop offset="100%" stopColor="#3B82F6" stopOpacity="0" />
         </linearGradient>
         <style>{`
           @keyframes ecg-scroll {
@@ -75,7 +75,7 @@ function EcgWaveform() {
         className="ecg-line-2"
         d="M0 95 L100 95 L118 95 L130 95 L142 30 L150 118 L158 12 L166 108 L174 95 L280 95 L298 95 L310 95 L322 30 L330 118 L338 12 L346 108 L354 95 L460 95 L478 95 L490 95 L502 30 L510 118 L518 12 L526 108 L534 95 L640 95 L658 95 L670 95 L682 30 L690 118 L698 12 L706 108 L714 95 L820 95 L838 95 L850 95 L862 30 L870 118 L878 12 L886 108 L894 95 L1000 95 L1018 95 L1030 95 L1042 30 L1050 118 L1058 12 L1066 108 L1074 95 L1180 95 L1198 95 L1210 95 L1222 30 L1230 118 L1238 12 L1246 108 L1254 95 L1360 95 L1378 95 L1390 95 L1402 30 L1410 118 L1418 12 L1426 108 L1434 95 L1440 95"
         fill="none"
-        stroke="#7B8CDE"
+        stroke="#60A5FA"
         strokeWidth="1"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -110,7 +110,7 @@ function StaticDataFlowVisualization() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 65% 65% at 50% 50%, rgba(123,140,222,0.08) 0%, transparent 70%)',
+            'radial-gradient(ellipse 65% 65% at 50% 50%, rgba(96,165,250,0.08) 0%, transparent 70%)',
         }}
       />
 
@@ -126,7 +126,7 @@ function StaticDataFlowVisualization() {
           cx={centerX}
           cy={centerY}
           r={orbitRadius}
-          stroke="rgba(0,201,177,0.12)"
+          stroke="rgba(59,130,246,0.12)"
           strokeWidth="1"
           strokeDasharray="3 12"
           fill="none"
@@ -136,7 +136,7 @@ function StaticDataFlowVisualization() {
           cx={centerX}
           cy={centerY}
           r={orbitRadius * 0.58}
-          stroke="rgba(123,140,222,0.09)"
+          stroke="rgba(96,165,250,0.09)"
           strokeWidth="1"
           strokeDasharray="2 16"
           fill="none"
@@ -151,7 +151,7 @@ function StaticDataFlowVisualization() {
               y1={pos.y}
               x2={centerX}
               y2={centerY}
-              stroke="rgba(0,201,177,0.18)"
+              stroke="rgba(59,130,246,0.18)"
               strokeWidth="1.2"
             />
           )
@@ -159,8 +159,8 @@ function StaticDataFlowVisualization() {
         {/* Center glow */}
         <defs>
           <radialGradient id="staticHubGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="rgba(0,201,177,0.22)" />
-            <stop offset="100%" stopColor="rgba(0,201,177,0)" />
+            <stop offset="0%" stopColor="rgba(59,130,246,0.22)" />
+            <stop offset="100%" stopColor="rgba(59,130,246,0)" />
           </radialGradient>
         </defs>
         <circle cx={centerX} cy={centerY} r={56} fill="url(#staticHubGlow)" />
@@ -175,16 +175,16 @@ function StaticDataFlowVisualization() {
           width: 72,
           height: 72,
           background: 'linear-gradient(135deg, #112744 0%, #0D2137 60%, #0A1828 100%)',
-          border: '2px solid rgba(0,201,177,0.65)',
+          border: '2px solid rgba(59,130,246,0.65)',
           boxShadow:
-            '0 0 32px rgba(0,201,177,0.32), 0 0 10px rgba(0,201,177,0.18), inset 0 1px 0 rgba(255,255,255,0.1)',
+            '0 0 32px rgba(59,130,246,0.32), 0 0 10px rgba(59,130,246,0.18), inset 0 1px 0 rgba(255,255,255,0.1)',
         }}
       >
         <svg width="16" height="16" viewBox="0 0 20 20" fill="none" style={{ marginBottom: '2px' }}>
-          <rect x="8" y="2" width="4" height="16" rx="2" fill="#00C9B1" opacity="0.9" />
-          <rect x="2" y="8" width="16" height="4" rx="2" fill="#00C9B1" opacity="0.9" />
+          <rect x="8" y="2" width="4" height="16" rx="2" fill="#3B82F6" opacity="0.9" />
+          <rect x="2" y="8" width="16" height="4" rx="2" fill="#3B82F6" opacity="0.9" />
         </svg>
-        <span className="text-[7px] font-bold tracking-widest" style={{ color: '#00C9B1' }}>
+        <span className="text-[7px] font-bold tracking-widest" style={{ color: '#3B82F6' }}>
           UNIFIED
         </span>
       </div>
@@ -259,7 +259,7 @@ function DataFlowVisualization() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const colors = ['#00C9B1', '#00C9B1', '#7B8CDE', '#00C9B1', '#7B8CDE']
+    const colors = ['#3B82F6', '#3B82F6', '#60A5FA', '#3B82F6', '#60A5FA']
 
     particlesRef.current = Array.from({ length: 25 }, (_, i) => ({
       nodeFrom: i % NODES.length,
@@ -276,7 +276,7 @@ function DataFlowVisualization() {
       // Outer orbit ring — dashed
       ctx.beginPath()
       ctx.arc(centerX, centerY, orbitRadius, 0, Math.PI * 2)
-      ctx.strokeStyle = 'rgba(0,201,177,0.08)'
+      ctx.strokeStyle = 'rgba(59,130,246,0.08)'
       ctx.lineWidth = 1
       ctx.setLineDash([3, 12])
       ctx.stroke()
@@ -285,7 +285,7 @@ function DataFlowVisualization() {
       // Middle orbit ring
       ctx.beginPath()
       ctx.arc(centerX, centerY, orbitRadius * 0.58, 0, Math.PI * 2)
-      ctx.strokeStyle = 'rgba(123,140,222,0.07)'
+      ctx.strokeStyle = 'rgba(96,165,250,0.07)'
       ctx.lineWidth = 1
       ctx.setLineDash([2, 16])
       ctx.stroke()
@@ -298,7 +298,7 @@ function DataFlowVisualization() {
       ctx.rotate(innerAngle)
       ctx.beginPath()
       ctx.arc(0, 0, orbitRadius * 0.3, 0, Math.PI * 2)
-      ctx.strokeStyle = 'rgba(0,201,177,0.05)'
+      ctx.strokeStyle = 'rgba(59,130,246,0.05)'
       ctx.lineWidth = 1
       ctx.setLineDash([2, 20])
       ctx.stroke()
@@ -309,10 +309,10 @@ function DataFlowVisualization() {
       NODES.forEach((node) => {
         const pos = getNodePos(node.angle)
         const gradient = ctx.createLinearGradient(pos.x, pos.y, centerX, centerY)
-        gradient.addColorStop(0, 'rgba(0,201,177,0.03)')
-        gradient.addColorStop(0.4, 'rgba(0,201,177,0.15)')
-        gradient.addColorStop(0.8, 'rgba(0,201,177,0.22)')
-        gradient.addColorStop(1, 'rgba(0,201,177,0.08)')
+        gradient.addColorStop(0, 'rgba(59,130,246,0.03)')
+        gradient.addColorStop(0.4, 'rgba(59,130,246,0.15)')
+        gradient.addColorStop(0.8, 'rgba(59,130,246,0.22)')
+        gradient.addColorStop(1, 'rgba(59,130,246,0.08)')
         ctx.beginPath()
         ctx.moveTo(pos.x, pos.y)
         ctx.lineTo(centerX, centerY)
@@ -332,9 +332,9 @@ function DataFlowVisualization() {
         const radius = 3.8 * (1 - t * 0.55)
         const alpha = p.opacity * (t < 0.85 ? 1 : (1 - t) / 0.15)
         const grd = ctx.createRadialGradient(x, y, 0, x, y, radius * 2.5)
-        const isLavender = p.color === '#7B8CDE'
-        grd.addColorStop(0, isLavender ? `rgba(123,140,222,${alpha})` : `rgba(0,201,177,${alpha})`)
-        grd.addColorStop(1, isLavender ? 'rgba(123,140,222,0)' : 'rgba(0,201,177,0)')
+        const isLavender = p.color === '#60A5FA'
+        grd.addColorStop(0, isLavender ? `rgba(96,165,250,${alpha})` : `rgba(59,130,246,${alpha})`)
+        grd.addColorStop(1, isLavender ? 'rgba(96,165,250,0)' : 'rgba(59,130,246,0)')
         ctx.beginPath()
         ctx.arc(x, y, radius, 0, Math.PI * 2)
         ctx.fillStyle = grd
@@ -352,9 +352,9 @@ function DataFlowVisualization() {
 
       // Center hub outer glow
       const hubGlow2 = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, 90)
-      hubGlow2.addColorStop(0, 'rgba(0,201,177,0.18)')
-      hubGlow2.addColorStop(0.5, 'rgba(0,201,177,0.07)')
-      hubGlow2.addColorStop(1, 'rgba(0,201,177,0)')
+      hubGlow2.addColorStop(0, 'rgba(59,130,246,0.18)')
+      hubGlow2.addColorStop(0.5, 'rgba(59,130,246,0.07)')
+      hubGlow2.addColorStop(1, 'rgba(59,130,246,0)')
       ctx.beginPath()
       ctx.arc(centerX, centerY, 90, 0, Math.PI * 2)
       ctx.fillStyle = hubGlow2
@@ -365,7 +365,7 @@ function DataFlowVisualization() {
       const pulseAlpha1 = 0.22 * (1 - Math.abs(Math.sin(timestamp / 1100)))
       ctx.beginPath()
       ctx.arc(centerX, centerY, pulse1, 0, Math.PI * 2)
-      ctx.strokeStyle = `rgba(0,201,177,${pulseAlpha1})`
+      ctx.strokeStyle = `rgba(59,130,246,${pulseAlpha1})`
       ctx.lineWidth = 2
       ctx.stroke()
 
@@ -374,7 +374,7 @@ function DataFlowVisualization() {
       const pulseAlpha2 = 0.12 * (1 - Math.abs(Math.sin(timestamp / 1100 + Math.PI * 0.66)))
       ctx.beginPath()
       ctx.arc(centerX, centerY, pulse2, 0, Math.PI * 2)
-      ctx.strokeStyle = `rgba(123,140,222,${pulseAlpha2})`
+      ctx.strokeStyle = `rgba(96,165,250,${pulseAlpha2})`
       ctx.lineWidth = 1.5
       ctx.stroke()
 
@@ -395,7 +395,7 @@ function DataFlowVisualization() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 65% 65% at 50% 50%, rgba(123,140,222,0.08) 0%, transparent 70%)',
+            'radial-gradient(ellipse 65% 65% at 50% 50%, rgba(96,165,250,0.08) 0%, transparent 70%)',
         }}
       />
       {/* Ambient teal glow */}
@@ -403,7 +403,7 @@ function DataFlowVisualization() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 40% 40% at 50% 50%, rgba(0,201,177,0.05) 0%, transparent 65%)',
+            'radial-gradient(ellipse 40% 40% at 50% 50%, rgba(59,130,246,0.05) 0%, transparent 65%)',
         }}
       />
 
@@ -418,9 +418,9 @@ function DataFlowVisualization() {
           width: 92,
           height: 92,
           background: 'linear-gradient(135deg, #112744 0%, #0D2137 60%, #0A1828 100%)',
-          border: '2px solid rgba(0,201,177,0.65)',
+          border: '2px solid rgba(59,130,246,0.65)',
           boxShadow:
-            '0 0 48px rgba(0,201,177,0.38), 0 0 16px rgba(0,201,177,0.22), inset 0 1px 0 rgba(255,255,255,0.1)',
+            '0 0 48px rgba(59,130,246,0.38), 0 0 16px rgba(59,130,246,0.22), inset 0 1px 0 rgba(255,255,255,0.1)',
         }}
       >
         {/* Cross / plus healthcare symbol */}
@@ -431,12 +431,12 @@ function DataFlowVisualization() {
           fill="none"
           style={{ marginBottom: '2px' }}
         >
-          <rect x="8" y="2" width="4" height="16" rx="2" fill="#00C9B1" opacity="0.9" />
-          <rect x="2" y="8" width="16" height="4" rx="2" fill="#00C9B1" opacity="0.9" />
+          <rect x="8" y="2" width="4" height="16" rx="2" fill="#3B82F6" opacity="0.9" />
+          <rect x="2" y="8" width="16" height="4" rx="2" fill="#3B82F6" opacity="0.9" />
         </svg>
         <span
           className="text-[8px] font-bold tracking-widest"
-          style={{ color: '#00C9B1' }}
+          style={{ color: '#3B82F6' }}
         >
           UNIFIED
         </span>
@@ -459,11 +459,11 @@ function DataFlowVisualization() {
               width: nodeRadius * 2,
               height: nodeRadius * 2,
               background: isActive
-                ? 'linear-gradient(135deg, rgba(0,201,177,0.24) 0%, rgba(17,39,68,0.96) 100%)'
+                ? 'linear-gradient(135deg, rgba(59,130,246,0.24) 0%, rgba(17,39,68,0.96) 100%)'
                 : 'rgba(255,255,255,0.04)',
-              border: `1px solid ${isActive ? 'rgba(0,201,177,0.65)' : 'rgba(255,255,255,0.1)'}`,
+              border: `1px solid ${isActive ? 'rgba(59,130,246,0.65)' : 'rgba(255,255,255,0.1)'}`,
               boxShadow: isActive
-                ? '0 0 28px rgba(0,201,177,0.38), 0 8px 32px rgba(0,0,0,0.32)'
+                ? '0 0 28px rgba(59,130,246,0.38), 0 8px 32px rgba(0,0,0,0.32)'
                 : '0 4px 20px rgba(0,0,0,0.28)',
               backdropFilter: 'blur(16px)',
               WebkitBackdropFilter: 'blur(16px)',
@@ -476,7 +476,7 @@ function DataFlowVisualization() {
             <span className="text-xl leading-none">{node.icon}</span>
             <span
               className="text-[9px] font-semibold mt-1.5 tracking-wide"
-              style={{ color: isActive ? '#00C9B1' : '#A8BFCC' }}
+              style={{ color: isActive ? '#3B82F6' : '#A8BFCC' }}
             >
               {node.label}
             </span>
@@ -497,9 +497,9 @@ function DataFlowVisualization() {
                 left: isRight ? pos.x + nodeRadius + 10 : pos.x - nodeRadius - 10,
                 top: pos.y - 12,
                 transform: isRight ? 'none' : 'translateX(-100%)',
-                background: 'rgba(0,201,177,0.13)',
-                border: '1px solid rgba(0,201,177,0.38)',
-                color: '#00C9B1',
+                background: 'rgba(59,130,246,0.13)',
+                border: '1px solid rgba(59,130,246,0.38)',
+                color: '#3B82F6',
                 backdropFilter: 'blur(12px)',
                 WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 16px rgba(0,0,0,0.25)',
@@ -528,7 +528,7 @@ function MockBrowserFrame({ children }: { children: React.ReactNode }) {
         background: 'rgba(255,255,255,0.04)',
         border: '1px solid rgba(255,255,255,0.09)',
         boxShadow:
-          '0 8px 48px rgba(0,0,0,0.3), 0 0 80px rgba(0,201,177,0.07), inset 0 1px 0 rgba(255,255,255,0.06)',
+          '0 8px 48px rgba(0,0,0,0.3), 0 0 80px rgba(59,130,246,0.07), inset 0 1px 0 rgba(255,255,255,0.06)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
       }}
@@ -597,7 +597,7 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(rgba(0,201,177,0.22) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(rgba(59,130,246,0.22) 1px, transparent 1px)`,
           backgroundSize: '32px 32px',
           opacity: 0.03,
         }}
@@ -613,7 +613,7 @@ export default function Hero() {
           width: '900px',
           height: '900px',
           background:
-            'radial-gradient(ellipse 55% 55% at 20% 80%, rgba(0,201,177,0.08) 0%, transparent 68%)',
+            'radial-gradient(ellipse 55% 55% at 20% 80%, rgba(59,130,246,0.08) 0%, transparent 68%)',
           borderRadius: '50%',
         }}
       />
@@ -628,7 +628,7 @@ export default function Hero() {
           width: '1000px',
           height: '900px',
           background:
-            'radial-gradient(ellipse 50% 50% at 80% 20%, rgba(123,140,222,0.06) 0%, transparent 68%)',
+            'radial-gradient(ellipse 50% 50% at 80% 20%, rgba(96,165,250,0.06) 0%, transparent 68%)',
           borderRadius: '50%',
         }}
       />
@@ -660,15 +660,15 @@ export default function Hero() {
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold mb-8 tracking-[0.18em] uppercase"
             style={{
-              background: 'rgba(0,201,177,0.08)',
-              border: '1px solid rgba(0,201,177,0.28)',
-              color: '#00C9B1',
+              background: 'rgba(59,130,246,0.08)',
+              border: '1px solid rgba(59,130,246,0.28)',
+              color: '#3B82F6',
               fontFamily: '"Inter", system-ui, sans-serif',
             }}
           >
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-              <rect x="4" y="0" width="2" height="10" rx="1" fill="#00C9B1" />
-              <rect x="0" y="4" width="10" height="2" rx="1" fill="#00C9B1" />
+              <rect x="4" y="0" width="2" height="10" rx="1" fill="#3B82F6" />
+              <rect x="0" y="4" width="10" height="2" rx="1" fill="#3B82F6" />
             </svg>
             <span
               className="w-1.5 h-1.5 rounded-full bg-current"
@@ -695,7 +695,7 @@ export default function Hero() {
               <span
                 style={{
                   background:
-                    'linear-gradient(92deg, #00C9B1 0%, #5BE8D5 40%, #7B8CDE 100%)',
+                    'linear-gradient(92deg, #3B82F6 0%, #93C5FD 40%, #60A5FA 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -731,14 +731,14 @@ export default function Hero() {
               href="#contact"
               className="inline-flex items-center gap-2.5 font-semibold rounded-xl select-none"
               style={{
-                background: '#00C9B1',
+                background: '#3B82F6',
                 color: '#0D2137',
                 height: '56px',
                 paddingLeft: '28px',
                 paddingRight: '28px',
                 borderRadius: '12px',
                 boxShadow:
-                  '0 0 32px rgba(0,201,177,0.38), 0 4px 16px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.25)',
+                  '0 0 32px rgba(59,130,246,0.38), 0 4px 16px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.25)',
                 fontFamily: '"Inter", system-ui, sans-serif',
                 fontWeight: 700,
                 fontSize: '15px',
@@ -748,16 +748,16 @@ export default function Hero() {
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLAnchorElement
                 el.style.boxShadow =
-                  '0 0 52px rgba(0,201,177,0.6), 0 8px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.3)'
+                  '0 0 52px rgba(59,130,246,0.6), 0 8px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.3)'
                 el.style.transform = 'scale(1.03) translateY(-1px)'
-                el.style.background = '#05DFC3'
+                el.style.background = '#60A5FA'
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLAnchorElement
                 el.style.boxShadow =
-                  '0 0 32px rgba(0,201,177,0.38), 0 4px 16px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.25)'
+                  '0 0 32px rgba(59,130,246,0.38), 0 4px 16px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.25)'
                 el.style.transform = 'scale(1) translateY(0)'
-                el.style.background = '#00C9B1'
+                el.style.background = '#3B82F6'
               }}
             >
               Request a Platform Demo
@@ -798,10 +798,10 @@ export default function Hero() {
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLAnchorElement
-                el.style.borderColor = 'rgba(0,201,177,0.45)'
-                el.style.background = 'rgba(0,201,177,0.07)'
+                el.style.borderColor = 'rgba(59,130,246,0.45)'
+                el.style.background = 'rgba(59,130,246,0.07)'
                 el.style.transform = 'scale(1.03) translateY(-1px)'
-                el.style.boxShadow = '0 0 24px rgba(0,201,177,0.12)'
+                el.style.boxShadow = '0 0 24px rgba(59,130,246,0.12)'
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLAnchorElement
@@ -841,13 +841,13 @@ export default function Hero() {
                   >
                     <path
                       d="M8 1.5L2 4v4c0 3.3 2.5 6.4 6 7 3.5-.6 6-3.7 6-7V4L8 1.5z"
-                      fill="rgba(0,201,177,0.15)"
-                      stroke="#00C9B1"
+                      fill="rgba(59,130,246,0.15)"
+                      stroke="#3B82F6"
                       strokeWidth="1.2"
                     />
                     <path
                       d="M5.5 8l1.8 1.8L10.5 6"
-                      stroke="#00C9B1"
+                      stroke="#3B82F6"
                       strokeWidth="1.4"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -892,8 +892,8 @@ export default function Hero() {
             }}
           >
             <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true">
-              <circle cx="4" cy="4" r="3" stroke="#00C9B1" strokeWidth="1.5" />
-              <circle cx="4" cy="4" r="1.5" fill="#00C9B1" />
+              <circle cx="4" cy="4" r="3" stroke="#3B82F6" strokeWidth="1.5" />
+              <circle cx="4" cy="4" r="1.5" fill="#3B82F6" />
             </svg>
             Live Data Convergence
           </div>
@@ -923,8 +923,8 @@ export default function Hero() {
             }}
           >
             <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true">
-              <circle cx="4" cy="4" r="3" stroke="#00C9B1" strokeWidth="1.5" />
-              <circle cx="4" cy="4" r="1.5" fill="#00C9B1" />
+              <circle cx="4" cy="4" r="3" stroke="#3B82F6" strokeWidth="1.5" />
+              <circle cx="4" cy="4" r="1.5" fill="#3B82F6" />
             </svg>
             Unified Data Platform
           </div>
@@ -956,7 +956,7 @@ export default function Hero() {
           <span
             className="h-px flex-1 max-w-[140px] rounded-full"
             style={{
-              background: 'linear-gradient(to right, transparent, rgba(0,201,177,0.38))',
+              background: 'linear-gradient(to right, transparent, rgba(59,130,246,0.38))',
             }}
           />
           <span
@@ -973,7 +973,7 @@ export default function Hero() {
           <span
             className="h-px flex-1 max-w-[140px] rounded-full"
             style={{
-              background: 'linear-gradient(to left, transparent, rgba(0,201,177,0.38))',
+              background: 'linear-gradient(to left, transparent, rgba(59,130,246,0.38))',
             }}
           />
         </div>

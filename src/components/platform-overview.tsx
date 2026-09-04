@@ -15,12 +15,12 @@ const modules = [
 ]
 
 const orbitNodes = [
-  { label: 'Clinical', angle: 0, color: '#00C9B1', icon: '🏥' },
-  { label: 'Financial', angle: 60, color: '#7B8CDE', icon: '💰' },
-  { label: 'Operational', angle: 120, color: '#00C9B1', icon: '⚙️' },
-  { label: 'Labs', angle: 180, color: '#7B8CDE', icon: '🔬' },
-  { label: 'Pharmacy', angle: 240, color: '#00C9B1', icon: '💊' },
-  { label: 'IoT', angle: 300, color: '#7B8CDE', icon: '📡' },
+  { label: 'Clinical', angle: 0, color: '#3B82F6', icon: '🏥' },
+  { label: 'Financial', angle: 60, color: '#60A5FA', icon: '💰' },
+  { label: 'Operational', angle: 120, color: '#3B82F6', icon: '⚙️' },
+  { label: 'Labs', angle: 180, color: '#60A5FA', icon: '🔬' },
+  { label: 'Pharmacy', angle: 240, color: '#3B82F6', icon: '💊' },
+  { label: 'IoT', angle: 300, color: '#60A5FA', icon: '📡' },
 ]
 
 function toRad(deg: number) {
@@ -38,41 +38,41 @@ function OrbitDiagram() {
       <defs>
         {/* Central glow gradient */}
         <radialGradient id="po-centerGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#00C9B1" stopOpacity="0.45" />
-          <stop offset="50%" stopColor="#00C9B1" stopOpacity="0.14" />
-          <stop offset="100%" stopColor="#00C9B1" stopOpacity="0" />
+          <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.45" />
+          <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.14" />
+          <stop offset="100%" stopColor="#3B82F6" stopOpacity="0" />
         </radialGradient>
 
         {/* Outer ambient glow */}
         <radialGradient id="po-outerGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#00C9B1" stopOpacity="0.07" />
-          <stop offset="60%" stopColor="#7B8CDE" stopOpacity="0.05" />
+          <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.07" />
+          <stop offset="60%" stopColor="#60A5FA" stopOpacity="0.05" />
           <stop offset="100%" stopColor="transparent" stopOpacity="0" />
         </radialGradient>
 
         {/* Teal node fill */}
         <radialGradient id="po-tealNode" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#00C9B1" stopOpacity="0.30" />
-          <stop offset="100%" stopColor="#00C9B1" stopOpacity="0.05" />
+          <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.30" />
+          <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.05" />
         </radialGradient>
 
         {/* Lavender node fill */}
         <radialGradient id="po-lavNode" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#7B8CDE" stopOpacity="0.30" />
-          <stop offset="100%" stopColor="#7B8CDE" stopOpacity="0.05" />
+          <stop offset="0%" stopColor="#60A5FA" stopOpacity="0.30" />
+          <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.05" />
         </radialGradient>
 
         {/* Central fill */}
         <radialGradient id="po-centerFill" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#00C9B1" stopOpacity="0.26" />
-          <stop offset="100%" stopColor="#00C9B1" stopOpacity="0.07" />
+          <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.26" />
+          <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.07" />
         </radialGradient>
 
         {/* Orbit ring gradient */}
         <linearGradient id="po-orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#00C9B1" stopOpacity="0.20" />
-          <stop offset="50%" stopColor="#7B8CDE" stopOpacity="0.35" />
-          <stop offset="100%" stopColor="#00C9B1" stopOpacity="0.20" />
+          <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.20" />
+          <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.35" />
+          <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.20" />
         </linearGradient>
 
         {/* Glow filter */}
@@ -181,7 +181,7 @@ function OrbitDiagram() {
         cy={240}
         r={200}
         fill="none"
-        stroke="rgba(123,140,222,0.07)"
+        stroke="rgba(96,165,250,0.07)"
         strokeWidth="1"
         strokeDasharray="2 10"
         className="po-outer-ring2"
@@ -193,7 +193,7 @@ function OrbitDiagram() {
         cy={240}
         r={183}
         fill="none"
-        stroke="rgba(0,201,177,0.10)"
+        stroke="rgba(59,130,246,0.10)"
         strokeWidth="1"
         strokeDasharray="3 9"
         className="po-outer-ring"
@@ -217,7 +217,7 @@ function OrbitDiagram() {
         cy={240}
         r={80}
         fill="none"
-        stroke="rgba(0,201,177,0.14)"
+        stroke="rgba(59,130,246,0.14)"
         strokeWidth="1"
         strokeDasharray="3 6"
         opacity="0.65"
@@ -231,7 +231,7 @@ function OrbitDiagram() {
         const curveFactor = 0.40
         const cx1 = 240 + 152 * curveFactor * Math.cos(rad - 0.48)
         const cy1 = 240 + 152 * curveFactor * Math.sin(rad - 0.48)
-        const isTeal = node.color === '#00C9B1'
+        const isTeal = node.color === '#3B82F6'
         return (
           <path
             key={`arc-${node.label}`}
@@ -261,8 +261,8 @@ function OrbitDiagram() {
         cx={240}
         cy={240}
         r={64}
-        fill="rgba(0,201,177,0.07)"
-        stroke="#00C9B1"
+        fill="rgba(59,130,246,0.07)"
+        stroke="#3B82F6"
         strokeWidth="1.2"
         strokeDasharray="4 5"
         opacity="0.55"
@@ -276,7 +276,7 @@ function OrbitDiagram() {
         cy={240}
         r={50}
         fill="url(#po-centerFill)"
-        stroke="#00C9B1"
+        stroke="#3B82F6"
         strokeWidth="2.2"
         filter="url(#po-strongGlow)"
         className="po-center-ring"
@@ -287,7 +287,7 @@ function OrbitDiagram() {
         cx={240}
         cy={240}
         r={36}
-        fill="rgba(0,201,177,0.18)"
+        fill="rgba(59,130,246,0.18)"
       />
 
       {/* Central label */}
@@ -295,7 +295,7 @@ function OrbitDiagram() {
         x={240}
         y={232}
         textAnchor="middle"
-        fill="#00C9B1"
+        fill="#3B82F6"
         fontSize="11"
         fontWeight="700"
         fontFamily="Inter, system-ui, sans-serif"
@@ -307,7 +307,7 @@ function OrbitDiagram() {
         x={240}
         y={246}
         textAnchor="middle"
-        fill="#00C9B1"
+        fill="#3B82F6"
         fontSize="11"
         fontWeight="700"
         fontFamily="Inter, system-ui, sans-serif"
@@ -319,7 +319,7 @@ function OrbitDiagram() {
         x={240}
         y={260}
         textAnchor="middle"
-        fill="#00C9B1"
+        fill="#3B82F6"
         fontSize="11"
         fontWeight="700"
         fontFamily="Inter, system-ui, sans-serif"
@@ -333,7 +333,7 @@ function OrbitDiagram() {
         const rad = toRad(node.angle)
         const nx = 240 + 152 * Math.cos(rad)
         const ny = 240 + 152 * Math.sin(rad)
-        const isTeal = node.color === '#00C9B1'
+        const isTeal = node.color === '#3B82F6'
         const nodeR = 32
 
         // Label positioned further outside the node
@@ -468,7 +468,7 @@ export function PlatformOverview() {
           left: '-120px',
           width: '560px',
           height: '560px',
-          background: 'radial-gradient(ellipse, rgba(0,201,177,0.07) 0%, transparent 68%)',
+          background: 'radial-gradient(ellipse, rgba(59,130,246,0.07) 0%, transparent 68%)',
           borderRadius: '50%',
         }}
         aria-hidden="true"
@@ -482,7 +482,7 @@ export function PlatformOverview() {
           right: '-100px',
           width: '480px',
           height: '480px',
-          background: 'radial-gradient(ellipse, rgba(123,140,222,0.07) 0%, transparent 68%)',
+          background: 'radial-gradient(ellipse, rgba(96,165,250,0.07) 0%, transparent 68%)',
           borderRadius: '50%',
         }}
         aria-hidden="true"
@@ -507,13 +507,13 @@ export function PlatformOverview() {
           <div className="flex items-center gap-2 mb-5">
             <span
               aria-hidden="true"
-              style={{ color: '#00C9B1', fontSize: '13px', lineHeight: 1 }}
+              style={{ color: '#3B82F6', fontSize: '13px', lineHeight: 1 }}
             >
               ✚
             </span>
             <span
               style={{
-                color: '#00C9B1',
+                color: '#3B82F6',
                 fontSize: '11px',
                 fontWeight: 600,
                 textTransform: 'uppercase',
@@ -534,9 +534,9 @@ export function PlatformOverview() {
                 marginTop: '6px',
                 width: '4px',
                 height: '56px',
-                backgroundColor: '#00C9B1',
+                backgroundColor: '#3B82F6',
                 borderRadius: '2px',
-                boxShadow: '0 0 18px rgba(0,201,177,0.6), 0 0 36px rgba(0,201,177,0.28)',
+                boxShadow: '0 0 18px rgba(59,130,246,0.6), 0 0 36px rgba(59,130,246,0.28)',
               }}
             />
             <div>
@@ -554,7 +554,7 @@ export function PlatformOverview() {
                 The Unified Patient{' '}
                 <span
                   style={{
-                    background: 'linear-gradient(90deg, #00C9B1 0%, #7B8CDE 100%)',
+                    background: 'linear-gradient(90deg, #3B82F6 0%, #60A5FA 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
@@ -608,7 +608,7 @@ export function PlatformOverview() {
                 position: 'absolute',
                 inset: 0,
                 background:
-                  'radial-gradient(ellipse 70% 70% at 50% 50%, rgba(0,201,177,0.09) 0%, transparent 68%)',
+                  'radial-gradient(ellipse 70% 70% at 50% 50%, rgba(59,130,246,0.09) 0%, transparent 68%)',
                 pointerEvents: 'none',
                 borderRadius: '50%',
               }}
@@ -762,15 +762,15 @@ function ModuleChip({
           'opacity 0.65s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1), background 0.30s ease, border-color 0.30s ease, box-shadow 0.30s ease',
         transitionDelay: isVisible ? `${480 + index * 55}ms` : '0ms',
         background: hovered
-          ? 'rgba(0,201,177,0.07)'
+          ? 'rgba(59,130,246,0.07)'
           : 'rgba(255,255,255,0.04)',
         border: hovered
-          ? '1px solid rgba(0,201,177,0.32)'
+          ? '1px solid rgba(59,130,246,0.32)'
           : '1px solid rgba(255,255,255,0.09)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
         boxShadow: hovered
-          ? '0 16px 64px rgba(0,0,0,0.40), 0 0 0 1px rgba(0,201,177,0.15), 0 1px 0 rgba(255,255,255,0.08) inset'
+          ? '0 16px 64px rgba(0,0,0,0.40), 0 0 0 1px rgba(59,130,246,0.15), 0 1px 0 rgba(255,255,255,0.08) inset'
           : '0 8px 48px rgba(0,0,0,0.28), 0 1px 0 rgba(255,255,255,0.06) inset',
         outline: 'none',
       }}
@@ -793,11 +793,11 @@ function ModuleChip({
             justifyContent: 'center',
             fontSize: '18px',
             background: hovered
-              ? 'rgba(0,201,177,0.16)'
-              : 'rgba(0,201,177,0.09)',
-            border: '1px solid rgba(0,201,177,0.22)',
+              ? 'rgba(59,130,246,0.16)'
+              : 'rgba(59,130,246,0.09)',
+            border: '1px solid rgba(59,130,246,0.22)',
             transition: 'background 0.30s ease',
-            boxShadow: hovered ? '0 0 12px rgba(0,201,177,0.18)' : 'none',
+            boxShadow: hovered ? '0 0 12px rgba(59,130,246,0.18)' : 'none',
           }}
         >
           {mod.icon}
@@ -823,7 +823,7 @@ function ModuleChip({
               marginTop: '3px',
               textTransform: 'uppercase',
               letterSpacing: '0.10em',
-              color: '#00C9B1',
+              color: '#3B82F6',
               margin: '3px 0 0 0',
             }}
           >
@@ -848,7 +848,7 @@ function ModuleChip({
       >
         <path
           d="M3 8h10M9 4l4 4-4 4"
-          stroke="#00C9B1"
+          stroke="#3B82F6"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -876,7 +876,7 @@ function ViewAllButton() {
         gap: '8px',
         fontSize: '14px',
         fontWeight: 600,
-        color: '#00C9B1',
+        color: '#3B82F6',
         background: 'none',
         border: 'none',
         cursor: 'pointer',
@@ -900,7 +900,7 @@ function ViewAllButton() {
       >
         <path
           d="M3 8h10M9 4l4 4-4 4"
-          stroke="#00C9B1"
+          stroke="#3B82F6"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -1004,7 +1004,7 @@ function StatCell({
         transition:
           'opacity 0.55s cubic-bezier(0.4,0,0.2,1), transform 0.55s cubic-bezier(0.4,0,0.2,1), background 0.28s ease',
         transitionDelay: `${640 + index * 80}ms`,
-        background: hovered ? 'rgba(0,201,177,0.05)' : 'transparent',
+        background: hovered ? 'rgba(59,130,246,0.05)' : 'transparent',
         cursor: 'default',
       }}
     >
@@ -1014,7 +1014,7 @@ function StatCell({
           fontWeight: 700,
           lineHeight: 1,
           marginBottom: '6px',
-          color: '#00C9B1',
+          color: '#3B82F6',
           letterSpacing: '-0.03em',
         }}
       >

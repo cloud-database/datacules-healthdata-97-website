@@ -12,7 +12,7 @@ export function Cta() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,201,177,0.12) 0%, transparent 70%)',
+            'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(59,130,246,0.12) 0%, transparent 70%)',
         }}
       />
 
@@ -31,7 +31,7 @@ export function Cta() {
       <div
         className="absolute bottom-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(0,201,177,0.09) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(59,130,246,0.09) 0%, transparent 70%)',
           filter: 'blur(56px)',
         }}
       />
@@ -40,7 +40,7 @@ export function Cta() {
       <div
         className="absolute top-0 right-1/4 w-80 h-80 rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(123,140,222,0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(96,165,250,0.08) 0%, transparent 70%)',
           filter: 'blur(56px)',
         }}
       />
@@ -56,7 +56,7 @@ export function Cta() {
           <polyline
             points="0,20 120,20 160,20 180,4 200,36 220,4 240,36 260,20 360,20 400,20 420,12 440,28 460,12 480,20 600,20 640,20 660,6 680,34 700,6 720,34 740,20 840,20 880,20 900,14 920,26 940,14 960,20 1080,20 1120,20 1140,8 1160,32 1180,8 1200,20 1320,20 1440,20"
             fill="none"
-            stroke="#00C9B1"
+            stroke="#3B82F6"
             strokeWidth="1.5"
           />
         </svg>
@@ -73,12 +73,12 @@ export function Cta() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <rect x="5" y="0" width="4" height="14" rx="1" fill="#00C9B1" />
-            <rect x="0" y="5" width="14" height="4" rx="1" fill="#00C9B1" />
+            <rect x="5" y="0" width="4" height="14" rx="1" fill="#3B82F6" />
+            <rect x="0" y="5" width="14" height="4" rx="1" fill="#3B82F6" />
           </svg>
           <span
             className="uppercase font-semibold"
-            style={{ color: '#00C9B1', fontSize: '11px', letterSpacing: '0.2em' }}
+            style={{ color: '#3B82F6', fontSize: '11px', letterSpacing: '0.2em' }}
           >
             Get Started Today
           </span>
@@ -96,7 +96,7 @@ export function Cta() {
           Transform Your Healthcare{' '}
           <span
             style={{
-              background: 'linear-gradient(90deg, #00C9B1 0%, #7B8CDE 100%)',
+              background: 'linear-gradient(90deg, #3B82F6 0%, #60A5FA 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -127,7 +127,7 @@ export function Cta() {
             href={BRAND.auth.register}
             className="cta-primary-btn relative inline-flex items-center justify-center font-bold rounded-xl"
             style={{
-              background: '#00C9B1',
+              background: '#3B82F6',
               color: '#0D2137',
               height: '64px',
               minWidth: '280px',
@@ -180,7 +180,7 @@ export function Cta() {
             height="14"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#00C9B1"
+            stroke="#3B82F6"
             strokeWidth="2.2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -218,13 +218,13 @@ export function Cta() {
       <style>{`
         @keyframes pulse-teal {
           0% {
-            box-shadow: 0 0 0 0 rgba(0, 201, 177, 0.55);
+            box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.55);
           }
           60% {
-            box-shadow: 0 0 0 18px rgba(0, 201, 177, 0);
+            box-shadow: 0 0 0 18px rgba(59, 130, 246, 0);
           }
           100% {
-            box-shadow: 0 0 0 0 rgba(0, 201, 177, 0);
+            box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
           }
         }
 
@@ -234,14 +234,14 @@ export function Cta() {
 
         .cta-primary-btn:hover {
           transform: scale(1.03);
-          box-shadow: 0 0 36px rgba(0, 201, 177, 0.5), 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+          box-shadow: 0 0 36px rgba(59, 130, 246, 0.5), 0 8px 24px rgba(0, 0, 0, 0.3) !important;
           animation: none;
         }
 
         .cta-ghost-btn:hover {
           transform: scale(1.03);
-          border-color: rgba(0, 201, 177, 0.45) !important;
-          background: rgba(0, 201, 177, 0.06) !important;
+          border-color: rgba(59, 130, 246, 0.45) !important;
+          background: rgba(59, 130, 246, 0.06) !important;
         }
       `}</style>
     </section>

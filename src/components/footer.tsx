@@ -53,7 +53,7 @@ function EcgWaveformDivider() {
           className="ecg-divider-base"
           d={ecgPath}
           fill="none"
-          stroke="rgba(0,201,177,0.05)"
+          stroke="rgba(59,130,246,0.05)"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -64,7 +64,7 @@ function EcgWaveformDivider() {
           className="ecg-divider-animated"
           d={ecgPath}
           fill="none"
-          stroke="rgba(0,201,177,0.55)"
+          stroke="rgba(59,130,246,0.55)"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -97,12 +97,12 @@ function PulsingDot() {
       {/* Expanding ring */}
       <span
         className="footer-pulse-ring absolute inline-flex w-full h-full rounded-full"
-        style={{ backgroundColor: 'rgba(0,201,177,0.4)' }}
+        style={{ backgroundColor: 'rgba(59,130,246,0.4)' }}
       />
       {/* Solid core */}
       <span
         className="relative inline-flex rounded-full"
-        style={{ width: '8px', height: '8px', backgroundColor: '#00C9B1', flexShrink: 0 }}
+        style={{ width: '8px', height: '8px', backgroundColor: '#3B82F6', flexShrink: 0 }}
       />
     </span>
   );
@@ -123,7 +123,7 @@ function FooterLogo() {
       style={{ width: logoWidth, height: logoHeight, opacity: 0.8 }}
     >
       <Image
-        src="/images/brand/logo-light.png"
+        src="/1207x302.png"
         alt="Datacules HealthData 97"
         width={logoWidth}
         height={logoHeight}
@@ -167,8 +167,8 @@ function FooterLogo() {
               y2="48"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0%" stopColor="#00C9B1" />
-              <stop offset="100%" stopColor="#0A9B8A" />
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#1D4ED8" />
             </linearGradient>
           </defs>
 
@@ -210,7 +210,7 @@ function FooterLogo() {
             fontFamily="'Inter', 'Plus Jakarta Sans', system-ui, sans-serif"
             fontWeight="500"
             fontSize="11"
-            fill="#00C9B1"
+            fill="#3B82F6"
             letterSpacing="0.8"
           >
             HEALTHDATA 97
@@ -247,7 +247,7 @@ function FooterLink({
   const baseStyle: React.CSSProperties = { color: '#A8BFCC' };
 
   const onEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.currentTarget.style.color = '#00C9B1';
+    e.currentTarget.style.color = '#3B82F6';
   };
   const onLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.currentTarget.style.color = '#A8BFCC';
@@ -340,7 +340,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs font-medium w-fit transition-colors duration-200"
               style={{ color: '#A8BFCC' }}
-              onMouseEnter={e => (e.currentTarget.style.color = '#00C9B1')}
+              onMouseEnter={e => (e.currentTarget.style.color = '#3B82F6')}
               onMouseLeave={e => (e.currentTarget.style.color = '#A8BFCC')}
             >
               {/* Small arrow icon */}
@@ -423,7 +423,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-sm transition-colors duration-200"
                   style={{ color: '#A8BFCC' }}
-                  onMouseEnter={e => (e.currentTarget.style.color = '#00C9B1')}
+                  onMouseEnter={e => (e.currentTarget.style.color = '#3B82F6')}
                   onMouseLeave={e => (e.currentTarget.style.color = '#A8BFCC')}
                 >
                   {BRAND.company.name}
