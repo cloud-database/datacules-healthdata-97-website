@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import { DataculesLogoSVG } from './logo';
 
 const navLinks = [
   { label: 'Platform', href: '/#platform' },
@@ -28,22 +28,15 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#06487A]/95 backdrop-blur-xl border-b border-white/5 shadow-nav'
+          ? 'bg-[#043A62]/95 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_24px_rgba(0,0,0,0.3)]'
           : 'bg-transparent'
       }`}
       style={{ height: 'var(--nav-height)' }}
     >
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
-        {/* Logo */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+        {/* Logo — SVG with transparent background, blends naturally with any dark bg */}
         <Link href="/" aria-label="Datacules HealthData 97 — Home">
-          <Image
-            src="/1207x302.png"
-            alt="Datacules HealthData 97"
-            width={165}
-            height={44}
-            className="object-contain"
-            priority
-          />
+          <DataculesLogoSVG compact={false} className="h-9 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -83,10 +76,10 @@ export function Navbar() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div
-          className="lg:hidden bg-[#06487A]/98 backdrop-blur-xl border-b border-white/5"
+          className="lg:hidden bg-[#043A62]/98 backdrop-blur-xl border-b border-white/5"
           style={{ animation: 'slideDown 0.25s ease-out forwards' }}
         >
-          <nav className="max-w-8xl mx-auto px-4 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
+          <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.label}

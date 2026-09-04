@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   UserRound, FileHeart, Stethoscope, FlaskConical, Pill, Video,
   Activity, CircleDollarSign, FileCheck, ClipboardCheck, Shield,
@@ -48,19 +48,37 @@ const categoryColors: Record<string, string> = {
   Operations: '#3B82F6',
 };
 
+const allCategories = [
+  'All',
+  ...Array.from(new Set(modules.map((m) => m.category))),
+];
+
 export function ModulesGrid() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [hoverCategory, setHoverCategory] = useState<string | null>(null);
 
   useEffect(() => {
     const els = sectionRef.current?.querySelectorAll('.animate-on-scroll');
     if (!els) return;
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('is-visible'); }),
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add('is-visible');
+        }),
       { threshold: 0.05, rootMargin: '0px 0px -60px 0px' }
     );
     els.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  function getCardState(mod: (typeof modules)[0]) {
+    const passesFilter = activeCategory === 'All' || mod.category === activeCategory;
+    if (!passesFilter) return 'dim';
+    if (hoverCategory && hoverCategory !== mod.category) return 'dim';
+    if (hoverCategory && hoverCategory === mod.category) return 'highlight';
+    return 'normal';
+  }
 
   return (
     <section
@@ -83,15 +101,41 @@ export function ModulesGrid() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-16 animate-on-scroll">
+        <div className="max-w-3xl mb-12 animate-on-scroll">
           <div className="section-eyebrow mb-4">Platform Anatomy</div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
             23 Tightly{' '}
             <span className="text-accent-gradient">Integrated Modules</span>
           </h2>
           <p className="text-lg text-[#A8BFCC]">
-            Every clinical, financial, operational, and compliance workflow unified in a single coherent platform architecture — from patient registration through AI-powered risk intelligence.
+            Every clinical, financial, operational, and compliance workflow unified in a single
+            coherent platform architecture — from patient registration through AI-powered risk
+            intelligence.
           </p>
+        </div>
+
+        {/* Category filter */}
+        <div className="flex flex-wrap gap-2 mb-8 animate-on-scroll stagger-1">
+          {allCategories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className="px-3 py-1.5 rounded-full text-[11px] font-semibold tracking-wide transition-all duration-200"
+              style={{
+                background:
+                  activeCategory === cat
+                    ? 'rgba(59,130,246,0.2)'
+                    : 'rgba(255,255,255,0.03)',
+                border:
+                  activeCategory === cat
+                    ? '1px solid rgba(59,130,246,0.45)'
+                    : '1px solid rgba(255,255,255,0.08)',
+                color: activeCategory === cat ? '#60A5FA' : '#A8BFCC',
+              }}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
 
         {/* Grid */}
@@ -99,11 +143,17 @@ export function ModulesGrid() {
           {modules.map((mod, i) => {
             const Icon = mod.icon;
             const color = categoryColors[mod.category] ?? '#3B82F6';
+            const state = getCardState(mod);
+
             return (
               <div
                 key={mod.name}
-                className="group flex flex-col items-center gap-3 p-4 rounded-xl border border-white/[0.07] bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04] transition-all duration-200 text-center"
+                className={`module-card flex flex-col items-center gap-3 p-4 rounded-xl border border-white/[0.07] bg-white/[0.02] text-center ${
+                  state === 'highlight' ? 'module-highlight' : ''
+                } ${state === 'dim' ? 'module-dim' : ''}`}
                 style={{ transitionDelay: `${(i % 6) * 0.04}s` }}
+                onMouseEnter={() => setHoverCategory(mod.category)}
+                onMouseLeave={() => setHoverCategory(null)}
               >
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"

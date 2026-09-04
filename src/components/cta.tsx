@@ -39,11 +39,12 @@ export function Cta() {
           <span className="text-accent-gradient">Datacules HealthData 97?</span>
         </h2>
         <p className="text-lg text-[#A8BFCC] mb-10 max-w-2xl mx-auto leading-relaxed">
-          See how Datacules HealthData 97 consolidates your clinical, financial, and operational data into one intelligent platform — designed for enterprise healthcare organizations.
+          See how Datacules HealthData 97 consolidates your clinical, financial, and operational
+          data into one intelligent platform — designed for enterprise healthcare organizations.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          {/* Primary CTA with pulse ring */}
+          {/* Primary CTA with pulse ring + arrow */}
           <div className="relative inline-flex">
             <div
               className="absolute inset-0 rounded-xl"
@@ -55,9 +56,18 @@ export function Cta() {
             />
             <Link
               href="/demo"
-              className="relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-[#3B82F6] hover:bg-[#2563EB] rounded-xl transition-all duration-200 min-w-[220px]"
+              className="btn-arrow relative inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-[#3B82F6] hover:bg-[#2563EB] rounded-xl transition-all duration-200 min-w-[220px] hover:shadow-[0_0_28px_rgba(59,130,246,0.35)]"
             >
               Request a Demo
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M3 8h10M9 4l4 4-4 4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </Link>
           </div>
           <Link

@@ -227,3 +227,154 @@ h1, h2, h3, h4, h5, h6 {
 @media print {
   body { background: white; color: black; }
 }
+
+/* ─── Count-Up Animation ─────────────────────────────────────────────────────── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Bar Grow ───────────────────────────────────────────────────────────────── */
+@keyframes barGrow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* ─── Pipeline Flow ──────────────────────────────────────────────────────────── */
+@keyframes pipelineFlow {
+  0% { stroke-dashoffset: 200; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* ─── Terminal Cursor ────────────────────────────────────────────────────────── */
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ─── Slide In Left ──────────────────────────────────────────────────────────── */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── Tier Activate ──────────────────────────────────────────────────────────── */
+@keyframes tierActivate {
+  from { opacity: 0.35; transform: translateX(-6px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── Glow Pulse ─────────────────────────────────────────────────────────────── */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+  50% { box-shadow: 0 0 24px 4px rgba(59,130,246,0.18); }
+}
+
+/* ─── Stroke Draw ────────────────────────────────────────────────────────────── */
+@keyframes strokeDraw {
+  from { stroke-dashoffset: 300; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* ─── Slide Down (mobile menu) ───────────────────────────────────────────────── */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Donut Animate ──────────────────────────────────────────────────────────── */
+@keyframes donutGrow {
+  from { stroke-dasharray: 0 100; }
+}
+
+/* ─── Terminal cursor element ────────────────────────────────────────────────── */
+.terminal-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 13px;
+  background: #3B82F6;
+  animation: cursorBlink 1s ease-in-out infinite;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  border-radius: 1px;
+}
+
+/* ─── Tier states ────────────────────────────────────────────────────────────── */
+.tier-row {
+  transition: opacity 0.5s ease, border-left-color 0.4s ease;
+}
+.tier-row.tier-inactive {
+  opacity: 0.38;
+}
+.tier-row.tier-active {
+  opacity: 1;
+  animation: tierActivate 0.45s ease-out forwards;
+}
+
+/* ─── Module card hover ──────────────────────────────────────────────────────── */
+.module-card {
+  transition: all 0.2s ease;
+  cursor: default;
+}
+.module-card:hover {
+  border-color: rgba(59,130,246,0.45) !important;
+  background: rgba(59,130,246,0.07) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.28), 0 0 0 1px rgba(59,130,246,0.18);
+}
+.module-card.module-highlight {
+  border-color: rgba(59,130,246,0.5) !important;
+  background: rgba(59,130,246,0.08) !important;
+}
+.module-card.module-dim {
+  opacity: 0.28;
+}
+
+/* ─── Pipeline node hover ────────────────────────────────────────────────────── */
+.pipeline-node {
+  transition: all 0.25s ease;
+  cursor: default;
+}
+.pipeline-node:hover {
+  transform: translateY(-3px);
+  border-color: rgba(59,130,246,0.55) !important;
+  background: rgba(255,255,255,0.07) !important;
+}
+
+/* ─── Button arrow ───────────────────────────────────────────────────────────── */
+.btn-arrow svg {
+  transition: transform 0.2s ease;
+}
+.btn-arrow:hover svg {
+  transform: translateX(4px);
+}
+
+/* ─── AI bar animation ───────────────────────────────────────────────────────── */
+.ai-bar-inner {
+  transform-origin: left center;
+  transition: width 1.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Status pulse dot ───────────────────────────────────────────────────────── */
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+.status-dot {
+  animation: statusPulse 2s ease-in-out infinite;
+}
+.status-dot-green {
+  animation: statusPulse 1.8s ease-in-out infinite;
+}
+
+/* ─── Security rings ─────────────────────────────────────────────────────────── */
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes ringRotateReverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}

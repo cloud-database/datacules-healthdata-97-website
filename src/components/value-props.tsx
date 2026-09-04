@@ -79,7 +79,8 @@ export function ValueProps() {
             <span className="text-accent-gradient">Decision-Maker</span>
           </h2>
           <p className="text-lg text-[#A8BFCC]">
-            Datacules HealthData 97 serves multiple stakeholders across the healthcare organization — from clinical teams and data engineers to executives and compliance officers.
+            Datacules HealthData 97 serves multiple stakeholders across the healthcare organization —
+            from clinical teams and data engineers to executives and compliance officers.
           </p>
         </div>
 
@@ -90,17 +91,28 @@ export function ValueProps() {
             return (
               <div
                 key={uc.title}
-                className="card-base p-7"
+                className="card-base p-7 group"
                 style={{ transitionDelay: `${(i % 3) * 0.08}s` }}
               >
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                  style={{ background: `${uc.color}15` }}
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
+                  style={{
+                    background: `${uc.color}15`,
+                    boxShadow: '0 0 0 0 transparent',
+                  }}
                 >
-                  <Icon size={22} style={{ color: uc.color }} />
+                  <Icon
+                    size={22}
+                    style={{ color: uc.color }}
+                    className="transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-3">{uc.title}</h3>
-                <p className="text-sm text-[#A8BFCC] leading-relaxed">{uc.description}</p>
+                <h3 className="text-lg font-semibold text-white mb-3 transition-colors duration-200 group-hover:text-white">
+                  {uc.title}
+                </h3>
+                <p className="text-sm text-[#A8BFCC] leading-relaxed transition-colors duration-200 group-hover:text-[#C8D9E6]">
+                  {uc.description}
+                </p>
               </div>
             );
           })}

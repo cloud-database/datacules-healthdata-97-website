@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Database,
   Settings,
@@ -18,7 +18,13 @@ const tiers = [
     subtitle: 'The Foundation',
     icon: Database,
     borderColor: '#3B82F6',
-    items: ['EHR & Clinical Systems', 'Labs & Diagnostics', 'Billing & Claims', 'Telehealth & IoT', 'Pharmacy & External APIs'],
+    items: [
+      'EHR & Clinical Systems',
+      'Labs & Diagnostics',
+      'Billing & Claims',
+      'Telehealth & IoT',
+      'Pharmacy & External APIs',
+    ],
   },
   {
     number: '02',
@@ -26,7 +32,13 @@ const tiers = [
     subtitle: 'Unify & Normalize',
     icon: Settings,
     borderColor: '#60A5FA',
-    items: ['Integration & Ingestion', 'Normalization & Validation', 'Data Quality Controls', 'Longitudinal Patient Records', 'Multi-source Reconciliation'],
+    items: [
+      'Integration & Ingestion',
+      'Normalization & Validation',
+      'Data Quality Controls',
+      'Longitudinal Patient Records',
+      'Multi-source Reconciliation',
+    ],
   },
   {
     number: '03',
@@ -34,7 +46,13 @@ const tiers = [
     subtitle: 'Control & Protect',
     icon: ShieldCheck,
     borderColor: '#3B82F6',
-    items: ['Role-Based Access Control', 'PHI Encryption at Rest & Transit', 'Complete Audit Trail', 'Privacy & Consent Management', 'Compliance-Oriented Architecture'],
+    items: [
+      'Role-Based Access Control',
+      'PHI Encryption at Rest & Transit',
+      'Complete Audit Trail',
+      'Privacy & Consent Management',
+      'Compliance-Oriented Architecture',
+    ],
   },
   {
     number: '04',
@@ -42,7 +60,13 @@ const tiers = [
     subtitle: 'Understand & Measure',
     icon: BarChart2,
     borderColor: '#60A5FA',
-    items: ['Clinical Analytics', 'Operational Analytics', 'Financial & Revenue Analytics', 'Population Health Metrics', 'Quality & Performance Dashboards'],
+    items: [
+      'Clinical Analytics',
+      'Operational Analytics',
+      'Financial & Revenue Analytics',
+      'Population Health Metrics',
+      'Quality & Performance Dashboards',
+    ],
   },
   {
     number: '05',
@@ -50,7 +74,13 @@ const tiers = [
     subtitle: 'Predict & Surface',
     icon: Brain,
     borderColor: '#3B82F6',
-    items: ['Readmission Risk Scoring', 'Billing Denial Prediction', 'Vitals Anomaly Detection', 'No-Show & No-Contact Prediction', 'Population Stratification'],
+    items: [
+      'Readmission Risk Scoring',
+      'Billing Denial Prediction',
+      'Vitals Anomaly Detection',
+      'No-Show & No-Contact Prediction',
+      'Population Stratification',
+    ],
   },
   {
     number: '06',
@@ -58,22 +88,57 @@ const tiers = [
     subtitle: 'Decide & Operate',
     icon: Zap,
     borderColor: '#60A5FA',
-    items: ['Operational Insights & Alerts', 'Clinical Decision Support', 'Workflow Triggers', 'Risk Prioritization', 'Executive Intelligence'],
+    items: [
+      'Operational Insights & Alerts',
+      'Clinical Decision Support',
+      'Workflow Triggers',
+      'Risk Prioritization',
+      'Executive Intelligence',
+    ],
   },
 ];
 
 export function PlatformOverview() {
   const sectionRef = useRef<HTMLElement>(null);
+  const tierRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeTiers, setActiveTiers] = useState<boolean[]>(tiers.map(() => false));
 
   useEffect(() => {
-    const els = sectionRef.current?.querySelectorAll('.animate-on-scroll');
-    if (!els) return;
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('is-visible'); }),
-      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
-    );
-    els.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    // Observe section header
+    const headerEls = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    if (headerEls) {
+      const headerObserver = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add('is-visible');
+          }),
+        { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      );
+      headerEls.forEach((el) => headerObserver.observe(el));
+    }
+
+    // Observe each tier individually
+    const observers: IntersectionObserver[] = [];
+    tierRefs.current.forEach((el, i) => {
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveTiers((prev) => {
+              const next = [...prev];
+              next[i] = true;
+              return next;
+            });
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   return (
@@ -91,19 +156,32 @@ export function PlatformOverview() {
             <span className="text-accent-gradient">Source to Decision</span>
           </h2>
           <p className="text-lg text-[#A8BFCC] leading-relaxed">
-            Datacules HealthData 97 is an enterprise healthcare data platform built to connect, manage, govern, analyze, and operationalize data across your entire organization. It brings clinical, financial, operational, and population data into one governed environment — with AI-driven intelligence integrated throughout every layer.
+            Datacules HealthData 97 is an enterprise healthcare data platform built to connect,
+            manage, govern, analyze, and operationalize data across your entire organization. It
+            brings clinical, financial, operational, and population data into one governed
+            environment — with AI-driven intelligence integrated throughout every layer.
           </p>
         </div>
 
-        {/* Architecture tiers */}
-        <div className="space-y-3 animate-on-scroll stagger-2">
+        {/* Architecture tiers — scroll-activated */}
+        <div className="space-y-3">
           {tiers.map((tier, i) => {
             const Icon = tier.icon;
+            const isActive = activeTiers[i];
+
             return (
-              <div key={tier.number}>
+              <div
+                key={tier.number}
+                ref={(el) => { tierRefs.current[i] = el; }}
+              >
                 <div
-                  className="relative rounded-2xl overflow-hidden border border-white/[0.07] bg-[rgba(255,255,255,0.03)] hover:border-white/15 transition-all duration-300 group"
-                  style={{ borderLeftWidth: '3px', borderLeftColor: tier.borderColor }}
+                  className={`tier-row relative rounded-2xl overflow-hidden border border-white/[0.07] bg-[rgba(255,255,255,0.03)] hover:border-white/15 transition-all duration-300 group ${
+                    isActive ? 'tier-active' : 'tier-inactive'
+                  }`}
+                  style={{
+                    borderLeftWidth: '3px',
+                    borderLeftColor: isActive ? tier.borderColor : 'rgba(255,255,255,0.1)',
+                  }}
                 >
                   <div className="p-5 sm:p-6">
                     <div className="flex flex-col sm:flex-row sm:items-start gap-4">
@@ -147,8 +225,8 @@ export function PlatformOverview() {
                   <div className="flex justify-center my-1">
                     <ChevronDown
                       size={16}
-                      className="text-[#3B82F6]"
-                      style={{ opacity: 0.3 }}
+                      className="transition-colors duration-500"
+                      style={{ color: '#3B82F6', opacity: activeTiers[i] ? 0.6 : 0.2 }}
                     />
                   </div>
                 )}
