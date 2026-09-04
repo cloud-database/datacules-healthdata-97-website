@@ -1,76 +1,73 @@
 import type { Metadata } from 'next';
-// NOTE: dashboard/ marker — do not overwrite with generated content
-import { BRAND } from '@/lib/brand';
+import Link from 'next/link';
+import Image from 'next/image';
+import { LayoutDashboard, BookOpen, Settings, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: `Dashboard | ${BRAND.name}`,
-  description: `Your ${BRAND.name} dashboard`,
+  title: 'Dashboard | Datacules HealthData 97',
+  description: 'Your Datacules HealthData 97 dashboard overview.',
 };
 
-// TODO: Protect this route with your auth provider (middleware.ts or a session check)
 export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-gray-950 pt-24">
+    <div className="min-h-screen bg-[#0D2137] pt-24">
       <div className="max-w-5xl mx-auto px-6 py-16">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-black text-white mb-2">Dashboard</h1>
-          <p className="text-gray-500">Welcome back. Here&apos;s your {BRAND.name} overview.</p>
+          <div className="section-eyebrow mb-4">Dashboard</div>
+          <h1 className="text-4xl font-bold text-white mb-2">Welcome Back</h1>
+          <p className="text-[#A8BFCC]">Your Datacules HealthData 97 overview.</p>
         </div>
 
         {/* Product access card */}
         <div
-          className="rounded-3xl p-8 mb-8 relative overflow-hidden"
-          style={{ background: `linear-gradient(135deg, var(--brand-primary), var(--brand-accent))` }}
+          className="rounded-2xl p-8 mb-8 relative overflow-hidden border border-[#3B82F6]/20"
+          style={{ background: 'linear-gradient(135deg, #0D2137 0%, #112744 100%)' }}
         >
-          <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/10 blur-2xl pointer-events-none" />
+          <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 80% at 80% 50%, rgba(59,130,246,0.12) 0%, transparent 70%)' }} />
           <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
-              <h2 className="text-2xl font-black text-white mb-2">Access {BRAND.name}</h2>
-              <p className="text-white/80 text-sm max-w-md">
-                {BRAND.tagline}
+              <Image src="/331x89.png" alt="Datacules HealthData 97" width={150} height={40} className="object-contain mb-4" />
+              <p className="text-[#A8BFCC] text-sm max-w-md">
+                Enterprise healthcare data management, analytics, and AI intelligence — unified in one platform.
               </p>
             </div>
-            <a
-              href="#"
-              className="flex-shrink-0 px-6 py-3 rounded-xl bg-white font-bold text-sm transition-all hover:scale-105 active:scale-95"
-              style={{ color: 'var(--brand-primary)' }}
+            <Link
+              href="/"
+              className="flex-shrink-0 px-6 py-3 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] text-white font-semibold text-sm transition-colors"
             >
-              Open {BRAND.name} →
-            </a>
+              Explore the Platform →
+            </Link>
           </div>
         </div>
 
         {/* Quick links */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          <a href={BRAND.auth.login} className="group rounded-2xl border border-white/10 bg-white/5 p-6 card-hover block">
-            <div className="w-10 h-10 rounded-xl mb-4 flex items-center justify-center" style={{ background: 'rgba(var(--brand-primary-rgb), 0.15)' }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="var(--brand-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <h3 className="text-white font-bold mb-1">Documentation</h3>
-            <p className="text-gray-500 text-sm">Browse all guides and API references.</p>
-          </a>
-          <a href="#" className="group rounded-2xl border border-white/10 bg-white/5 p-6 card-hover block">
-            <div className="w-10 h-10 rounded-xl mb-4 flex items-center justify-center" style={{ background: 'rgba(var(--brand-primary-rgb), 0.15)' }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="var(--brand-primary)"/>
-              </svg>
-            </div>
-            <h3 className="text-white font-bold mb-1">Subscription</h3>
-            <p className="text-gray-500 text-sm">Manage your plan and billing.</p>
-          </a>
-          <a href="#" className="group rounded-2xl border border-white/10 bg-white/5 p-6 card-hover block">
-            <div className="w-10 h-10 rounded-xl mb-4 flex items-center justify-center" style={{ background: 'rgba(var(--brand-primary-rgb), 0.15)' }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="8" r="4" stroke="var(--brand-primary)" strokeWidth="2"/>
-                <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="var(--brand-primary)" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            </div>
-            <h3 className="text-white font-bold mb-1">Account Settings</h3>
-            <p className="text-gray-500 text-sm">Update your profile and preferences.</p>
-          </a>
+          {[
+            { href: '/docs', icon: BookOpen, title: 'Documentation', desc: 'API reference and integration guides.' },
+            { href: '/security', icon: Shield, title: 'Security Overview', desc: 'Platform security and compliance architecture.' },
+            { href: '/contact', icon: Settings, title: 'Account & Support', desc: 'Contact the Datacules team for assistance.' },
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link key={item.title} href={item.href} className="card-base p-6 block">
+                <div className="w-10 h-10 rounded-xl bg-[#3B82F6]/15 flex items-center justify-center mb-4">
+                  <Icon size={18} className="text-[#3B82F6]" />
+                </div>
+                <h3 className="text-white font-semibold mb-1 text-sm">{item.title}</h3>
+                <p className="text-[#A8BFCC] text-xs">{item.desc}</p>
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-white/[0.06]">
+          <div className="flex items-center gap-2">
+            <LayoutDashboard size={14} className="text-[#4A6080]" />
+            <p className="text-xs text-[#4A6080]">
+              Datacules HealthData 97 · © 2026 Datacules LLC
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -394,15 +394,15 @@ export const BRAND = {
     ],
     badges: [
       {
-        title: "HIPAA Compliant",
+        title: "HIPAA-Aligned Architecture",
         description:
-          "Full PHI protection with encryption at rest and in transit, minimum necessary access controls, and complete audit trail infrastructure.",
+          "Designed with HIPAA requirements in mind — PHI encryption at rest and in transit, minimum necessary access controls, and complete audit trail infrastructure.",
         icon: "shield",
         accentColor: "#3B82F6",
         gridPosition: { row: 1, col: 1 },
       },
       {
-        title: "GDPR Ready",
+        title: "GDPR Privacy Controls",
         description:
           "Privacy by design with data subject rights workflows, consent management, automated data export, and configurable retention policies.",
         icon: "lock",
@@ -410,17 +410,17 @@ export const BRAND = {
         gridPosition: { row: 1, col: 2 },
       },
       {
-        title: "HL7 FHIR Certified",
+        title: "HL7 FHIR Compatible",
         description:
-          "Native HL7 FHIR R4 support for standardized clinical data exchange, ensuring seamless interoperability across your entire care ecosystem.",
+          "HL7 FHIR R4 support for standardized clinical data exchange, enabling seamless interoperability across your healthcare ecosystem.",
         icon: "network",
         accentColor: "#60A5FA",
         gridPosition: { row: 2, col: 1 },
       },
       {
-        title: "SOC 2 Type II",
+        title: "SOC 2 Aligned Architecture",
         description:
-          "Independent third-party attestation of our security, availability, and confidentiality controls — giving enterprise procurement teams the assurance they require.",
+          "Security, availability, and confidentiality controls aligned with SOC 2 principles — providing enterprise procurement teams a structured security posture.",
         icon: "badge-check",
         accentColor: "#60A5FA",
         gridPosition: { row: 2, col: 2 },

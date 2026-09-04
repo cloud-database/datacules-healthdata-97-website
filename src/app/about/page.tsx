@@ -1,88 +1,142 @@
 import type { Metadata } from 'next';
-import { Cta } from '@/components/cta';
-import { BRAND } from '@/lib/brand';
+import Link from 'next/link';
+import { Shield, Brain, Database, BarChart2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: `About | ${BRAND.name}`,
-  description: `About ${BRAND.name} — ${BRAND.tagline}`,
+  title: 'About Datacules LLC',
+  description:
+    'Datacules LLC develops enterprise healthcare data technology. Learn about our approach to healthcare data management, governance, and AI-driven intelligence.',
 };
+
+const pillars = [
+  {
+    icon: Database,
+    title: 'Data-First Architecture',
+    description:
+      'Healthcare data is the foundation of every capability we build. We designed Datacules HealthData 97 around a unified patient record that aggregates clinical, financial, and operational data from every connected source.',
+  },
+  {
+    icon: Shield,
+    title: 'Governance by Design',
+    description:
+      'Security, access control, audit, and privacy controls are part of the platform architecture — not add-ons. Every data access event is logged, every permission is role-scoped, every PHI field is protected.',
+  },
+  {
+    icon: Brain,
+    title: 'AI as an Intelligence Layer',
+    description:
+      'Our AI capabilities are connected directly to the underlying data platform — not separate tools. Predictive models for readmission risk, denial prediction, and vitals anomaly detection are integrated into the same data environment your teams use daily.',
+  },
+  {
+    icon: BarChart2,
+    title: 'Enterprise-Grade Infrastructure',
+    description:
+      'Datacules HealthData 97 is built for enterprise healthcare systems — with 354+ API endpoints, 23 integrated modules, and a governance framework designed for complex organizational structures.',
+  },
+];
 
 export default function AboutPage() {
   return (
-    <div className="bg-gray-950 min-h-screen pt-24">
-      <div className="max-w-3xl mx-auto px-6 py-16">
-        {/* Header */}
-        <div className="mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-6 border border-white/10 bg-white/5 text-gray-400">
-            Our Story
-          </div>
-          <h1 className="text-5xl font-black text-white mb-6">
-            About <span className="gradient-text">{BRAND.name}</span>
+    <main className="bg-[#0D2137] min-h-screen">
+      {/* Hero */}
+      <section className="pt-40 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <div className="section-eyebrow mb-5">About Datacules LLC</div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-7 leading-tight">
+            Building Enterprise Healthcare Data Infrastructure
           </h1>
-          <p className="text-xl text-gray-400 leading-relaxed">{BRAND.description}</p>
-        </div>
-
-        {/* Tagline callout */}
-        <div
-          className="rounded-2xl p-8 mb-14 border border-white/10"
-          style={{ background: `rgba(var(--brand-primary-rgb), 0.08)` }}
-        >
-          <p className="text-2xl font-bold text-white leading-snug">
-            &ldquo;{BRAND.tagline}&rdquo;
+          <p className="text-xl text-[#A8BFCC] leading-relaxed">
+            Datacules LLC develops enterprise healthcare data technology. Datacules HealthData 97 is our flagship platform — purpose-built to unify, govern, analyze, and operationalize healthcare data across complex organizational environments.
           </p>
         </div>
+      </section>
 
-        {/* Value props */}
-        <h2 className="text-2xl font-black text-white mb-8">Why {BRAND.name}?</h2>
-        <div className="space-y-5 mb-14">
-          
-          <div key={0} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-lg font-bold text-white mb-2">Enterprise-Wide Data Unification</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">Connect EHR, billing, telehealth, labs, prescriptions, and IoT into 23 integrated modules via 354+ API endpoints.</p>
-          </div>
-          <div key={1} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-lg font-bold text-white mb-2">AI That Works When It Matters</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">Dual AI architecture delivers readmission risk, denial prediction, and vitals anomaly detection with statistical fallback coverage.</p>
-          </div>
-          <div key={2} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-lg font-bold text-white mb-2">Compliance Built Into the Foundation</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">HIPAA and GDPR controls, PHI encryption, configurable audit log retention, and dedicated compliance tables — by design, not as an add-on.</p>
+      {/* What we build */}
+      <section className="py-20 border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                What We Build
+              </h2>
+              <p className="text-[#A8BFCC] mb-5 leading-relaxed">
+                Healthcare data is fragmented across clinical systems, billing platforms, lab information systems, telehealth tools, pharmacy systems, and IoT devices. Each system holds a piece of the patient record — but none of them talk to each other.
+              </p>
+              <p className="text-[#A8BFCC] mb-5 leading-relaxed">
+                Datacules HealthData 97 is designed to solve that problem. It connects those data sources, normalizes and validates the data, applies governance and access controls, and surfaces it through analytics, AI-driven intelligence, and a comprehensive API.
+              </p>
+              <p className="text-[#A8BFCC] leading-relaxed">
+                The result is a single, governed healthcare data environment that clinical teams, data engineers, financial operations teams, and executives can all rely on.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="card-base p-5 text-center">
+                <div className="text-3xl font-bold text-white mb-1">354+</div>
+                <div className="text-xs text-[#A8BFCC]">REST API Endpoints</div>
+              </div>
+              <div className="card-base p-5 text-center">
+                <div className="text-3xl font-bold text-white mb-1">23</div>
+                <div className="text-xs text-[#A8BFCC]">Integrated Modules</div>
+              </div>
+              <div className="card-base p-5 text-center">
+                <div className="text-3xl font-bold text-white mb-1">240+</div>
+                <div className="text-xs text-[#A8BFCC]">Database Tables</div>
+              </div>
+              <div className="card-base p-5 text-center">
+                <div className="text-3xl font-bold text-white mb-1">PHI</div>
+                <div className="text-xs text-[#A8BFCC]">Encrypted at Rest &amp; Transit</div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Company card */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 className="text-lg font-bold text-white mb-3">Built by {BRAND.company.name}</h3>
-          <p className="text-gray-500 text-sm mb-4">
-            {BRAND.name} is designed and maintained by {BRAND.company.name} — {BRAND.company.tagline}.
+      {/* Our approach */}
+      <section className="py-20 border-t border-white/[0.06] bg-[#112744]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 max-w-2xl">
+            Our Approach to Healthcare Data
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {pillars.map((p) => {
+              const Icon = p.icon;
+              return (
+                <div key={p.title} className="card-base p-7">
+                  <div className="w-11 h-11 rounded-xl bg-[#3B82F6]/15 flex items-center justify-center mb-5">
+                    <Icon size={20} className="text-[#3B82F6]" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-3">{p.title}</h3>
+                  <p className="text-sm text-[#A8BFCC] leading-relaxed">{p.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">See Datacules HealthData 97 in Action</h2>
+          <p className="text-[#A8BFCC] mb-8 max-w-xl mx-auto">
+            Request a demo to explore how the platform handles your healthcare data environment.
           </p>
-          <a
-            href={BRAND.company.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-            style={{ color: `var(--brand-primary)` }}
-          >
-            Visit {BRAND.company.name} →
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/demo"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-[#3B82F6] hover:bg-[#2563EB] rounded-xl transition-colors"
+            >
+              Request a Demo
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border border-white/20 hover:border-white/40 rounded-xl transition-all"
+            >
+              Contact Datacules
+            </Link>
+          </div>
         </div>
-
-        {/* Auth CTA */}
-        <div className="mt-10 text-center">
-          <a
-            href={BRAND.auth.register}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 glow-primary"
-            style={{ background: `linear-gradient(135deg, var(--brand-primary), var(--brand-accent))` }}
-          >
-            {BRAND.messaging.cta} →
-          </a>
-          <p className="text-gray-600 text-sm mt-3">
-            Already have an account?{' '}
-            <a href={BRAND.auth.login} className="hover:text-white transition-colors" style={{ color: `var(--brand-primary)` }}>Log in</a>
-          </p>
-        </div>
-      </div>
-      <Cta />
-    </div>
+      </section>
+    </main>
   );
 }

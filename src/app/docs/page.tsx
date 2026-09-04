@@ -1,148 +1,133 @@
 import type { Metadata } from 'next';
-import { BRAND } from '@/lib/brand';
+import Link from 'next/link';
+import { BookOpen, Code2, Shield, Network, ExternalLink } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: `Documentation | ${BRAND.name}`,
-  description: `Full documentation for ${BRAND.name}`,
+  title: 'Developer Documentation',
+  description:
+    'Datacules HealthData 97 developer documentation — API reference, integration guides, authentication, and platform architecture.',
 };
+
+const sections = [
+  {
+    icon: Code2,
+    title: 'REST API Reference',
+    description: '354+ endpoints across all 23 platform modules. Full OpenAPI / Swagger documentation with request/response schemas.',
+    badge: '354+ Endpoints',
+  },
+  {
+    icon: Network,
+    title: 'HL7 FHIR Integration',
+    description: 'HL7 FHIR R4 compatible data exchange for EHR interoperability, clinical data sharing, and health network connectivity.',
+    badge: 'FHIR R4',
+  },
+  {
+    icon: Shield,
+    title: 'Authentication & Security',
+    description: 'OAuth 2.0 and JWT authentication, role-based access control, PHI access controls, and rate limiting on every endpoint.',
+    badge: 'OAuth 2.0 / JWT',
+  },
+  {
+    icon: BookOpen,
+    title: 'Platform Architecture',
+    description: 'Overview of the platform data model, module architecture, integration protocols, and governance framework.',
+    badge: 'Architecture Guide',
+  },
+];
 
 export default function DocsPage() {
   return (
-    <div className="bg-gray-950 min-h-screen pt-24">
-      <div className="max-w-4xl mx-auto px-6 py-16">
-        <div className="mb-14 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-6 border border-white/10 bg-white/5 text-gray-400">
-            Documentation
-          </div>
-          <h1 className="text-5xl font-black text-white mb-4">
-            {BRAND.name} <span className="gradient-text">Docs</span>
+    <main className="bg-[#0D2137] min-h-screen">
+      <section className="pt-40 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mb-16">
+          <div className="section-eyebrow mb-5">Developer Documentation</div>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+            Build on Datacules HealthData 97
           </h1>
-          <p className="text-gray-400 text-lg mb-8">{BRAND.messaging.subheadline}</p>
+          <p className="text-xl text-[#A8BFCC] leading-relaxed">
+            Comprehensive developer resources for the Datacules HealthData 97 REST API, HL7 FHIR integration, authentication, and platform architecture.
+          </p>
+        </div>
 
-          {/* Docs gate — account required */}
-          <div
-            className="rounded-2xl border border-white/10 p-8 text-left"
-            style={{ background: 'rgba(255,255,255,0.03)' }}
-          >
-            <div className="flex items-start gap-4">
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: 'rgba(var(--brand-primary-rgb), 0.15)' }}
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="11" width="18" height="11" rx="2" stroke="var(--brand-primary)" strokeWidth="2"/>
-                  <path d="M7 11V7a5 5 0 0110 0v4" stroke="var(--brand-primary)" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-lg font-bold text-white mb-2">Sign in to access documentation</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-5">
-                  Developer documentation, API reference, and integration guides are available to registered users.
-                  Create your free account to get instant access.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={BRAND.auth.register}
-                    className="px-6 py-2.5 rounded-xl text-white text-sm font-semibold transition-all hover:opacity-90"
-                    style={{ background: `linear-gradient(135deg, var(--brand-primary), var(--brand-accent))` }}
-                  >
-                    Create free account →
-                  </a>
-                  <a
-                    href={BRAND.auth.login}
-                    className="px-6 py-2.5 rounded-xl border border-white/20 text-gray-300 text-sm font-semibold hover:bg-white/10 transition-all"
-                  >
-                    Log in
-                  </a>
-                </div>
+        {/* Coming soon state */}
+        <div className="rounded-2xl border border-[#3B82F6]/20 bg-[#3B82F6]/[0.04] p-8 mb-14 max-w-2xl">
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-[#3B82F6]/20 flex items-center justify-center flex-shrink-0">
+              <BookOpen size={18} className="text-[#3B82F6]" />
+            </div>
+            <div>
+              <h2 className="text-base font-semibold text-white mb-2">Documentation Coming Soon</h2>
+              <p className="text-sm text-[#A8BFCC] leading-relaxed mb-4">
+                Full developer documentation is under active development. Request early access or contact our team to discuss API integration requirements.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/demo"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-[#3B82F6] hover:bg-[#2563EB] rounded-xl transition-colors"
+                >
+                  Request API Access
+                  <ExternalLink size={13} />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-[#A8BFCC] hover:text-white border border-white/15 hover:border-white/30 rounded-xl transition-all"
+                >
+                  Contact the Team
+                </Link>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Public doc previews — teaser only */}
-        <h2 className="text-xl font-bold text-white mb-5 mt-10">What&apos;s inside</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 opacity-60 pointer-events-none select-none">
-          
-        <a
-          href="#"
-          className="group rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-white/20 hover:bg-white/10 transition-all block"
-        >
-          <h3 className="text-lg font-bold text-white mb-2 group-hover:gradient-text transition-colors">
-            Getting Started
-          </h3>
-          <p className="text-gray-500 text-sm leading-relaxed">Install and set up Datacules-HealthData-97 in minutes. No complex configuration required.</p>
-          <span className="inline-block mt-4 text-sm font-semibold" style={{ color: 'var(--brand-primary)' }}>
-            Read more →
-          </span>
-        </a>
-        <a
-          href="#"
-          className="group rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-white/20 hover:bg-white/10 transition-all block"
-        >
-          <h3 className="text-lg font-bold text-white mb-2 group-hover:gradient-text transition-colors">
-            Core Concepts
-          </h3>
-          <p className="text-gray-500 text-sm leading-relaxed">Understand how Datacules-HealthData-97 works under the hood and the key abstractions it uses.</p>
-          <span className="inline-block mt-4 text-sm font-semibold" style={{ color: 'var(--brand-primary)' }}>
-            Read more →
-          </span>
-        </a>
-        <a
-          href="#"
-          className="group rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-white/20 hover:bg-white/10 transition-all block"
-        >
-          <h3 className="text-lg font-bold text-white mb-2 group-hover:gradient-text transition-colors">
-            Configuration
-          </h3>
-          <p className="text-gray-500 text-sm leading-relaxed">Customize Datacules-HealthData-97 for your specific workflow and environment.</p>
-          <span className="inline-block mt-4 text-sm font-semibold" style={{ color: 'var(--brand-primary)' }}>
-            Read more →
-          </span>
-        </a>
-        <a
-          href="#"
-          className="group rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-white/20 hover:bg-white/10 transition-all block"
-        >
-          <h3 className="text-lg font-bold text-white mb-2 group-hover:gradient-text transition-colors">
-            API Reference
-          </h3>
-          <p className="text-gray-500 text-sm leading-relaxed">Full REST API documentation with request/response schemas and authentication guides.</p>
-          <span className="inline-block mt-4 text-sm font-semibold" style={{ color: 'var(--brand-primary)' }}>
-            Read more →
-          </span>
-        </a>
-        <a
-          href="#"
-          className="group rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-white/20 hover:bg-white/10 transition-all block"
-        >
-          <h3 className="text-lg font-bold text-white mb-2 group-hover:gradient-text transition-colors">
-            Integrations
-          </h3>
-          <p className="text-gray-500 text-sm leading-relaxed">Connect Datacules-HealthData-97 to your existing tools — Express, React and more.</p>
-          <span className="inline-block mt-4 text-sm font-semibold" style={{ color: 'var(--brand-primary)' }}>
-            Read more →
-          </span>
-        </a>
-        <a
-          href="#"
-          className="group rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-white/20 hover:bg-white/10 transition-all block"
-        >
-          <h3 className="text-lg font-bold text-white mb-2 group-hover:gradient-text transition-colors">
-            FAQ
-          </h3>
-          <p className="text-gray-500 text-sm leading-relaxed">Common questions and troubleshooting guides for Datacules-HealthData-97.</p>
-          <span className="inline-block mt-4 text-sm font-semibold" style={{ color: 'var(--brand-primary)' }}>
-            Read more →
-          </span>
-        </a>
+        {/* Doc sections */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {sections.map((sec) => {
+            const Icon = sec.icon;
+            return (
+              <div key={sec.title} className="card-base p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#3B82F6]/15 flex items-center justify-center">
+                    <Icon size={18} className="text-[#3B82F6]" />
+                  </div>
+                  <span className="text-[10px] font-semibold tracking-wider uppercase text-[#3B82F6] bg-[#3B82F6]/10 px-2 py-1 rounded-full">
+                    {sec.badge}
+                  </span>
+                </div>
+                <h3 className="text-base font-semibold text-white mb-2">{sec.title}</h3>
+                <p className="text-sm text-[#A8BFCC] leading-relaxed">{sec.description}</p>
+              </div>
+            );
+          })}
         </div>
-        <p className="text-center text-gray-600 text-sm mt-6">
-          <a href={BRAND.auth.register} className="hover:text-white transition-colors pointer-events-auto" style={{ color: 'var(--brand-primary)' }}>
-            Sign up free
-          </a>{' '}to unlock full access to all documentation sections.
-        </p>
-      </div>
-    </div>
+
+        {/* API preview */}
+        <div className="mt-14">
+          <h2 className="text-2xl font-bold text-white mb-6">API Quick Reference</h2>
+          <div
+            className="rounded-2xl border border-white/[0.07] overflow-hidden"
+            style={{ background: '#0A1628' }}
+          >
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.07]">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+              <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
+              <div className="w-2.5 h-2.5 rounded-full bg-[#28CA41]" />
+              <span className="ml-3 text-xs text-[#4A6080] font-mono">REST API — Base URL</span>
+            </div>
+            <div className="code-surface p-5 text-xs overflow-x-auto">
+              <div className="text-[#4A6080] mb-2"># Patient endpoints</div>
+              <div className="text-[#A8BFCC]">GET  <span className="text-[#3B82F6]">/api/v1/patients</span></div>
+              <div className="text-[#A8BFCC]">GET  <span className="text-[#3B82F6]">/api/v1/patients/{'{id}'}</span></div>
+              <div className="text-[#A8BFCC]">GET  <span className="text-[#3B82F6]">/api/v1/patients/{'{id}'}/risk-scores</span></div>
+              <div className="text-[#A8BFCC]">GET  <span className="text-[#3B82F6]">/api/v1/patients/{'{id}'}/encounters</span></div>
+              <div className="mt-3 text-[#4A6080]"># AI Intelligence endpoints</div>
+              <div className="text-[#A8BFCC]">GET  <span className="text-[#60A5FA]">/api/v1/ai/readmission-risk</span></div>
+              <div className="text-[#A8BFCC]">GET  <span className="text-[#60A5FA]">/api/v1/ai/denial-prediction</span></div>
+              <div className="text-[#A8BFCC]">GET  <span className="text-[#60A5FA]">/api/v1/ai/vitals-anomaly</span></div>
+              <div className="mt-3 text-[#4A6080]"># ... 354+ total endpoints across 23 modules</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

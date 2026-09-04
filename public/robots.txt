@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://datacules-healthdata-97-website.vercel.app/sitemap.xml
