@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Shield } from 'lucide-react';
 
@@ -72,8 +71,9 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5" aria-label="Datacules HealthData 97 — Home">
-              <Image
-                src="/1207x302.png"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo.svg"
                 alt="Datacules HealthData 97"
                 width={220}
                 height={55}
